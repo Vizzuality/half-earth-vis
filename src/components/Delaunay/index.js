@@ -16,7 +16,7 @@ class Delaunay {
   init() {
     const options = this.options;
     const τ = Math.PI * 2;
-    const width = Math.ceil(window.innerWidth * 0.75);
+    const width = Math.ceil(window.innerHeight * 0.75);
     const height = width;
     const canvas = this.el.append('canvas')
       .attr('width', width)
