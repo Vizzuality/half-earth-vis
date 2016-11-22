@@ -9,6 +9,7 @@ const defaults = {
   space: 4.5,
   width: 500,
   height: 500,
+  resize: true,
   geojson: {}
 };
 
@@ -37,16 +38,21 @@ class World {
   }
 
   setSize() {
-    // Lookup the size the browser is displaying the canvas.
-    const displayWidth = this.options.width = window.innerWidth;
-    const displayHeight = this.options.height = window.innerHeight;
+    if (this.options.resize) {
+      // Lookup the size the browser is displaying the canvas.
+      const displayWidth = this.options.width = window.innerWidth;
+      const displayHeight = this.options.height = window.innerHeight;
 
-    // Check if the canvas is not the same size.
-    if (this.canvas.width !== displayWidth ||
-      this.canvas.height !== displayHeight) {
-      // Make the canvas the same size
-      this.canvas.width = displayWidth;
-      this.canvas.height = displayHeight;
+      // Check if the canvas is not the same size.
+      if (this.canvas.width !== displayWidth ||
+        this.canvas.height !== displayHeight) {
+        // Make the canvas the same size
+        this.canvas.width = displayWidth;
+        this.canvas.height = displayHeight;
+      }
+    } else {
+      this.canvas.width = this.options.width;
+      this.canvas.height = this.options.height;
     }
   }
 

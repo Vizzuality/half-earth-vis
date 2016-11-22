@@ -5,6 +5,7 @@ import './styles/index.scss';
 
 import World from './components/World/Canvas';
 import Photo from './components/Photo';
+import Delaunay from './components/Delaunay';
 
 import worldTopo from './data/world.json';
 import elephantsPath from './images/elephants.jpg';
@@ -28,7 +29,8 @@ function onReady() {
 
   // Section 3
   app.worldLayer = new World('worldLayer', {
-    geojson: worldGeoJSON
+    geojson: worldGeoJSON,
+    projection: 'orthographic',
   });
 
   // Section 4
@@ -39,8 +41,12 @@ function onReady() {
   // Section 3
   app.worldVis = new World('worldVis', {
     projection: 'orthographic',
-    geojson: worldGeoJSON
+    geojson: worldGeoJSON,
+    resize: false,
+    width: window.innerHeight * 0.7,
+    height: window.innerHeight * 0.7
   });
+  app.delaunay = new Delaunay('delaunay');
 
   // Section 5
   app.wilsonPhoto = new Photo('wilsonPhoto', {
