@@ -16,11 +16,12 @@ class Delaunay {
   init() {
     const options = this.options;
     const τ = Math.PI * 2;
-    const width = Math.ceil(window.innerHeight * 0.75);
-    const height = width;
+    const width = Math.ceil(window.innerHeight * 0.75) + 100;
+    const height = Math.ceil(window.innerHeight * 0.75) + 100;
     const canvas = this.el.append('canvas')
       .attr('width', width)
       .attr('height', height);
+    console.log(width, height);
     const context = canvas.node().getContext('2d');
     const nodes = d3.range(200).map(() => {
       return {
@@ -65,10 +66,8 @@ class Delaunay {
     }
 
     const simulation = d3.forceSimulation()
-      .force('link', d3.forceLink().id(function(d) { return d.index }))
-      .force('charge', d3.forceManyBody().strength(function(d, i) {
-        return -50;
-      }))
+      .force('link', d3.forceLink().id(d => d.index))
+      .force('charge', d3.forceManyBody().strength(-60))
       .force('center', d3.forceCenter(width / 2, height / 2))
       .force('y', d3.forceY(0))
       .force('x', d3.forceX(0));
