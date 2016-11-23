@@ -1,6 +1,7 @@
 import * as topojson from 'topojson-client';
 
 import 'normalize.css';
+import './styles/lib/foundation.css';
 import './styles/index.scss';
 
 import World from './components/World/Canvas';
