@@ -21,7 +21,6 @@ class Delaunay {
     const canvas = this.el.append('canvas')
       .attr('width', width)
       .attr('height', height);
-    console.log(width, height);
     const context = canvas.node().getContext('2d');
     const nodes = d3.range(200).map(() => {
       return {
