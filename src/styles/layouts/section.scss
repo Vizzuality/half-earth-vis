@@ -9,6 +9,10 @@
     background-position: center;
   }
 
+  &.-fixed {
+    position: fixed;
+  }
+
   > .section-content {
 
     article {

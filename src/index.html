@@ -7,18 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <defs>
-      <symbol id="icon-fb" viewBox="0 0 16 32">
-        <title>fb</title>
-        <path class="path1" d="M10.551 10.362v-3.321c0-1.247 0.89-1.538 1.516-1.538h3.845v-5.483l-5.296-0.019c-5.879 0-7.217 4.090-7.217 6.707v3.655h-3.4v5.65h3.4v15.988h7.151v-15.988h4.825l0.624-5.65h-5.449z"></path>
-      </symbol>
-      <symbol id="icon-twitter" viewBox="0 0 39 32">
-        <title>twiter</title>
-        <path class="path1" d="M39.385 3.787c-1.449 0.644-3.005 1.078-4.641 1.271 1.668-0.999 2.95-2.582 3.554-4.468-1.562 0.924-3.291 1.599-5.131 1.959-1.475-1.569-3.575-2.55-5.901-2.55-4.463 0-8.078 3.616-8.078 8.078 0 0.633 0.070 1.25 0.208 1.841-6.716-0.337-12.669-3.553-16.655-8.441-0.694 1.194-1.093 2.581-1.093 4.062 0 2.804 1.427 5.275 3.593 6.725-1.323-0.043-2.569-0.405-3.659-1.010-0.001 0.033-0.001 0.069-0.001 0.101 0 3.915 2.785 7.18 6.482 7.922-0.677 0.183-1.391 0.283-2.129 0.283-0.522 0-1.027-0.050-1.519-0.144 1.027 3.207 4.012 5.543 7.546 5.61-2.764 2.166-6.248 3.46-10.033 3.46-0.652 0-1.296-0.038-1.928-0.113 3.575 2.289 7.822 3.627 12.386 3.627 14.862 0 22.99-12.309 22.99-22.985 0-0.35-0.010-0.699-0.025-1.046 1.579-1.138 2.948-2.56 4.033-4.182v0z"></path>
-      </symbol>
-    </defs>
-  </svg>
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+        <symbol id="icon-fb" viewBox="0 0 16 32">
+          <path class="path1" d="M10.551 10.362v-3.321c0-1.247 0.89-1.538 1.516-1.538h3.845v-5.483l-5.296-0.019c-5.879 0-7.217 4.090-7.217 6.707v3.655h-3.4v5.65h3.4v15.988h7.151v-15.988h4.825l0.624-5.65h-5.449z"></path>
+        </symbol>
+        <symbol id="icon-twitter" viewBox="0 0 39 32">
+          <path class="path1" d="M39.385 3.787c-1.449 0.644-3.005 1.078-4.641 1.271 1.668-0.999 2.95-2.582 3.554-4.468-1.562 0.924-3.291 1.599-5.131 1.959-1.475-1.569-3.575-2.55-5.901-2.55-4.463 0-8.078 3.616-8.078 8.078 0 0.633 0.070 1.25 0.208 1.841-6.716-0.337-12.669-3.553-16.655-8.441-0.694 1.194-1.093 2.581-1.093 4.062 0 2.804 1.427 5.275 3.593 6.725-1.323-0.043-2.569-0.405-3.659-1.010-0.001 0.033-0.001 0.069-0.001 0.101 0 3.915 2.785 7.18 6.482 7.922-0.677 0.183-1.391 0.283-2.129 0.283-0.522 0-1.027-0.050-1.519-0.144 1.027 3.207 4.012 5.543 7.546 5.61-2.764 2.166-6.248 3.46-10.033 3.46-0.652 0-1.296-0.038-1.928-0.113 3.575 2.289 7.822 3.627 12.386 3.627 14.862 0 22.99-12.309 22.99-22.985 0-0.35-0.010-0.699-0.025-1.046 1.579-1.138 2.948-2.56 4.033-4.182v0z"></path>
+        </symbol>
+      </defs>
+    </svg>
+
     <header class="l-header">
       <a href="#" class="brand">
         <img src="<%= require('./images/logo-half-earth-white.png') %>" alt="Logo Half Earth">
@@ -43,49 +45,34 @@
       </div>
     </aside>
 
-    <div id="worldIntro" class="l-section -parallax">
+    <div class="c-scroll-animation">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <div>
+        <span class="arrow -one"></span>
+        <span class="arrow -two"></span>
+      </div>
+      <div>scroll down to find out more</div>
+    </div>
+
+    <!-- Canvas world with layers -->
+    <div id="worldIntro" class="l-section -fixed"></div>
+
+    <div class="l-section -parallax">
       <div class="section-content row column">
-
-          <div class="column small-12 medium-5 medium-offset-1">
-            <article class="-level-1">
-              <h1>We  live</h1>
-            </article>
-          </div>
-
-          <div class="column small-12 medium-3 medium-offset-4">
-            <article class="-level-2">
-              <h1>in a</h1>
-            </article>
-          </div>
-
-          <div class="column small-12 medium-7 medium-offset-3">
-            <article class="-level-3">
-              <h1>disappearing</h1>
-            </article>
-          </div>
-
-          <div class="column small-12 medium-3 medium-offset-9">
-            <article class="-level-4">
-              <h1>world</h1>
-            </article>
-          </div>
-
-          <div class="column small-12 medium-4 medium-offset-4 end">
-            <article class="-level-bottom c-scroll-animation">
-              <div class="mouse">
-                <div class="wheel"></div>
-              </div>
-              <div>
-                <span class="arrow -one"></span>
-                <span class="arrow -two"></span>
-              </div>
-              <p>scroll down to find out more</p>
-            </article>
-          </div>
-
+        <div class="column small-12">
+          <h1>
+            <div>We live</div>
+            <div>in a</div>
+            <div>disappearing</div>
+            <div>world</div>
+          </h1>
+        </div>
       </div>
     </div>
-    <div id="worldIntro2" class="l-section -parallax">
+
+    <div class="l-section -parallax">
       <div class="section-content row column">
         <div class="column small-12 medium-3 medium-offset-6 end">
           <article class="-level-2">
@@ -118,6 +105,7 @@
         </div>
       </div>
     </div>
+
     <div id="worldLayer2" class="l-section -parallax">
       <div class="section-content row column">
         <div class="column small-12 medium-3 medium-offset-6 end">
@@ -131,7 +119,9 @@
         </div>
       </div>
     </div>
+
     <div id="deerPhoto" class="l-section -parallax"></div>
+
     <div id="worldVis" class="l-section -parallax">
       <div class="section-content row column">
         <div class="column small-12 medium-3 end">
@@ -154,6 +144,7 @@
       </div>
       <div id="delaunay" class="c-vis -centered"></div>
     </div>
+
     <div id="worldVis2" class="l-section -parallax">
       <div class="section-content row column">
         <div class="column small-12 medium-3 medium-offset-3 end">
@@ -167,6 +158,7 @@
       </div>
       <div id="delaunay" class="c-vis -centered"></div>
     </div>
+
     <div id="wilsonPhoto" class="l-section -parallax"></div>
   </body>
 </html>

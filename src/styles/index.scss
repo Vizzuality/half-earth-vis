@@ -1,15 +1,11 @@
-@import "settings", "base", "fonts";
+@import "fonts", "settings", "base";
 
 @import
-  "layouts/page",
   "layouts/header",
   "layouts/sidebar",
-  "layouts/section"
-;
+  "layouts/section";
 
 @import
-  "components/parallax",
-  "components/canvas",
-  "components/world",
+  "components/vis",
   "components/scroll-animation",
   "components/icon";

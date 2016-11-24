@@ -10,7 +10,8 @@ const defaults = {
   width: 500,
   height: 500,
   resize: true,
-  geojson: {}
+  geojson: {},
+  asBackground: false
 };
 
 const geoProjection = {
@@ -81,9 +82,14 @@ class World {
     this.paintPattern();
     this.context.restore();
 
-    // Draw image
-    const imagePath = this.canvas.toDataURL();
-    this.el.style.backgroundImage = `url(${imagePath})`;
+    // Draw image as background
+    if (this.options.asBackground) {
+      const imagePath = this.canvas.toDataURL();
+      this.el.style.backgroundImage = `url(${imagePath})`;
+    // OR Append canvas
+    } else {
+      this.el.appendChild(this.canvas);
+    }
   }
 
   getScale(bounds) {

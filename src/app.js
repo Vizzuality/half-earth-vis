@@ -24,9 +24,7 @@ function onReady() {
   });
 
   // Section 2
-  app.worldIntro2 = new World('worldIntro2', {
-    geojson: worldGeoJSON
-  });
+
 
   // Section 3
   app.elephantPhoto = new Photo('elephantPhoto', {
@@ -37,12 +35,14 @@ function onReady() {
   app.worldLayer = new World('worldLayer', {
     geojson: worldGeoJSON,
     projection: 'orthographic',
+    asBackground: true
   });
 
   // Section 5
   app.worldLayer2 = new World('worldLayer2', {
     geojson: worldGeoJSON,
     projection: 'orthographic',
+    asBackground: true
   });
 
   // Section 6
@@ -56,7 +56,8 @@ function onReady() {
     geojson: worldGeoJSON,
     resize: false,
     width: window.innerHeight * 0.7,
-    height: window.innerHeight * 0.7
+    height: window.innerHeight * 0.7,
+    asBackground: true
   });
   app.delaunay = new Delaunay('delaunay');
 
@@ -65,7 +66,8 @@ function onReady() {
     geojson: worldGeoJSON,
     resize: false,
     width: window.innerHeight * 0.7,
-    height: window.innerHeight * 0.7
+    height: window.innerHeight * 0.7,
+    asBackground: true
   });
 
   // Section 9
