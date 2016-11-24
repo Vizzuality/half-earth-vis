@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 
 const defaults = {
-  pointColor: 'rgb(99, 204, 48)',
+  pointColor: 'rgba(99, 204, 48, .6)',
   lineColor: 'rgba(99, 204, 48, .3)'
 };
 

@@ -24,6 +24,14 @@
           top: $top+vh;
         }
       }
+
+      &.-level-middle {
+        top: 40vh;
+      }
+
+      &.-level-bottom {
+        top: 85vh;
+      }
     }
   }
 }
