@@ -1,0 +1,20 @@
+.l-sidebar {
+  position: fixed;
+  position: sticky;
+  margin: $small-margin;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+
+  .share {
+    margin-top: $small-margin;
+    cursor: pointer;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+  }
+}

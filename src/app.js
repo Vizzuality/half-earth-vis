@@ -24,22 +24,33 @@ function onReady() {
   });
 
   // Section 2
+  app.worldIntro2 = new World('worldIntro2', {
+    geojson: worldGeoJSON
+  });
+
+  // Section 3
   app.elephantPhoto = new Photo('elephantPhoto', {
     imagePath: elephantsPath
   });
 
-  // Section 3
+  // Section 4
   app.worldLayer = new World('worldLayer', {
     geojson: worldGeoJSON,
     projection: 'orthographic',
   });
 
-  // Section 4
+  // Section 5
+  app.worldLayer2 = new World('worldLayer2', {
+    geojson: worldGeoJSON,
+    projection: 'orthographic',
+  });
+
+  // Section 6
   app.deerPhoto = new Photo('deerPhoto', {
     imagePath: deerPath
   });
 
-  // Section 3
+  // Section 7
   app.worldVis = new World('worldVis', {
     projection: 'orthographic',
     geojson: worldGeoJSON,
@@ -49,7 +60,15 @@ function onReady() {
   });
   app.delaunay = new Delaunay('delaunay');
 
-  // Section 5
+  app.worldVis2 = new World('worldVis2', {
+    projection: 'orthographic',
+    geojson: worldGeoJSON,
+    resize: false,
+    width: window.innerHeight * 0.7,
+    height: window.innerHeight * 0.7
+  });
+
+  // Section 9
   app.wilsonPhoto = new Photo('wilsonPhoto', {
     imagePath: wilsonPath
   });
