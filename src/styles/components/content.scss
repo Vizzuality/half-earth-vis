@@ -1,0 +1,25 @@
+.c-content {
+
+  article {
+    position: absolute;
+    height: 100vh;
+    max-width: inherit;
+    z-index: 2;
+
+    @for $i from 1 through 6 {
+      $top: 15 * $i;
+
+      &.-level-#{$i} {
+        top: $top+vh;
+      }
+    }
+
+    &.-level-middle {
+      top: 40vh;
+    }
+
+    &.-level-bottom {
+      top: 85vh;
+    }
+  }
+}
