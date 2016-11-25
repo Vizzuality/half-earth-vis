@@ -36,7 +36,6 @@
     "normalize.css": "^5.0.0",
     "postcss-loader": "^1.1.0",
     "sass-loader": "^4.0.2",
-    "scrollmagic": "^2.0.5",
     "style-loader": "^0.13.1",
     "topojson-client": "^2.1.0",
     "underscore": "^1.8.3",

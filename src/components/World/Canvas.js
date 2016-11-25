@@ -10,8 +10,7 @@ const defaults = {
   width: 500,
   height: 500,
   resize: true,
-  geojson: {},
-  asBackground: false
+  geojson: {}
 };
 
 const geoProjection = {
@@ -24,14 +23,17 @@ class World {
   constructor(elementQuery, options = {}) {
     this.el = document.getElementById(elementQuery);
     this.options = Object.assign({}, defaults, options);
-    this.canvas = document.createElement('canvas');
-    this.context = this.canvas.getContext('2d');
+
     this.init();
   }
 
   init() {
-    this.setSize();
+    this.canvas = document.createElement('canvas');
+    this.context = this.canvas.getContext('2d');
     this.data = this.options.geojson;
+
+    this.el.appendChild(this.canvas);
+    this.setSize();
     this.draw();
 
     // Resizing
@@ -81,15 +83,6 @@ class World {
     this.context.clip();
     this.paintPattern();
     this.context.restore();
-
-    // Draw image as background
-    if (this.options.asBackground) {
-      const imagePath = this.canvas.toDataURL();
-      this.el.style.backgroundImage = `url(${imagePath})`;
-    // OR Append canvas
-    } else {
-      this.el.appendChild(this.canvas);
-    }
   }
 
   getScale(bounds) {
@@ -108,8 +101,8 @@ class World {
       this.context.beginPath();
       this.context.arc(center[0], center[1], r, 0, Math.PI * 2, false);
       this.context.stroke();
-      this.context.closePath();
     }
+    this.context.closePath();
   }
 
   diagonalCalc() {
@@ -122,7 +115,7 @@ class World {
 
   update() {
     this.setSize();
-    this.draw();
+    requestAnimationFrame(this.draw.bind(this));
   }
 
   clear() {
@@ -130,8 +123,10 @@ class World {
   }
 
   setProjection(projectionName) {
-    this.options.projection = projectionName;
-    this.draw();
+    if (projectionName !== this.options.projection) {
+      this.options.projection = projectionName;
+      requestAnimationFrame(this.draw.bind(this));
+    }
   }
 
 }
