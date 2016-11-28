@@ -9,6 +9,7 @@ import _ from 'underscore';
 import World from './components/World/Canvas';
 import Photo from './components/Photo';
 import Delaunay from './components/Delaunay';
+import Globe from './components/Globe';
 
 import worldTopo from './data/world.json';
 import elephantsPath from './images/elephants.jpg';
@@ -27,25 +28,14 @@ function onReady() {
 
   // Section 2
 
-
   // Section 3
   app.elephantPhoto = new Photo('elephantPhoto', {
     imagePath: elephantsPath
   });
 
   // Section 4
-  // app.worldLayer = new World('worldLayer', {
-  //   geojson: worldGeoJSON,
-  //   projection: 'orthographic',
-  //   asBackground: true
-  // });
 
   // Section 5
-  // app.worldLayer2 = new World('worldLayer2', {
-  //   geojson: worldGeoJSON,
-  //   projection: 'orthographic',
-  //   asBackground: true
-  // });
 
   // Section 6
   app.deerPhoto = new Photo('deerPhoto', {
@@ -53,29 +43,15 @@ function onReady() {
   });
 
   // Section 7
-  // app.worldVis = new World('worldVis', {
-  //   projection: 'orthographic',
-  //   geojson: worldGeoJSON,
-  //   resize: false,
-  //   width: window.innerHeight * 0.7,
-  //   height: window.innerHeight * 0.7,
-  //   asBackground: true
-  // });
   app.delaunay = new Delaunay('delaunay');
-
-  // app.worldVis2 = new World('worldVis2', {
-  //   projection: 'orthographic',
-  //   geojson: worldGeoJSON,
-  //   resize: false,
-  //   width: window.innerHeight * 0.7,
-  //   height: window.innerHeight * 0.7,
-  //   asBackground: true
-  // });
 
   // Section 9
   app.wilsonPhoto = new Photo('wilsonPhoto', {
     imagePath: wilsonPath
   });
+
+  // Section 10
+  app.globe = new Globe('#globe');
 
   function onScroll(ev) {
     const h = window.innerHeight;
