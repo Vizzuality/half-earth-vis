@@ -1,5 +1,7 @@
 import * as THREE from 'three';
 import orbitControl from 'three-orbit-controls';
+import earthImage from '../../images/earth.jpg';
+import earthBumpImage from '../../images/earth-bump.jpg';
 
 const Control = orbitControl(THREE);
 
@@ -56,8 +58,8 @@ class Globe {
   addGlobe() {
     const radius = 200;
     const material = new THREE.MeshPhongMaterial({
-      map: this.imageLoader.load('/src/images/earth.jpg'),
-      bumpMap: this.imageLoader.load('/src/images/earth-bump.jpg'),
+      map: this.imageLoader.load(earthImage),
+      bumpMap: this.imageLoader.load(earthBumpImage),
       bumpScale: 2
     });
     const geometry = new THREE.SphereGeometry(radius, 40, 30);
