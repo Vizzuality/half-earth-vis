@@ -82,7 +82,16 @@ function onReady() {
     const y = window.pageYOffset;
 
     // Section 4: map in orthographic
-    if (y >= (h * 2) && y < (h * 5)) {
+    if (y < (h * 2)) {
+      let introHeading = document.getElementById('intro-heading');
+      introHeading.style.filter = `blur(${y / 20}px)`;
+
+      let scrollAnimation = document.getElementById('scroll-down-animation')
+      scrollAnimation.classList.add('-hidden');
+
+      app.world.setProjection('robinson');
+
+    } else if (y >= (h * 2) && y < (h * 8)) {
       app.world.setProjection('orthographic');
     } else {
       app.world.setProjection('robinson');

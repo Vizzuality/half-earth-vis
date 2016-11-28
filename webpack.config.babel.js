@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 const path = require('path');
 
 const config = {
@@ -28,7 +29,7 @@ const config = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        loader: 'style-loader!css-loader!postcss-loader'
       },
       {
         test: /\.(scss|sass)$/,
@@ -43,6 +44,10 @@ const config = {
         loader: 'url-loader?prefix=image/&limit=5000&context=./src/images'
       }
     ]
+  },
+
+  postcss() {
+    return [autoprefixer];
   },
 
   resolve: {
