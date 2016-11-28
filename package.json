@@ -46,6 +46,7 @@
     "webpack-dev-server": "^1.16.2"
   },
   "devDependencies": {
+    "autoprefixer": "^6.5.3",
     "eslint": "^3.10.2",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.1.0",

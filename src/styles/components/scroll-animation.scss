@@ -3,9 +3,14 @@
   flex-direction: column;
   align-items: center;
   position: absolute;
-  bottom: 10vh;
+  bottom: 2vh;
   left: 43vw;
   z-index: 2;
+
+  &.-hidden {
+    transition: opacity 300ms ease-in-out;
+    opacity: 0;
+  }
 
   .footnote {
     margin-top: $small-margin;
@@ -17,8 +22,6 @@
     display: block;
     width: 8px;
     height: 8px;
-    -ms-transform: rotate(45deg); /* IE 9 */
-    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
     transform: rotate(45deg);
     margin: 0 0 1px 0;
     border-right: 2px solid rgba($white, 0.6);
@@ -26,22 +29,18 @@
 
 
     .-one, .-two {
-      -webkit-animation: mouse-scroll 1s infinite;
-      -moz-animation: mouse-scroll 1s infinite;
+      animation: mouse-scroll 1s infinite;
     }
 
     .-one {
       margin-top: 6px;
-
-      -webkit-animation-delay: .1s;
-      -moz-animation-delay: .1s;
-      -webkit-animation-direction: alternate;
+      animation-delay: .1s;
+      animation-direction: alternate;
     }
 
     .-two {
-      -webkit-animation-delay: .2s;
-      -moz-animation-delay: .2s;
-      -webkit-animation-direction: alternate;
+      animation-delay: .2s;
+      animation-direction: alternate;
     }
   }
 
@@ -65,23 +64,18 @@
     background: white;
     position: relative;
 
-    -webkit-animation: mouse-wheel 1.2s ease infinite;
-    -moz-animation: mouse-wheel 1.2s ease infinite;
+    animation: mouse-wheel 1.2s ease infinite;
   }
 
   @-webkit-keyframes mouse-wheel
   {
     0% {
       opacity: 1;
-      -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
       transform: translateY(0);
     }
 
     100% {
       opacity: 0;
-      -webkit-transform: translateY(6px);
-      -ms-transform: translateY(6px);
       transform: translateY(6px);
     }
   }
