@@ -62,11 +62,10 @@ function onReady() {
       let introHeading = document.getElementById('intro-heading');
       introHeading.style.filter = `blur(${y / 20}px)`;
 
-      let scrollAnimation = document.getElementById('scroll-down-animation')
+      let scrollAnimation = document.getElementById('scroll-down-animation');
       scrollAnimation.classList.add('-hidden');
 
       app.world.setProjection('robinson');
-
     } else if (y >= (h * 2) && y < (h * 8)) {
       app.world.setProjection('orthographic');
     } else {

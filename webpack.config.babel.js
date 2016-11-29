@@ -8,7 +8,7 @@ const config = {
   context: path.join(__dirname, 'src'),
 
   entry: [
-    './app.js'
+    './app.jsx'
   ],
 
   output: {
@@ -19,7 +19,7 @@ const config = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         loader: 'babel-loader',
         exclude: /node_modules/
       },
@@ -51,7 +51,7 @@ const config = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx', 'css', '.scss']
+    extensions: ['', '.js', '.jsx', '.css', '.scss']
   },
 
   plugins: [
