@@ -1,3 +1,5 @@
+import 'normalize.css';
+import './styles/lib/foundation.css';
 import './styles/index.scss';
 
 import React from 'react';
@@ -26,6 +28,7 @@ class AppComponent extends React.Component {
     return (
       <div>
         <Header />
+        <Globe scrollTop={this.state.scrollTop} />
         <Sidebar />
       </div>
     );
