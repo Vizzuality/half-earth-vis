@@ -1,7 +1,9 @@
+import './style.scss';
+
 import React from 'react';
 import * as THREE from 'three';
 import orbitControl from 'three-orbit-controls';
-import earthImage from './images/earth.jpg';
+import earthImage from './images/earth-clouds-blue.jpg';
 import earthBumpImage from './images/earth-bump.jpg';
 
 const Control = orbitControl(THREE);
@@ -80,7 +82,7 @@ class GlobeComponent extends React.Component {
 
   render() {
     return (
-      <div ref="globeElement"></div>
+      <div ref="globeElement" className="c-globe"></div>
     );
   }
 
