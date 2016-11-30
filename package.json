@@ -45,6 +45,7 @@
     "topojson-client": "^2.1.0",
     "underscore": "^1.8.3",
     "url-loader": "^0.5.7",
+    "vizz-components": "file:///Users/davidsingal/Workspace/vizz-components",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
   },

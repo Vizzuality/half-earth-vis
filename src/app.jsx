@@ -4,9 +4,9 @@ import './styles/index.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Globe} from 'vizz-components';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
-import Globe from './components/Globe';
 import Story from './components/Story';
 
 class AppComponent extends React.Component {
