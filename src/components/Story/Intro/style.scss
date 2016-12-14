@@ -6,9 +6,12 @@
   justify-content: center;
   align-items: center;
   background-image: url("./bg-intro.jpg");
-  background-size: cover;
+  position: relative;
+  min-height: 100vh;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover;
 
   h1 {
     font-size: $font-size-h1;

@@ -1,0 +1,11 @@
+@import "../../styles/settings";
+
+.text-section {
+  p {
+    font-family: $font-family-base;
+    font-size: $font-size-text-section;
+    line-height: 1.83;
+    letter-spacing: $letter-spacing-text-section;
+    color: $white;
+  }
+}

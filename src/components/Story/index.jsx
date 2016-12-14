@@ -2,6 +2,9 @@ import React from 'react';
 import $ from 'jquery';
 
 import Intro from './Intro';
+import FirstSection from './FirstSection';
+
+import './style.scss';
 
 const defaults = {};
 
@@ -21,6 +24,7 @@ class Story extends React.Component{
     return (
       <div>
         <Intro />
+        <FirstSection />
       </div>
     );
   }
