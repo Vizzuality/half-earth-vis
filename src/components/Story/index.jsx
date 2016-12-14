@@ -1,6 +1,7 @@
 import React from 'react';
-import './style.scss';
 import $ from 'jquery';
+
+import Intro from './Intro';
 
 const defaults = {};
 
@@ -18,8 +19,8 @@ class Story extends React.Component{
 
   render() {
     return (
-      <div className="c-intro">
-
+      <div>
+        <Intro />
       </div>
     );
   }
