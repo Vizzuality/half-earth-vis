@@ -1,0 +1,71 @@
+@import "../../../styles/settings";
+
+.c-second-section {
+  margin-top: 130px;
+  position: relative;
+
+  .wrap {
+    position: relative;
+  }
+
+  img {
+    box-shadow: -10px 10px 0 0 rgba($base-font-color, 0.1);
+    position: absolute;
+
+    &.first-image {
+      max-width: 250px;
+      top: 0;
+      z-index: 1;
+    }
+
+    &.second-image {
+      max-width: 430px;
+      top: 150px;
+      left: 90px;
+      z-index: 2;
+    }
+
+    &.fourth-image {
+      max-width: 340px;
+      top: 710px;
+      z-index: 1;
+    }
+
+    &.sixth-image {
+      max-width: 340px;
+      right: 180px;
+      top: 920px;
+    }
+  }
+
+  .large-image {
+    width: 50%;
+    position: relative;
+    float: left;
+    height: 1px;
+  }
+
+  .third-image,
+  .fifth-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+  }
+
+  .third-image {
+    width: calc(100% + 90px);
+    top: 410px;
+    height: 480px;
+    background-image: url('assets/meanders.jpg');
+    box-shadow: -10px 10px 0 0 rgba($base-font-color, 0.1);
+  }
+
+  .fifth-image {
+    width: calc(100% - 20px);
+    top: 240px;
+    height: 420px;
+    background-image: url('assets/lake.jpg');
+    left: 20px;
+  }
+
+}
