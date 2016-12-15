@@ -4,6 +4,7 @@ import $ from 'jquery';
 import Intro from './Intro';
 import FirstSection from './FirstSection';
 import SecondSection from './SecondSection'; // first gallery
+import ThirdSection from './ThirdSection';
 
 import './style.scss';
 
@@ -27,6 +28,7 @@ class Story extends React.Component{
         <Intro />
         <FirstSection />
         <SecondSection />
+        <ThirdSection />
       </div>
     );
   }
