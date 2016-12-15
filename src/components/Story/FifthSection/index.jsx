@@ -13,10 +13,10 @@ class FifthSection extends React.Component{
     return (
       <div className="c-fifth-section">
         <div className="wrap">
-          <img className="first-image" src={firstImage} alt="Road" />
-          <img className="second-image" src={secondImage} alt="Road" />
-          <img className="fifth-image" src={fifthImage} alt="Road" />
-          <img className="sixth-image" src={sixthImage} alt="Road" />
+          <img className="first-image" src={firstImage} alt="Scouts" />
+          <img className="second-image" src={secondImage} alt="EO wilson" />
+          <img className="fifth-image" src={fifthImage} alt="Bird" />
+          <img className="sixth-image" src={sixthImage} alt="Helicopter" />
           <div className="text-section first">
             <p>The Half-Earth Project will drive</p>
             <p>the research needed to better understand</p>

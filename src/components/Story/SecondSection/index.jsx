@@ -14,9 +14,9 @@ class SecondSection extends React.Component{
       <div className="c-second-section">
         <div className="wrap">
           <img className="first-image" src={firstImage} alt="Road" />
-          <img className="second-image" src={secondImage} alt="Road" />
-          <img className="fourth-image" src={fourthImage} alt="Road" />
-          <img className="sixth-image" src={sixthImage} alt="Road" />
+          <img className="second-image" src={secondImage} alt="Tigers" />
+          <img className="fourth-image" src={fourthImage} alt="Mountain with tree" />
+          <img className="sixth-image" src={sixthImage} alt="Mallard" />
           <div className="text-section first">
             <p>Suitable habitat, crucial to nature’s survival,</p>
             <p>is shrinking fast. In fact the rate of</p>
@@ -32,11 +32,11 @@ class SecondSection extends React.Component{
         </div>
 
         <div className="large-image">
-          <div className="third-image" alt="Road">{''}</div>
+          <div className="third-image">{''}</div>
         </div>
 
         <div className="large-image">
-          <div className="fifth-image" alt="Road">{''}</div>
+          <div className="fifth-image">{''}</div>
         </div>
       </div>
     );
