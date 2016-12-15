@@ -6,6 +6,7 @@ import FirstSection from './FirstSection';
 import SecondSection from './SecondSection'; // first gallery
 import ThirdSection from './ThirdSection';
 import FourthSection from './FourthSection';
+import FifthSection from './FifthSection';
 
 import './style.scss';
 
@@ -31,6 +32,7 @@ class Story extends React.Component{
         <SecondSection />
         <ThirdSection />
         <FourthSection />
+        <FifthSection />
       </div>
     );
   }
