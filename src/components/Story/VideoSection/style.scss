@@ -1,68 +1,16 @@
 @import "../../../styles/settings";
 
 .c-video-section {
-  margin-top: 340px;
-  width: 100%;
-  height: 100vh;
-  background-image: url('assets/examplevideo.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
   display: flex;
-  align-content: center;
   justify-content: center;
   align-items: center;
+  margin-top: 340px;
+  height: calc(100vh - 50px);
 
-  .contain-video-player {
-    position: absolute;
-  }
-
-  .video-player {
-    width: 0;
-    height: 0;
-    transition: .7s ease;
-    z-index: 4;
-
-    &.-opened {
-      width: calc(100% - 200px);
-      height: calc(100% - 200px);
-      position: absolute;
+    .video-player {
+      min-width: 100%;
+      height: 100%;
+      transition: .7s ease;
+      z-index: 4;
     }
-  }
-
-  .backdark {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: 2;
-    background-color: rgba($pattern-color, .9);
-    transition: .7s;
-
-    &.-opened {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-
-  .close-video-button {
-    font-size: 18px;
-    color: $pattern-color;
-    position: absolute;
-    right: 50px;
-    top: 100px;
-    background-color: $white;
-    z-index: 5;
-  }
-
-  .play-button {
-    background-color: $white;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    width: 150px;
-    cursor: pointer;
-    z-index: 3;
-  }
 }
