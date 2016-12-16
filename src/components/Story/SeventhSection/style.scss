@@ -7,11 +7,28 @@
   background-image: url('assets/examplevideo.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  position: absolute;
+  position: relative;
   display: flex;
   align-content: center;
   justify-content: center;
   align-items: center;
+
+  .contain-video-player {
+    position: absolute;
+  }
+
+  .video-player {
+    width: 0;
+    height: 0;
+    transition: .7s ease;
+    z-index: 4;
+
+    &.-opened {
+      width: calc(100% - 200px);
+      height: calc(100% - 200px);
+      position: absolute;
+    }
+  }
 
   .backdark {
     opacity: 0;
@@ -20,61 +37,23 @@
     height: 100%;
     width: 100%;
     z-index: 2;
-    background-color: rgba($pattern-color, .6);
+    background-color: rgba($pattern-color, .9);
     transition: .7s;
 
     &.-opened {
       opacity: 1;
       visibility: visible;
     }
-
-    &.-close {
-      opacity: 0;
-      visibility: hidden;
-    }
   }
 
-  .contain-video-player {
-    width: 0;
-    height: 0;
-    transition: .7s ease;
-    z-index: 3;
-    position: relative;
-    overflow: hidden;
-
-    .video-player {
-      width: 0;
-      height: 0;
-    }
-
-    &.-opened {
-      height: 95%;
-      width: 95%;
-
-      .video-player {
-        min-width: 100%;
-        min-height: 100%;
-      }
-    }
-
-    &.-close {
-      height: 0;
-      width: 0;
-
-      .video-player {
-        min-width: 0;
-        min-height: 0;
-      }
-    }
-
-    .close-video-button {
-      font-size: 18px;
-      color: $pattern-color;
-      position: absolute;
-      right: 5%;
-      top: 5%;
-      background-color: $white;
-    }
+  .close-video-button {
+    font-size: 18px;
+    color: $pattern-color;
+    position: absolute;
+    right: 50px;
+    top: 100px;
+    background-color: $white;
+    z-index: 5;
   }
 
   .play-button {
