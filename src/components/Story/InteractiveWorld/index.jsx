@@ -3,11 +3,11 @@ import TitleSection from '../TitleSection';
 import './style.scss';
 
 
-class NinethSection extends React.Component{
+class InteractiveWorld extends React.Component{
 
   render() {
     return (
-      <div className="c-nineth-section wrap">
+      <div className="c-interactive-world-section wrap">
         <TitleSection text="We can if we want to" align="center" />
       </div>
     );
@@ -15,4 +15,4 @@ class NinethSection extends React.Component{
 
 }
 
-export default NinethSection;
+export default InteractiveWorld;

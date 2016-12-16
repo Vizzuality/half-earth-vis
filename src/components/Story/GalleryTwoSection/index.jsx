@@ -1,5 +1,4 @@
 import React from 'react';
-import TitleSection from '../TitleSection';
 import './style.scss';
 import firstImage from './assets/scouts.jpg';
 import secondImage from './assets/eowilson.jpg';
@@ -7,11 +6,11 @@ import fifthImage from './assets/bird.jpg';
 import sixthImage from './assets/helicopter.jpg';
 
 
-class FifthSection extends React.Component{
+class GalleryTwoSection extends React.Component{
 
   render() {
     return (
-      <div className="c-fifth-section">
+      <div className="c-gallery-two-section">
         <div className="wrap">
           <img className="first-image" src={firstImage} alt="Scouts" />
           <img className="second-image" src={secondImage} alt="EO wilson" />
@@ -43,4 +42,4 @@ class FifthSection extends React.Component{
 
 }
 
-export default FifthSection ;
+export default GalleryTwoSection ;

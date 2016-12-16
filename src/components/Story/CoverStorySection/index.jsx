@@ -3,11 +3,11 @@ import Mouse from '../../Mouse';
 import './style.scss';
 
 
-class Intro extends React.Component{
+class CoverStorySection extends React.Component{
 
   render() {
     return (
-      <div className="c-intro">
+      <div className="c-cover">
         <h1>
           We  live<br />
           in a<br />
@@ -21,4 +21,4 @@ class Intro extends React.Component{
 
 }
 
-export default Intro;
+export default CoverStorySection;

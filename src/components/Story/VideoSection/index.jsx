@@ -3,7 +3,7 @@ import $ from 'jquery';
 import './style.scss';
 
 
-class SeventhSection extends React.Component{
+class VideoSection extends React.Component{
 
   // IMPROVE CODE
 
@@ -23,18 +23,18 @@ class SeventhSection extends React.Component{
 
   render() {
     return (
-      <div className="c-seventh-section">
+      <div className="c-video-section">
         <span className="play-button" onClick={(e) => this.openVideo(e)}>Play video</span>
         {/*<span className="close-video-button" onClick={(e) => this.closeVideo(e)}>X</span>*/}
         <div className="backdark">{''}</div>
-          <video className="video-player">
-            <source src="src/components/Story/SeventhSection/assets/demo.mp4" type="video/mp4"></source>
-            Your browser does not support the video tag.
-          </video>
+        <video className="video-player">
+          <source src="src/components/Story/SeventhSection/assets/demo.mp4" type="video/mp4"></source>
+          Your browser does not support the video tag.
+        </video>
       </div>
     );
   }
 
 }
 
-export default SeventhSection ;
+export default VideoSection;

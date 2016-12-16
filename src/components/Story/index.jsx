@@ -1,16 +1,16 @@
 import React from 'react';
 import $ from 'jquery';
 
-import Intro from './Intro';
-import FirstSection from './FirstSection';
-import SecondSection from './SecondSection'; // first gallery
-import ThirdSection from './ThirdSection';
-import FourthSection from './FourthSection';
-import FifthSection from './FifthSection';
-import SixthSection from './SixthSection';
-import SeventhSection from './SeventhSection';
+import CoverStorySection from './CoverStorySection';
+import MeshSection from './MeshSection';
+import GalleryOneSection from './GalleryOneSection'; // first gallery
+import RangeSection from './RangeSection';
+import RangeHalfSection from './RangeHalfSection';
+import GalleryTwoSection from './GalleryTwoSection';
+import CirclesSection from './CirclesSection';
+import VideoSection from './VideoSection';
 import EighthSection from './EighthSection';
-import NinethSection from './NinethSection';
+import InteractiveWorld from './InteractiveWorld';
 
 import './style.scss';
 
@@ -31,16 +31,16 @@ class Story extends React.Component{
   render() {
     return (
       <div>
-        <Intro />
-        <FirstSection />
-        <SecondSection />
-        <ThirdSection />
-        <FourthSection />
-        <FifthSection />
-        <SixthSection />
-        <SeventhSection />
+        <CoverStorySection />
+        <MeshSection />
+        <GalleryOneSection />
+        <RangeSection />
+        <RangeHalfSection />
+        <GalleryTwoSection />
+        <CirclesSection />
+        <VideoSection />
         <EighthSection />
-        <NinethSection />
+        <InteractiveWorld />
       </div>
     );
   }

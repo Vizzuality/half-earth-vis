@@ -3,11 +3,11 @@ import TitleSection from '../TitleSection';
 import './style.scss';
 
 
-class FirstSection extends React.Component{
+class MeshSection extends React.Component{
 
   render() {
     return (
-      <div className="c-first-section wrap">
+      <div className="c-mesh-section wrap">
         <TitleSection text="Human beings are connected with all of life" align="center" />
         <div className="text-section">
           <p>We depend upon all of nature</p>
@@ -20,4 +20,4 @@ class FirstSection extends React.Component{
 
 }
 
-export default FirstSection;
+export default MeshSection;

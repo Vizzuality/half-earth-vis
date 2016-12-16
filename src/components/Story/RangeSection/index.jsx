@@ -3,11 +3,11 @@ import TitleSection from '../TitleSection';
 import './style.scss';
 
 
-class ThirdSection extends React.Component{
+class RangeSection extends React.Component{
 
   render() {
     return (
-      <div className="c-third-section wrap">
+      <div className="c-range-section wrap">
         <div className="text-section">
           <p>Half-Earth is a call-to-action to commit</p>
           <p>half of the planet’s surface to nature.</p>
@@ -19,4 +19,4 @@ class ThirdSection extends React.Component{
 
 }
 
-export default ThirdSection ;
+export default RangeSection ;

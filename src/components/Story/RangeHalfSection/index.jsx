@@ -1,13 +1,12 @@
 import React from 'react';
-import TitleSection from '../TitleSection';
 import './style.scss';
 
 
-class FourthSection extends React.Component{
+class RangeHalfSection extends React.Component{
 
   render() {
     return (
-      <div className="c-fourth-section wrap">
+      <div className="c-range-half-section wrap">
         <div className="text-section">
           <p>If we conserve half the land and sea, 85% of</p>
           <p>all species will be protected from extinction</p>
@@ -19,4 +18,4 @@ class FourthSection extends React.Component{
 
 }
 
-export default FourthSection ;
+export default RangeHalfSection ;

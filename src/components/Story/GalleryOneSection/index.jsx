@@ -7,11 +7,11 @@ import fourthImage from './assets/tree.jpg';
 import sixthImage from './assets/mallard.jpg';
 
 
-class SecondSection extends React.Component{
+class GalleryOneSection extends React.Component{
 
   render() {
     return (
-      <div className="c-second-section">
+      <div className="c-gallery-one-section">
         <div className="wrap">
           <img className="first-image" src={firstImage} alt="Road" />
           <img className="second-image" src={secondImage} alt="Tigers" />
@@ -44,4 +44,4 @@ class SecondSection extends React.Component{
 
 }
 
-export default SecondSection;
+export default GalleryOneSection;
