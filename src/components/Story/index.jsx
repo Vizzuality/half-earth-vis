@@ -10,6 +10,7 @@ import FifthSection from './FifthSection';
 import SixthSection from './SixthSection';
 import SeventhSection from './SeventhSection';
 import EighthSection from './EighthSection';
+import NinethSection from './NinethSection';
 
 import './style.scss';
 
@@ -39,6 +40,7 @@ class Story extends React.Component{
         <SixthSection />
         <SeventhSection />
         <EighthSection />
+        <NinethSection />
       </div>
     );
   }

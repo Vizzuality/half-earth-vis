@@ -1,5 +1,4 @@
 import React from 'react';
-import TitleSection from '../TitleSection';
 import './style.scss';
 
 
