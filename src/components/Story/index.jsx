@@ -16,6 +16,26 @@ import './style.scss';
 
 class Story extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      scrollTop: 0
+    };
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', () => {
+      this.setState({ scrollTop: window.pageYOffset });
+
+      // Video Player function
+      if (window.pageYOffset > 6800 && window.pageYOffset < 7100) {
+        $('.video-player')[0].play();
+      } else {
+        $('.video-player')[0].pause();
+      }
+    });
+  }
+
   render() {
     return (
       <div>
