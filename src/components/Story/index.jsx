@@ -14,19 +14,7 @@ import InteractiveWorld from './InteractiveWorld';
 
 import './style.scss';
 
-const defaults = {};
-
-class Story extends React.Component{
-
-// constructor(queryElement, options = {}) {
-//   this.el = document.querySelector(queryElement);
-//   this.options = Object.assign({}, defaults, options);
-//   this.init();
-// }
-//
-// init() {
-//   this.$el = $(this.el);
-// }
+class Story extends React.Component {
 
   render() {
     return (
