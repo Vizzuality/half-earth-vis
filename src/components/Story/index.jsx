@@ -24,14 +24,36 @@ class Story extends React.Component {
   }
 
   componentDidMount() {
-    // Gallery One Animation
+
     let lastScrollTop = window.pageYOffset;
     let up = 0;
     let down = 0;
+
     window.addEventListener('scroll', () => {
       this.setState({ scrollTop: window.pageYOffset });
-      const st = window.pageYOffset;
 
+      if (window.pageYOffset <= 391) {
+        if ($('.c-scroll-animation').hasClass('-half-hidden') === true) {
+          $('.c-scroll-animation').removeClass('-half-hidden');
+        }
+      }
+
+      if (window.pageYOffset >= 392 && window.pageYOffset <= 650) {
+        if ($('.c-scroll-animation').hasClass('-hidden') === true) {
+          $('.c-scroll-animation').removeClass('-hidden');
+        }
+        $('.c-scroll-animation').addClass('-half-hidden');
+      }
+      
+      if (window.pageYOffset >= 651) {
+        if ($('.c-scroll-animation').hasClass('-half-hidden') === true) {
+          $('.c-scroll-animation').removeClass('-half-hidden');
+        }
+        $('.c-scroll-animation').addClass('-hidden');
+      }
+
+      // Gallery One Animation
+      const st = window.pageYOffset;
       if (window.pageYOffset > 1470 && window.pageYOffset < 2220) {
         const firstTop = parseFloat($('.first-image').css('top'));
         const secondTop = parseFloat($('.second-image').css('top'));
