@@ -7,7 +7,7 @@ class RangeSection extends React.Component{
 
   render() {
     return (
-      <div className="c-range-section wrap">
+      <div className="c-range-section wrap z2">
         <div className="text-section">
           <p>Half-Earth is a call-to-action to commit</p>
           <p>half of the planet’s surface to nature.</p>

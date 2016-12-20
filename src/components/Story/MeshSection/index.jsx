@@ -7,7 +7,7 @@ class MeshSection extends React.Component{
 
   render() {
     return (
-      <div className="c-mesh-section wrap">
+      <div className="c-mesh-section wrap z2">
         <TitleSection text="Human beings are connected with all of life" align="center" />
         <div className="text-section">
           <p>We depend upon all of nature</p>

@@ -11,7 +11,7 @@ class GalleryOneSection extends React.Component{
 
   render() {
     return (
-      <div className="c-gallery-one-section">
+      <div className="c-gallery-one-section z2">
         <div className="wrap">
           <img className="first-image-one" src={firstImage} alt="Road" />
           <img className="second-image-one" src={secondImage} alt="Tigers" />

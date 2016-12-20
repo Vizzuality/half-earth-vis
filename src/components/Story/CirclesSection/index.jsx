@@ -7,7 +7,7 @@ class CirclesSection extends React.Component{
 
   render() {
     return (
-      <div className="c-circles-section wrap">
+      <div className="c-circles-section wrap z2">
         <div className="text-section">
           <TitleSection text="Mapping Core" />
           <p>At the center of these efforts will be the</p>

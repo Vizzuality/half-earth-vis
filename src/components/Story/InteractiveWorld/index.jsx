@@ -7,7 +7,7 @@ class InteractiveWorld extends React.Component{
 
   render() {
     return (
-      <div className="c-interactive-world-section wrap">
+      <div className="c-interactive-world-section wrap z2">
         <TitleSection text="We can if we want to" align="center" />
       </div>
     );

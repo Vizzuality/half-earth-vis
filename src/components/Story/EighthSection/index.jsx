@@ -6,7 +6,7 @@ class EighthSection extends React.Component{
 
   render() {
     return (
-      <div className="c-eighth-section">
+      <div className="c-eighth-section z2">
         <h1>
           Can we save half<br />
           the earth<br />
