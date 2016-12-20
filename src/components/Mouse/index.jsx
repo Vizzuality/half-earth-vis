@@ -2,11 +2,12 @@ import React from 'react';
 import './style.scss';
 
 
-class Mouse extends React.Component{
+class Mouse extends React.Component {
 
   render() {
+    const activeClassName = this.props.active ? '' : ' -hidden';
     return (
-      <div className="c-scroll-animation">
+      <div className={"c-scroll-animation" + activeClassName}>
         <div className="mouse">
         <div className="wheel"></div>
         </div>

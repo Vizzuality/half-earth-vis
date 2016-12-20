@@ -2,6 +2,7 @@ import 'normalize.css';
 import './styles/lib/foundation.css';
 import './styles/index.scss';
 
+import _ from 'underscore';
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import {Globe} from 'vizz-components';
@@ -20,9 +21,9 @@ class AppComponent extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', () => {
-      this.setState({ scrollTop: window.pageOffsetY });
-    });
+    window.addEventListener('scroll', _.debounce(() => {
+      this.setState({ scrollTop: window.pageYOffset });
+    }, 16));
   }
 
   render() {
@@ -31,7 +32,7 @@ class AppComponent extends React.Component {
         <WorldStatic />
         <Header />
         <Sidebar />
-        <Story />
+        <Story scrollTop={this.state.scrollTop} />
       </div>
     );
   }
