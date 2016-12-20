@@ -1,9 +1,8 @@
-$small-margin: 23px;
+@import "../../styles/settings";
 
 .c-sidebar {
   position: fixed;
-  position: sticky;
-  margin: $small-margin;
+  margin: 0 0 $medium-margin $medium-margin;
   bottom: 0;
   left: 0;
   z-index: 2;
@@ -11,7 +10,7 @@ $small-margin: 23px;
   flex-direction: column;
 
   .share {
-    margin-top: $small-margin;
+    margin-top: $medium-margin;
     cursor: pointer;
 
     &:first-child {

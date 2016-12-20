@@ -1,10 +1,15 @@
+@import "../../styles/settings";
+
 .c-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
   position: fixed;
-  position: sticky;
+  width: 100%;
+  padding: $small-margin;
   top: 0;
   left: 0;
-
-  margin: 23px;
 
   z-index: 2;
 
@@ -15,6 +20,36 @@
       display: block;
       width: 107px;
       height: 50px;
+      object-fit: contain;
+    }
+  }
+
+  .menu {
+
+    ul {
+      list-style: none;
+
+      li {
+        display: inline-block;
+        margin-right: $medium-margin;
+
+        a {
+          color: $white;
+          font-size: $base-font-size;
+          text-decoration: none;
+        }
+
+        &.round {
+          border: 2px solid $heading-color;
+          border-radius: 100px;
+          padding: 10px 20px;
+          margin-right: 0;
+
+          a {
+            color: $heading-color;
+          }
+        }
+      }
     }
   }
 }

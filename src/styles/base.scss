@@ -1,23 +1,5 @@
 body {
   font-family: $font-family-base;
-  color: $font-color;
-  background-color: $bg-color;
-  background-image: url("../images/bg.jpg");
+  background-image: url("../images/bg-stars-large.jpg");
   background-attachment: fixed;
-}
-
-h1 {
-  color: $heading-color;
-  font-size: $font-size-h1;
-  font-weight: $font-weight-bold;
-  letter-spacing: $letter-spacing-h1;
-  text-align: center;
-}
-
-p {
-  color: $base-font-color;
-  line-height: 1.6;
-  letter-spacing: 0.5px;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  font-size: $base-font-size;
 }
