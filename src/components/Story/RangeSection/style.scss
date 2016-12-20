@@ -1,0 +1,16 @@
+@import "../../../styles/settings";
+
+.c-range-section {
+  margin-top: 340px;
+  position: relative;
+
+  .text-section {
+    text-align: center;
+
+    .c-title-section {
+      h2 {
+        margin: 0 auto;
+      }
+    }
+  }
+}

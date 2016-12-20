@@ -6,7 +6,7 @@ class HeaderComponent extends React.Component {
 
   render() {
     return (
-      <header className="c-header">
+      <header className="c-header z4">
         <a href="/" className="brand">
           <img src={logoImage} alt="Half Earth project" />
         </a>
