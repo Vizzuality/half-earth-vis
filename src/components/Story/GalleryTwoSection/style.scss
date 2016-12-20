@@ -31,34 +31,35 @@
 
     img {
       position: absolute;
-      box-shadow: -10px 10px 0 0 rgba($base-font-color, 0.1);
       transition: $animation-cubic;
 
       &.first-image-two {
+        box-shadow: 10px 10px 0 0 rgba($pattern-color, .3);
         right: 270px;
         max-width: 340px;
       }
 
       &.second-image-two {
+        box-shadow: 10px 10px 0 0 rgba($pattern-color, .3);
         right: 0;
         max-width: 525px;
         top: 190px;
       }
 
       &.fifth-image-two {
+        box-shadow: -10px 10px 0 0 rgba($pattern-color, .3);
         max-width: 430px;
         right: 360px;
         top: 934px;
-        z-index: 1;
-        background-image: url('assets/circle.jpg');
+        z-index: 2;
       }
 
       &.sixth-image-two {
+        box-shadow: -10px 10px 0 0 rgba($pattern-color, .3);
         max-width: 340px;
         left: 0;
         top: 1144px;
         z-index: 1;
-        background-image: url('assets/circle.jpg');
       }
     }
   }
@@ -71,8 +72,7 @@
   }
 
   .third-image-two,
-  .fourth-image-two,
-  .fifth-image-two {
+  .fourth-image-two {
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
@@ -84,7 +84,7 @@
     top: 360px;
     height: 420px;
     background-image: url('assets/circle.jpg');
-    box-shadow: -10px 10px 0 0 rgba($base-font-color, 0.1);
+    box-shadow: 0 10px 0 0 rgba($pattern-color, .3);
     z-index: 1;
   }
 
@@ -93,6 +93,7 @@
     top: 695px;
     height: 485px;
     background-image: url('assets/huge-tree.jpg');
+    box-shadow: 0 10px 0 0 rgba($pattern-color, .3);
     left: -70px;
   }
 

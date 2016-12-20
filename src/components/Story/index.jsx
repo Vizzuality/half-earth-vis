@@ -67,22 +67,22 @@ class Story extends React.Component {
           up = 0; // up now is stop = 0
           down += 1; // start down scroll
 
-          $('.first-image-one').css('top', `${firstTop + (down * 0.1)}px`);
-          $('.second-image-one').css('top', `${secondTop - (down * 0.2)}px`);
-          $('.third-image-one').css('top', `${thirdTop + (down * 0.3)}px`);
-          $('.fourth-image-one').css('top', `${fourthTop - (down * 0.1)}px`);
-          $('.fifth-image-one').css('top', `${fifthTop + (down * 0.2)}px`);
-          $('.sixth-image-one').css('top', `${sixthTop - (down * 0.1)}px`);
+          $('.first-image-one').css('top', `${firstTop + (down * 0.015)}px`);
+          $('.second-image-one').css('top', `${secondTop - (down * 0.025)}px`);
+          $('.third-image-one').css('top', `${thirdTop + (down * 0.035)}px`);
+          $('.fourth-image-one').css('top', `${fourthTop - (down * 0.015)}px`);
+          $('.fifth-image-one').css('top', `${fifthTop + (down * 0.025)}px`);
+          $('.sixth-image-one').css('top', `${sixthTop - (down * 0.015)}px`);
         } else {
           down = 0;
           up += 1;
 
-          $('.first-image-one').css('top', `${firstTop - (up * 0.1)}px`);
-          $('.second-image-one').css('top', `${secondTop + (up * 0.2)}px`);
-          $('.third-image-one').css('top', `${thirdTop - (up * 0.3)}px`);
-          $('.fourth-image-one').css('top', `${fourthTop + (up * 0.1)}px`);
-          $('.fifth-image-one').css('top', `${fifthTop - (up * 0.2)}px`);
-          $('.sixth-image-one').css('top', `${sixthTop + (up * 0.1)}px`);
+          $('.first-image-one').css('top', `${firstTop - (up * 0.015)}px`);
+          $('.second-image-one').css('top', `${secondTop + (up * 0.025)}px`);
+          $('.third-image-one').css('top', `${thirdTop - (up * 0.035)}px`);
+          $('.fourth-image-one').css('top', `${fourthTop + (up * 0.015)}px`);
+          $('.fifth-image-one').css('top', `${fifthTop - (up * 0.025)}px`);
+          $('.sixth-image-one').css('top', `${sixthTop + (up * 0.015)}px`);
         }
       }
 
@@ -99,22 +99,22 @@ class Story extends React.Component {
           up = 0; // up now is stop = 0
           down += 1; // start down scroll
 
-          $('.first-image-two').css('top', `${firstTop + (down * 0.1)}px`);
-          $('.second-image-two').css('top', `${secondTop - (down * 0.2)}px`);
-          $('.third-image-two').css('top', `${thirdTop + (down * 0.3)}px`);
-          $('.fourth-image-two').css('top', `${fourthTop - (down * 0.1)}px`);
-          $('.fifth-image-two').css('top', `${fifthTop + (down * 0.2)}px`);
-          $('.sixth-image-two').css('top', `${sixthTop - (down * 0.1)}px`);
+          $('.first-image-two').css('top', `${firstTop + (down * 0.015)}px`);
+          $('.second-image-two').css('top', `${secondTop - (down * 0.025)}px`);
+          $('.third-image-two').css('top', `${thirdTop + (down * 0.035)}px`);
+          $('.fourth-image-two').css('top', `${fourthTop - (down * 0.015)}px`);
+          $('.fifth-image-two').css('top', `${fifthTop + (down * 0.025)}px`);
+          $('.sixth-image-two').css('top', `${sixthTop - (down * 0.015)}px`);
         } else {
           down = 0;
           up += 1;
 
-          $('.first-image-two').css('top', `${firstTop - (up * 0.1)}px`);
-          $('.second-image-two').css('top', `${secondTop + (up * 0.2)}px`);
-          $('.third-image-two').css('top', `${thirdTop - (up * 0.3)}px`);
-          $('.fourth-image-two').css('top', `${fourthTop + (up * 0.1)}px`);
-          $('.fifth-image-two').css('top', `${fifthTop - (up * 0.2)}px`);
-          $('.sixth-image-two').css('top', `${sixthTop + (up * 0.1)}px`);
+          $('.first-image-two').css('top', `${firstTop - (up * 0.015)}px`);
+          $('.second-image-two').css('top', `${secondTop + (up * 0.025)}px`);
+          $('.third-image-two').css('top', `${thirdTop - (up * 0.035)}px`);
+          $('.fourth-image-two').css('top', `${fourthTop + (up * 0.015)}px`);
+          $('.fifth-image-two').css('top', `${fifthTop - (up * 0.025)}px`);
+          $('.sixth-image-two').css('top', `${sixthTop + (up * 0.015)}px`);
         }
       }
 
