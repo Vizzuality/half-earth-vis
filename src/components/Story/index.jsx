@@ -139,14 +139,14 @@ class Story extends React.Component {
   render() {
     return (
       <div>
-        <CoverStorySection scrollTop={ this.state.scrollTop } />
+        <CoverStorySection scrollTop={this.state.scrollTop} />
         <MeshSection />
         <GalleryOneSection />
         <RangeSection />
         <RangeHalfSection />
         <GalleryTwoSection />
         <CirclesSection />
-        <VideoSection />
+        <VideoSection scrollTop={this.state.scrollTop} />
         <EighthSection />
         <InteractiveWorld />
       </div>

@@ -8,10 +8,6 @@
   bottom: $medium-margin;
   transition: $animation-cubic;
 
-  &.-half-hidden {
-    opacity: .5;
-  }
-
   &.-hidden {
     opacity: 0;
   }

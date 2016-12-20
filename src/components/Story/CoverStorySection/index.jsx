@@ -14,10 +14,6 @@ class CoverStorySection extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState(nextProps);
-  }
-
   componentDidMount() {
     this.setState({
       minY: this.refs.cover.offsetTop,
@@ -25,8 +21,12 @@ class CoverStorySection extends React.Component {
     });
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState(nextProps);
+  }
+
   render() {
-    const isMouseActive = (this.state.scrollTop < (this.state.maxY - this.state.minY) / 2);
+    const isMouseActive = (this.state.scrollTop < ((this.state.maxY - this.state.minY) + 125) / 2);
     return (
       <div className="c-cover z2" ref="cover">
         <h1>
