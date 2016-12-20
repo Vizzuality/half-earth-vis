@@ -13,10 +13,10 @@ class GalleryOneSection extends React.Component{
     return (
       <div className="c-gallery-one-section">
         <div className="wrap">
-          <img className="first-image" src={firstImage} alt="Road" />
-          <img className="second-image" src={secondImage} alt="Tigers" />
-          <img className="fourth-image" src={fourthImage} alt="Mountain with tree" />
-          <img className="sixth-image" src={sixthImage} alt="Mallard" />
+          <img className="first-image-one" src={firstImage} alt="Road" />
+          <img className="second-image-one" src={secondImage} alt="Tigers" />
+          <img className="fourth-image-one" src={fourthImage} alt="Mountain with tree" />
+          <img className="sixth-image-one" src={sixthImage} alt="Mallard" />
           <div className="text-section first">
             <p>Suitable habitat, crucial to nature’s survival,</p>
             <p>is shrinking fast. In fact the rate of</p>
@@ -32,11 +32,11 @@ class GalleryOneSection extends React.Component{
         </div>
 
         <div className="large-image">
-          <div className="third-image">{''}</div>
+          <div className="third-image-one">{''}</div>
         </div>
 
         <div className="large-image">
-          <div className="fifth-image">{''}</div>
+          <div className="fifth-image-one">{''}</div>
         </div>
       </div>
     );

@@ -44,7 +44,7 @@ class Story extends React.Component {
         }
         $('.c-scroll-animation').addClass('-half-hidden');
       }
-      
+
       if (window.pageYOffset >= 651) {
         if ($('.c-scroll-animation').hasClass('-half-hidden') === true) {
           $('.c-scroll-animation').removeClass('-half-hidden');
@@ -52,36 +52,69 @@ class Story extends React.Component {
         $('.c-scroll-animation').addClass('-hidden');
       }
 
-      // Gallery One Animation
       const st = window.pageYOffset;
+
+      // Gallery One Animation
       if (window.pageYOffset > 1470 && window.pageYOffset < 2220) {
-        const firstTop = parseFloat($('.first-image').css('top'));
-        const secondTop = parseFloat($('.second-image').css('top'));
-        const thirdTop = parseFloat($('.third-image').css('top'));
-        const fourthTop = parseFloat($('.fourth-image').css('top'));
-        const fifthTop = parseFloat($('.fifth-image').css('top'));
-        const sixthTop = parseFloat($('.sixth-image').css('top'));
+        const firstTop = parseFloat($('.first-image-one').css('top'));
+        const secondTop = parseFloat($('.second-image-one').css('top'));
+        const thirdTop = parseFloat($('.third-image-one').css('top'));
+        const fourthTop = parseFloat($('.fourth-image-one').css('top'));
+        const fifthTop = parseFloat($('.fifth-image-one').css('top'));
+        const sixthTop = parseFloat($('.sixth-image-one').css('top'));
 
         if (st > lastScrollTop) {
           up = 0; // up now is stop = 0
           down += 1; // start down scroll
 
-          $('.first-image').css('top', `${firstTop + (down * 0.1)}px`);
-          $('.second-image').css('top', `${secondTop - (down * 0.2)}px`);
-          $('.third-image').css('top', `${thirdTop + (down * 0.3)}px`);
-          $('.fourth-image').css('top', `${fourthTop - (down * 0.1)}px`);
-          $('.fifth-image').css('top', `${fifthTop + (down * 0.2)}px`);
-          $('.sixth-image').css('top', `${sixthTop - (down * 0.1)}px`);
+          $('.first-image-one').css('top', `${firstTop + (down * 0.1)}px`);
+          $('.second-image-one').css('top', `${secondTop - (down * 0.2)}px`);
+          $('.third-image-one').css('top', `${thirdTop + (down * 0.3)}px`);
+          $('.fourth-image-one').css('top', `${fourthTop - (down * 0.1)}px`);
+          $('.fifth-image-one').css('top', `${fifthTop + (down * 0.2)}px`);
+          $('.sixth-image-one').css('top', `${sixthTop - (down * 0.1)}px`);
         } else {
           down = 0;
           up += 1;
 
-          $('.first-image').css('top', `${firstTop - (up * 0.1)}px`);
-          $('.second-image').css('top', `${secondTop + (up * 0.2)}px`);
-          $('.third-image').css('top', `${thirdTop - (up * 0.3)}px`);
-          $('.fourth-image').css('top', `${fourthTop + (up * 0.1)}px`);
-          $('.fifth-image').css('top', `${fifthTop - (up * 0.2)}px`);
-          $('.sixth-image').css('top', `${sixthTop + (up * 0.1)}px`);
+          $('.first-image-one').css('top', `${firstTop - (up * 0.1)}px`);
+          $('.second-image-one').css('top', `${secondTop + (up * 0.2)}px`);
+          $('.third-image-one').css('top', `${thirdTop - (up * 0.3)}px`);
+          $('.fourth-image-one').css('top', `${fourthTop + (up * 0.1)}px`);
+          $('.fifth-image-one').css('top', `${fifthTop - (up * 0.2)}px`);
+          $('.sixth-image-one').css('top', `${sixthTop + (up * 0.1)}px`);
+        }
+      }
+
+      // Gallery Two Animation
+      if (window.pageYOffset > 4080 && window.pageYOffset < 5380) {
+        const firstTop = parseFloat($('.first-image-two').css('top'));
+        const secondTop = parseFloat($('.second-image-two').css('top'));
+        const thirdTop = parseFloat($('.third-image-two').css('top'));
+        const fourthTop = parseFloat($('.fourth-image-two').css('top'));
+        const fifthTop = parseFloat($('.fifth-image-two').css('top'));
+        const sixthTop = parseFloat($('.sixth-image-two').css('top'));
+
+        if (st > lastScrollTop) {
+          up = 0; // up now is stop = 0
+          down += 1; // start down scroll
+
+          $('.first-image-two').css('top', `${firstTop + (down * 0.1)}px`);
+          $('.second-image-two').css('top', `${secondTop - (down * 0.2)}px`);
+          $('.third-image-two').css('top', `${thirdTop + (down * 0.3)}px`);
+          $('.fourth-image-two').css('top', `${fourthTop - (down * 0.1)}px`);
+          $('.fifth-image-two').css('top', `${fifthTop + (down * 0.2)}px`);
+          $('.sixth-image-two').css('top', `${sixthTop - (down * 0.1)}px`);
+        } else {
+          down = 0;
+          up += 1;
+
+          $('.first-image-two').css('top', `${firstTop - (up * 0.1)}px`);
+          $('.second-image-two').css('top', `${secondTop + (up * 0.2)}px`);
+          $('.third-image-two').css('top', `${thirdTop - (up * 0.3)}px`);
+          $('.fourth-image-two').css('top', `${fourthTop + (up * 0.1)}px`);
+          $('.fifth-image-two').css('top', `${fifthTop - (up * 0.2)}px`);
+          $('.sixth-image-two').css('top', `${sixthTop + (up * 0.1)}px`);
         }
       }
 

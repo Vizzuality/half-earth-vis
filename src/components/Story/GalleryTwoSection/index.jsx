@@ -12,10 +12,10 @@ class GalleryTwoSection extends React.Component{
     return (
       <div className="c-gallery-two-section">
         <div className="wrap">
-          <img className="first-image" src={firstImage} alt="Scouts" />
-          <img className="second-image" src={secondImage} alt="EO wilson" />
-          <img className="fifth-image" src={fifthImage} alt="Bird" />
-          <img className="sixth-image" src={sixthImage} alt="Helicopter" />
+          <img className="first-image-two" src={firstImage} alt="Scouts" />
+          <img className="second-image-two" src={secondImage} alt="EO wilson" />
+          <img className="fifth-image-two" src={fifthImage} alt="Bird" />
+          <img className="sixth-image-two" src={sixthImage} alt="Helicopter" />
           <div className="text-section first">
             <p>The Half-Earth Project will drive</p>
             <p>the research needed to better understand</p>
@@ -31,10 +31,10 @@ class GalleryTwoSection extends React.Component{
           </div>
         </div>
         <div className="large-image">
-          <div className="third-image">{''}</div>
+          <div className="third-image-two">{''}</div>
         </div>
         <div className="large-image">
-          <div className="fourth-image">{''}</div>
+          <div className="fourth-image-two">{''}</div>
         </div>
       </div>
     );

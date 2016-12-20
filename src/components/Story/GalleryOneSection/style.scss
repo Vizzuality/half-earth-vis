@@ -29,27 +29,27 @@
     position: absolute;
     transition: $animation-cubic;
 
-    &.first-image {
+    &.first-image-one {
       max-width: 250px;
       top: 0;
       z-index: 1;
     }
 
-    &.second-image {
+    &.second-image-one {
       max-width: 430px;
       top: 150px;
       left: 110px;
       z-index: 2;
     }
 
-    &.fourth-image {
+    &.fourth-image-one {
       max-width: 340px;
       top: 710px;
       z-index: 1;
       left: 200px;
     }
 
-    &.sixth-image {
+    &.sixth-image-one {
       max-width: 340px;
       right: 180px;
       top: 920px;
@@ -63,15 +63,15 @@
     height: 1px;
   }
 
-  .third-image,
-  .fifth-image {
+  .third-image-one,
+  .fifth-image-one {
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
     transition: $animation-cubic;
   }
 
-  .third-image {
+  .third-image-one {
     width: calc(100% + 90px);
     top: 410px;
     height: 480px;
@@ -79,7 +79,7 @@
     box-shadow: -10px 10px 0 0 rgba($base-font-color, 0.1);
   }
 
-  .fifth-image {
+  .fifth-image-one {
     width: calc(100% - 20px);
     top: 240px;
     height: 420px;
