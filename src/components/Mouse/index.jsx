@@ -7,7 +7,7 @@ class Mouse extends React.Component {
   render() {
     const activeClassName = this.props.active ? '' : ' -hidden';
     return (
-      <div className={"c-scroll-animation" + activeClassName}>
+      <div className={'c-scroll-animation' + activeClassName}>
         <div className="mouse">
         <div className="wheel"></div>
         </div>
@@ -21,5 +21,9 @@ class Mouse extends React.Component {
   }
 
 }
+
+Mouse.propTypes = {
+  active: React.PropTypes.boolean,
+};
 
 export default Mouse;

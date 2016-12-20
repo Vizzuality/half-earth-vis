@@ -16,8 +16,8 @@ class CoverStorySection extends React.Component {
 
   componentDidMount() {
     this.setState({
-      minY: this.refs.cover.offsetTop,
-      maxY: this.refs.cover.offsetTop + window.innerHeight
+      minY: this.cover.offsetTop,
+      maxY: this.cover.offsetTop + window.innerHeight
     });
   }
 
@@ -28,18 +28,22 @@ class CoverStorySection extends React.Component {
   render() {
     const isMouseActive = (this.state.scrollTop < ((this.state.maxY - this.state.minY) + 125) / 2);
     return (
-      <div className="c-cover z2" ref="cover">
+      <div className="c-cover z2" ref={(c) => { this.cover = c; }}>
         <h1>
           We  live<br />
           in a<br />
           disappearing<br />
           world<br />
         </h1>
-        <Mouse active={ isMouseActive } />
+        <Mouse active={isMouseActive} />
       </div>
     );
   }
 
 }
+
+CoverStorySection.propTypes = {
+  scrollTop: React.PropTypes.number,
+};
 
 export default CoverStorySection;
