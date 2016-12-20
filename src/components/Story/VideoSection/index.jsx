@@ -10,7 +10,6 @@ class VideoSection extends React.Component{
     this.state = {
       minY: 0,
       maxY: 0,
-      video: ''
     };
   }
 
@@ -27,7 +26,6 @@ class VideoSection extends React.Component{
     const state = {
       minY: this.video.offsetTop,
       maxY: this.video.offsetTop + window.innerHeight,
-      video: this.videoplayer
     };
 
     const half = (state.minY - state.maxY) / 2;

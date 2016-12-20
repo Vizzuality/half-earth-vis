@@ -1,6 +1,4 @@
 import React from 'react';
-import $ from 'jquery';
-
 import CoverStorySection from './CoverStorySection';
 import MeshSection from './MeshSection';
 import GalleryOneSection from './GalleryOneSection'; // first gallery
@@ -141,7 +139,7 @@ class Story extends React.Component {
       <div>
         <CoverStorySection scrollTop={this.state.scrollTop} />
         <MeshSection />
-        <GalleryOneSection />
+        <GalleryOneSection scrollTop={this.state.scrollTop} />
         <RangeSection />
         <RangeHalfSection />
         <GalleryTwoSection />

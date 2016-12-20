@@ -22,8 +22,4 @@ class Mouse extends React.Component {
 
 }
 
-Mouse.propTypes = {
-  active: React.PropTypes.boolean,
-};
-
 export default Mouse;

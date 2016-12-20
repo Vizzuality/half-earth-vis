@@ -9,11 +9,42 @@ import sixthImage from './assets/mallard.jpg';
 
 class GalleryOneSection extends React.Component{
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      minY: 0,
+      maxY: 0,
+    };
+  }
+
+  componentDidMount() {
+    this.moveGallery();
+  }
+
+
+  componentDidUpdate() {
+    this.moveGallery();
+  }
+
+  moveGallery() {
+    if (this.props.scrollTop >= (this.gallery.offsetTop - 200) &&
+    this.props.scrollTop <= ((this.gallery.offsetTop + window.innerHeight) - 100)) {
+      // Inner
+    } else {
+      // Out
+    }
+  }
+
   render() {
     return (
-      <div className="c-gallery-one-section z2">
+      <div className="c-gallery-one-section z2" ref={(c) => { this.gallery = c; }}>
         <div className="wrap">
-          <img className="first-image-one" src={firstImage} alt="Road" />
+          <img
+            className="first-image-one"
+            src={firstImage}
+            alt="Road"
+            ref={(c) => { this.firstImage = c; }}
+          />
           <img className="second-image-one" src={secondImage} alt="Tigers" />
           <img className="fourth-image-one" src={fourthImage} alt="Mountain with tree" />
           <img className="sixth-image-one" src={sixthImage} alt="Mallard" />
@@ -43,5 +74,9 @@ class GalleryOneSection extends React.Component{
   }
 
 }
+
+GalleryOneSection.propTypes = {
+  scrollTop: React.PropTypes.number,
+};
 
 export default GalleryOneSection;
