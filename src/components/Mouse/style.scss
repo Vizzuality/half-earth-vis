@@ -6,13 +6,9 @@
   align-items: center;
   position: absolute;
   bottom: $medium-margin;
-  transition: $animation-cubic;
-
-  &.-half-hidden {
-    opacity: .5;
-  }
 
   &.-hidden {
+    transition: opacity 300ms ease-in-out;
     opacity: 0;
   }
 
