@@ -14,6 +14,8 @@ import InteractiveWorld from './InteractiveWorld';
 
 import './style.scss';
 
+// require('object-fit-videos');
+
 class Story extends React.Component {
 
   constructor(props) {
@@ -24,6 +26,8 @@ class Story extends React.Component {
   }
 
   componentDidMount() {
+
+    objectFitVideos();
 
     let lastScrollTop = window.pageYOffset;
     let up = 0;
