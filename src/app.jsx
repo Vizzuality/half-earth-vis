@@ -8,6 +8,7 @@ import ReactDOM from 'react-dom';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Story from './components/Story';
+import WorldStatic from './components/WorldStatic';
 
 class AppComponent extends React.Component {
 
@@ -27,6 +28,7 @@ class AppComponent extends React.Component {
   render() {
     return (
       <div>
+        <WorldStatic />
         <Header />
         <Sidebar />
         <Story />
