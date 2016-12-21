@@ -6,7 +6,7 @@ import fifthImage from './assets/bird.jpg';
 import sixthImage from './assets/helicopter.jpg';
 
 
-class GalleryTwoSection extends React.Component{
+class GalleryTwoSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,19 +38,19 @@ class GalleryTwoSection extends React.Component{
         && this.fifthImage.style.transform && this.sixthImage.style.transform
     ) {
       if (this.props.direction === false) { // up
-        firstTranslate = parseInt(transYRegex.exec(this.firstImage.style.transform)[1]) - 1;
-        secondTranslate = parseInt(transYRegex.exec(this.secondImage.style.transform)[1]) + 1;
-        thirdTranslate = parseInt(transYRegex.exec(this.thirdImage.style.transform)[1]) - 1;
-        fourthTranslate = parseInt(transYRegex.exec(this.fourthImage.style.transform)[1]) + 1;
-        fifthTranslate = parseInt(transYRegex.exec(this.fifthImage.style.transform)[1]) - 1;
-        sixthTranslate = parseInt(transYRegex.exec(this.sixthImage.style.transform)[1]) + 1;
+        firstTranslate = parseFloat(transYRegex.exec(this.firstImage.style.transform)[1]) - 0.25;
+        secondTranslate = parseFloat(transYRegex.exec(this.secondImage.style.transform)[1]) + 0.3;
+        thirdTranslate = parseFloat(transYRegex.exec(this.thirdImage.style.transform)[1]) - 0.2;
+        fourthTranslate = parseFloat(transYRegex.exec(this.fourthImage.style.transform)[1]) + 0.3;
+        fifthTranslate = parseFloat(transYRegex.exec(this.fifthImage.style.transform)[1]) - 0.25;
+        sixthTranslate = parseFloat(transYRegex.exec(this.sixthImage.style.transform)[1]) + 0.15;
       } else { // down
-        firstTranslate = parseInt(transYRegex.exec(this.firstImage.style.transform)[1]) + 1;
-        secondTranslate = parseInt(transYRegex.exec(this.secondImage.style.transform)[1]) - 1;
-        thirdTranslate = parseInt(transYRegex.exec(this.thirdImage.style.transform)[1]) + 1;
-        fourthTranslate = parseInt(transYRegex.exec(this.fourthImage.style.transform)[1]) - 1;
-        fifthTranslate = parseInt(transYRegex.exec(this.fifthImage.style.transform)[1]) + 1;
-        sixthTranslate = parseInt(transYRegex.exec(this.sixthImage.style.transform)[1]) - 1;
+        firstTranslate = parseFloat(transYRegex.exec(this.firstImage.style.transform)[1]) + 0.25;
+        secondTranslate = parseFloat(transYRegex.exec(this.secondImage.style.transform)[1]) - 0.3;
+        thirdTranslate = parseFloat(transYRegex.exec(this.thirdImage.style.transform)[1]) + 0.2;
+        fourthTranslate = parseFloat(transYRegex.exec(this.fourthImage.style.transform)[1]) - 0.3;
+        fifthTranslate = parseFloat(transYRegex.exec(this.fifthImage.style.transform)[1]) + 0.25;
+        sixthTranslate = parseFloat(transYRegex.exec(this.sixthImage.style.transform)[1]) - 0.15;
       }
     }
 
