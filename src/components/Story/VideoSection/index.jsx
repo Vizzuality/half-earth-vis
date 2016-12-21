@@ -32,16 +32,13 @@ class VideoSection extends React.Component{
     const isVideoPlay = (this.props.scrollTop > (state.minY - 200)
     && this.props.scrollTop < (state.maxY + half));
 
-    isVideoPlay ? this.videoplayer.play() : this.videoplayer.pause();
+    // isVideoPlay ? this.videoplayer.src = 'https://player.vimeo.com/video/29067223?&autoplay=1&title=0&badge=0&byline=0' : this.videoplayer.src = 'https://player.vimeo.com/video/29067223?&autopause=1&title=0&badge=0&byline=0';
   }
 
   render() {
     return (
-      <div className="c-video-section" ref={(c) => { this.video = c; }}>
-        <video className="video-player" ref={(c) => { this.videoplayer = c; }} autoPlay loop>
-          <source src="src/components/Story/VideoSection/assets/demo.mp4" type="video/mp4"></source>
-          Your browser does not support the video tag.
-        </video>
+      <div className="c-video-section z4" ref={(c) => { this.video = c; }}>
+        <iframe src="https://player.vimeo.com/video/29067223?&autoplay=1&title=0&badge=0&byline=0" ref={(c) => { this.videoplayer = c; }} frameBorder="0"></iframe>
       </div>
     );
   }
