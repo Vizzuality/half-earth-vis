@@ -16,13 +16,27 @@ class AppComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      scrollTop: 0
+      scrollTop: 0,
+      direction: false
     };
   }
 
   componentDidMount() {
     window.addEventListener('scroll', _.debounce(() => {
+      // if (window.pageYOffset > this.state.scrollTop) {
+      //   this.setState({ direction: true });
+      // } else {
+      //   this.setState({ direction: false });
+      // }
       this.setState({ scrollTop: window.pageYOffset });
+    }, 16));
+
+    window.addEventListener('wheel', _.debounce((e) => {
+      if (e.deltaY < 0) {
+        this.setState({ direction: false });
+      } else {
+        this.setState({ direction: true });
+      }
     }, 16));
   }
 
@@ -32,7 +46,7 @@ class AppComponent extends React.Component {
         <WorldStatic />
         <Header />
         <Sidebar />
-        <Story scrollTop={this.state.scrollTop} />
+        <Story scrollTop={this.state.scrollTop} direction={this.state.direction} />
       </div>
     );
   }

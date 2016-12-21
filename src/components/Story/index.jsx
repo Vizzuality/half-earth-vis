@@ -18,12 +18,18 @@ class Story extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      scrollTop: props.scrollTop
+      scrollTop: props.scrollTop,
+      direction: props.direction
     };
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState(nextProps);
+    this.setState(
+      {
+        scrollTop: nextProps.scrollTop,
+        direction: nextProps.direction
+      }
+    );
   }
 
   // componentDidMount() {
@@ -139,10 +145,10 @@ class Story extends React.Component {
       <div>
         <CoverStorySection scrollTop={this.state.scrollTop} />
         <MeshSection />
-        <GalleryOneSection scrollTop={this.state.scrollTop} />
+        <GalleryOneSection scrollTop={this.state.scrollTop} direction={this.state.direction} />
         <RangeSection />
         <RangeHalfSection />
-        <GalleryTwoSection />
+        <GalleryTwoSection scrollTop={this.state.scrollTop} direction={this.state.direction} />
         <CirclesSection />
         <VideoSection scrollTop={this.state.scrollTop} />
         <EighthSection />
