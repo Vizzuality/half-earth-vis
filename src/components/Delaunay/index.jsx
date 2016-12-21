@@ -1,14 +1,16 @@
 import * as d3 from 'd3';
+import React from 'react';
 
 const defaults = {
-  pointColor: 'rgba(99, 204, 48, .6)',
-  lineColor: 'rgba(99, 204, 48, .3)'
+  pointColor: 'rgba(79, 220, 253, 1)',
+  lineColor: 'rgba(96, 157, 187, 1)'
 };
 
-class Delaunay {
+class Delaunay extends React.Component {
 
-  constructor(elementQuery, options = {}) {
-    this.el = d3.select(`#${elementQuery}`);
+  constructor(props, elementQuery, options = {}) {
+    super(props);
+    this.el = d3.select('body');
     this.options = Object.assign({}, defaults, options);
     this.init();
   }
@@ -74,6 +76,14 @@ class Delaunay {
     simulation
       .nodes(nodes.slice())
       .on('tick', ticked);
+  }
+
+  render() {
+    return (
+      <header className="c-header z4">
+        hello
+      </header>
+    );
   }
 
 }

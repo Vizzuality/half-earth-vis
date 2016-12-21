@@ -1,0 +1,10 @@
+.c-mesh {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  canvas {
+    margin: 0 auto;
+    display: block;
+  }
+}

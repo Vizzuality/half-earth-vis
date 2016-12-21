@@ -1,17 +1,16 @@
 import 'normalize.css';
-import './styles/lib/foundation.css';
-import './styles/index.scss';
-
-
 import _ from 'underscore';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Globe } from 'vizz-components/components';
+
+import './styles/lib/foundation.css';
+import './styles/index.scss';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Story from './components/Story';
-import WorldStatic from './components/WorldStatic';
-
-// import { Globe } from 'vizz-components';
+import Mesh from './components/Mesh';
+// import WorldStatic from './components/WorldStatic';
 
 class AppComponent extends React.Component {
 
@@ -45,7 +44,8 @@ class AppComponent extends React.Component {
   render() {
     return (
       <div>
-        <WorldStatic />
+        <Globe autorotate={false} />
+        <Mesh />
         <Header />
         <Sidebar />
         <Story scrollTop={this.state.scrollTop} direction={this.state.direction} />
