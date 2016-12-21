@@ -20,6 +20,7 @@
   },
   "homepage": "http://vizzuality.github.io/half-earth/",
   "dependencies": {
+    "@vimeo/player": "^2.0.1",
     "autoprefixer": "^6.5.3",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.7",
