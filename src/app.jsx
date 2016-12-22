@@ -1,16 +1,15 @@
-import 'normalize.css';
 import _ from 'underscore';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Globe } from 'vizz-components/components';
-
-import './styles/lib/foundation.css';
-import './styles/index.scss';
+import Globe from './components/Globe';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Story from './components/Story';
 import Mesh from './components/Mesh';
-// import WorldStatic from './components/WorldStatic';
+
+import 'normalize.css';
+import './styles/lib/foundation.css';
+import './styles/index.scss';
 
 class AppComponent extends React.Component {
 

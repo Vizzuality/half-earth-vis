@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@vimeo/player@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@vimeo/player/-/player-2.0.1.tgz#9ddb550d2f51018f8c5549ef0193e07903e5b2fc"
+  dependencies:
+    es6-collections "0.5.6"
+    native-promise-only "0.8.1"
+
 Base64@~0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/Base64/-/Base64-0.2.1.tgz#ba3a4230708e186705065e66babdd4c35cf60028"
@@ -1789,6 +1796,10 @@ es5-ext@^0.10.7, es5-ext@^0.10.8, es5-ext@~0.10.11, es5-ext@~0.10.2, es5-ext@~0.
     es6-iterator "2"
     es6-symbol "~3.1"
 
+es6-collections@0.5.6:
+  version "0.5.6"
+  resolved "https://registry.yarnpkg.com/es6-collections/-/es6-collections-0.5.6.tgz#5552e800ad12c1820cda2bd4a79ae7dbb03d89a2"
+
 es6-iterator@2:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/es6-iterator/-/es6-iterator-2.0.0.tgz#bd968567d61635e33c0b80727613c9cb4b096bac"
@@ -3109,10 +3120,6 @@ lodash.keys@^3.0.0:
     lodash.isarguments "^3.0.0"
     lodash.isarray "^3.0.0"
 
-lodash.mergewith@^4.6.0:
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.0.tgz#150cf0a16791f5903b8891eab154609274bdea55"
-
 lodash.restparam@^3.0.0:
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/lodash.restparam/-/lodash.restparam-3.6.1.tgz#936a4e309ef330a7645ed4145986c85ae5b20805"
@@ -3289,6 +3296,10 @@ nan@^2.3.0, nan@^2.3.2:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.4.0.tgz#fb3c59d45fe4effe215f0b890f8adf6eb32d2232"
 
+native-promise-only@0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/native-promise-only/-/native-promise-only-0.8.1.tgz#20a318c30cb45f71fe7adfbf7b21c99c1472ef11"
+
 natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
@@ -3385,7 +3396,7 @@ node-pre-gyp@^0.6.29:
     tar "~2.2.1"
     tar-pack "~3.3.0"
 
-node-sass@^3.13.0:
+node-sass@^3.13.0, node-sass@^3.4.2:
   version "3.13.0"
   resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-3.13.0.tgz#d08b95bdebf40941571bd2c16a9334b980f8924f"
   dependencies:
@@ -3405,29 +3416,6 @@ node-sass@^3.13.0:
     npmlog "^4.0.0"
     request "^2.61.0"
     sass-graph "^2.1.1"
-
-node-sass@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.1.1.tgz#dc3e27d25bd827b6276ea243be357c7c7cd07111"
-  dependencies:
-    async-foreach "^0.1.3"
-    chalk "^1.1.1"
-    cross-spawn "^3.0.0"
-    gaze "^1.0.0"
-    get-stdin "^4.0.1"
-    glob "^7.0.3"
-    in-publish "^2.0.0"
-    lodash.assign "^4.2.0"
-    lodash.clonedeep "^4.3.2"
-    lodash.mergewith "^4.6.0"
-    meow "^3.7.0"
-    mkdirp "^0.5.1"
-    nan "^2.3.2"
-    node-gyp "^3.3.1"
-    npmlog "^4.0.0"
-    request "^2.61.0"
-    sass-graph "^2.1.1"
-    stdout-stream "^1.4.0"
 
 node-uuid@~1.4.7:
   version "1.4.7"
@@ -4691,12 +4679,6 @@ stack-trace@0.0.x:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.3.0.tgz#8e55758cb20e7682c1f4fce8dcab30bf01d1e07a"
 
-stdout-stream@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/stdout-stream/-/stdout-stream-1.4.0.tgz#a2c7c8587e54d9427ea9edb3ac3f2cd522df378b"
-  dependencies:
-    readable-stream "^2.0.1"
-
 stream-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/stream-browserify/-/stream-browserify-1.0.0.tgz#bf9b4abfb42b274d751479e44e0ff2656b6f1193"
@@ -5087,7 +5069,7 @@ verror@1.3.6:
   dependencies:
     extsprintf "1.0.2"
 
-vizz-components@^0.1.2:
+vizz-components@^0.1.7:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/vizz-components/-/vizz-components-0.1.7.tgz#b49becc9fb443d2fe199b007654cd4a7fac42dfd"
   dependencies:

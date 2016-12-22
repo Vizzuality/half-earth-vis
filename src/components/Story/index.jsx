@@ -142,7 +142,7 @@ class Story extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="c-story">
         <CoverStorySection scrollTop={this.state.scrollTop} />
         <MeshSection />
         <GalleryOneSection scrollTop={this.state.scrollTop} direction={this.state.direction} />
