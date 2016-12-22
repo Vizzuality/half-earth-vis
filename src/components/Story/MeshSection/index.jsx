@@ -28,9 +28,9 @@ class MeshSection extends React.Component{
       minY: this.mesh.offsetTop,
       maxY: this.mesh.offsetTop
     };
-
-    const isMesh = (this.props.scrollTop > (state.minY - 250)
-    && this.props.scrollTop < (state.maxY));
+    const height = this.mesh.offsetHeight;
+    const isMesh = (this.props.scrollTop > (state.minY - (height / 2))
+    && this.props.scrollTop < (state.maxY + (height / 6)));
 
     if (isMesh) {
       containMesh.style.opacity = '1';
