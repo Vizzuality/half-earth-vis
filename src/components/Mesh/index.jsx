@@ -89,7 +89,7 @@ class Mesh extends React.Component {
 
   render() {
     return (
-      <div className="c-mesh">
+      <div className="c-mesh z1">
 
       </div>
     );

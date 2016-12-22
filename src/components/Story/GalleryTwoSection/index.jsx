@@ -71,7 +71,7 @@ class GalleryTwoSection extends React.Component {
 
   render() {
     return (
-      <div className="c-gallery-two-section" ref={(c) => { this.gallery = c; }}>
+      <div className="c-gallery-two-section z1" ref={(c) => { this.gallery = c; }}>
         <div className="wrap">
           <img
             className="first-image-two"

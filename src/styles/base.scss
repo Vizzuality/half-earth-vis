@@ -40,45 +40,7 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
 // Animation
-@keyframes fadeIn{
-  0% {
-    display: none;
-    opacity: 0;
-  }
-
-  1% {
-    display: block;
-    opacity: 0;
-  }
-
-  100% {
-    display: block;
-    opacity: 1;
-  }
-}
-
-
-@keyframes fadeOut{
-  0% {
-    display: block;
-    opacity: 1;
-  }
-
-  50% {
-    display: block;
-    opacity: 0.5;
-  }
-
-  90% {
-    display: block;
-    opacity: 0;
-  }
-
-  100% {
-    display: none;
-    opacity: 0;
-  }
-}

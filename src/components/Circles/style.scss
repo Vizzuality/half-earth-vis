@@ -1,0 +1,54 @@
+@import "../../styles/settings";
+
+.c-circles {
+  position: fixed;
+  left: calc(50% - 50vh);
+  top: calc(50% - 50vh);
+  transform: translate(-50%,-50%);
+  transition: opacity .4s $cubic;
+
+  .animatePulse,
+  .animatePulseSecond,
+  .animatePulseThird {
+    animation: pulse infinite 2s linear;
+    width: 100vh;
+    height: 100vh;
+    border-radius: 100vh;
+    position: absolute;
+    background-color: $white;
+  }
+
+  .animatePulseSecond {
+    animation-delay: .2s;
+  }
+
+  .animatePulseThird{
+    animation-delay: .4s;
+  }
+}
+
+@keyframes pulse {
+	 0% {
+	    transform: scale(0);
+	   	opacity: 0.3;
+	 }
+   1% {
+     transform: scale(0);
+   }
+	 25% {
+	    transform: scale(0.5);
+	   	opacity: 0.2;
+	 }
+	 50% {
+	    transform: scale(1);
+	   	opacity: 0.15;
+	 }
+	 75% {
+	    transform: scale(1.5);
+	   	opacity: 0.1;
+	 }
+	 100% {
+	    transform: scale(2);
+	   	opacity: 0.05;
+	 }
+	}

@@ -8,6 +8,8 @@ import Story from './components/Story';
 import Mesh from './components/Mesh';
 import RangerD3 from './components/RangerD3';
 import RangerHalfD3 from './components/RangerHalfD3';
+import Circles from './components/Circles';
+import BackgroundChange from './components/BackgroundChange';
 import 'normalize.css';
 import './styles/index.scss';
 
@@ -43,6 +45,8 @@ class AppComponent extends React.Component {
         <Mesh />
         <RangerD3 />
         <RangerHalfD3 />
+        <Circles />
+        <BackgroundChange />
         <Header />
         <Sidebar />
         <Story scrollTop={this.state.scrollTop} direction={this.state.direction} />

@@ -24,6 +24,8 @@ class RangeHalfSection extends React.Component {
   showRange() {
     const height = this.range.offsetHeight;
     const containRange = document.querySelector('.c-ranger-half-d3');
+    const containCircles = document.querySelector('.c-circles');
+    const containBackground = document.querySelector('.c-background-change');
     const state = {
       minY: this.range.offsetTop,
       maxY: this.range.offsetTop + 300
@@ -32,11 +34,31 @@ class RangeHalfSection extends React.Component {
     const isRange = (this.props.scrollTop > (state.minY)
     && this.props.scrollTop < (state.maxY));
 
+    const isRangeCircles = (this.props.scrollTop > (state.minY - (height / 3))
+    && this.props.scrollTop < (state.maxY + (height / 3)));
+
     if (isRange) {
       containRange.style.opacity = '1';
+      containBackground.style.background = 'linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 220, 252, 0.4))';
     } else {
       containRange.style.opacity = '0';
     }
+
+    if (this.props.scrollTop < (state.minY - (height / 3))) {
+      containBackground.style.background = 'transparent';
+    }
+
+    if (this.props.scrollTop > (state.maxY + (height / 3))) {
+      containBackground.style.background = 'linear-gradient(rgba(0, 220, 252, 0.4), rgba(0, 220, 252, 0.8))';
+    }
+
+    if (isRangeCircles) {
+      containCircles.style.opacity = '1';
+    } else {
+      containCircles.style.opacity = '0';
+    }
+
+
   }
 
 

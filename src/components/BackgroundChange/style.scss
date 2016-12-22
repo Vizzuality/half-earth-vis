@@ -1,0 +1,9 @@
+@import "../../styles/settings";
+
+.c-background-change {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  transition: background 2s linear;
+}
