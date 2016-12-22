@@ -55,7 +55,7 @@ class Mesh extends React.Component {
         const dx = link.source.x - link.target.x;
         const dy = link.source.y - link.target.y;
 
-        if (dx * dx + dy * dy < 10000) {
+        if ((dx * dx) + (dy * dy) < 10000) {
           context.moveTo(link.source.x, link.source.y);
           context.lineTo(link.target.x, link.target.y);
         }

@@ -1,8 +1,13 @@
+@import "../../styles/settings";
+
 .c-mesh {
+  opacity: 0;
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
+  transition: .2s $cubic;
+
   canvas {
     margin: 0 auto;
     display: block;

@@ -6,10 +6,12 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Story from './components/Story';
 import Mesh from './components/Mesh';
-
+import RangerD3 from './components/RangerD3';
+import RangerHalfD3 from './components/RangerHalfD3';
 import 'normalize.css';
 import './styles/lib/foundation.css';
 import './styles/index.scss';
+
 
 class AppComponent extends React.Component {
 
@@ -45,6 +47,8 @@ class AppComponent extends React.Component {
       <div>
         <Globe autorotate={false} />
         <Mesh />
+        <RangerD3 />
+        <RangerHalfD3 />
         <Header />
         <Sidebar />
         <Story scrollTop={this.state.scrollTop} direction={this.state.direction} />
