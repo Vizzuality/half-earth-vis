@@ -25,11 +25,6 @@ class AppComponent extends React.Component {
 
   componentDidMount() {
     window.addEventListener('scroll', _.debounce(() => {
-      // if (window.pageYOffset > this.state.scrollTop) {
-      //   this.setState({ direction: true });
-      // } else {
-      //   this.setState({ direction: false });
-      // }
       this.setState({ scrollTop: window.pageYOffset });
     }, 16));
 

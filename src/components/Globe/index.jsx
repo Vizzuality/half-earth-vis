@@ -19,8 +19,8 @@ class GlobeComponent extends React.Component {
   }
 
   componentDidMount() {
-    const width = this.props.width || window.innerWidth;
-    const height = this.props.height || window.innerHeight;
+    const width = this.props.width;
+    const height = this.props.height;
 
     const fov = 45;
     const near = 1;
@@ -31,6 +31,7 @@ class GlobeComponent extends React.Component {
     this.camera = new THREE.PerspectiveCamera(fov, width / height, near, far);
     this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 
+    this.camera.position.z = (far / 2) * 0.90;
     this.renderer.setSize(width, height);
 
     // Appending to DOM
@@ -40,8 +41,6 @@ class GlobeComponent extends React.Component {
     this.addLights();
     this.addGlobe();
     this.addMarkers();
-
-    this.camera.position.z = (far / 2) * 0.90;
 
     this.draw();
 
@@ -78,19 +77,38 @@ class GlobeComponent extends React.Component {
     });
     const geometry = new THREE.SphereGeometry(this.props.radius, 40, 30);
     const earth = new THREE.Mesh(geometry, material);
-    earth.rotation.y = Math.PI;
+
     earth.updateMatrix();
 
     this.scene.add(earth);
   }
 
   addMarkers() {
-    const data = [{lat: 40, lng: -3}];
+    const data = [{ lat: 40, lng: -3 }];
+    const geom = new THREE.Geometry();
+    const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
 
-    for (var i = data.length - 1; i >= 0; i--) {
-      const position = latLongToVector3(data[i].lat, data[i].lng, 50, 100);
-      console.log(position);
+    for (let i = data.length - 1; i >= 0; i--) {
+      // calculate the position
+      const lat = data[i].lat;
+      const lng = data[i].lng;
+      const radio = this.props.radius;
+      const height = 2;
+      const position = latLongToVector3(lat, lng, radio, height);
+
+      const geometry = new THREE.BoxGeometry(10, 10, 10);
+      const cube = new THREE.Mesh(geometry, material);
+
+      cube.position.set(position.x, position.y, position.z);
+
+      geom.mergeMesh(cube);
     }
+
+    // create a new mesh, containing all the other meshes.
+    const total = new THREE.Mesh(geom, material);
+
+    // and add the total mesh to the scene
+    this.scene.add(total);
   }
 
   draw() {
@@ -109,7 +127,7 @@ class GlobeComponent extends React.Component {
 }
 
 GlobeComponent.defaultProps = {
-  width: 500,
+  width: window.innerWidth,
   height: 500,
   radius: 200,
   autorotate: true,
