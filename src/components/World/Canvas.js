@@ -102,6 +102,7 @@ class World {
       this.context.arc(center[0], center[1], r, 0, Math.PI * 2, false);
       this.context.stroke();
     }
+
     this.context.closePath();
   }
 

@@ -110,12 +110,15 @@ class Photo {
     if (offsetX < 0) {
       offsetX = 0;
     }
+
     if (offsetY < 0) {
       offsetY = 0;
     }
+
     if (offsetX > 1) {
       offsetX = 1;
     }
+
     if (offsetY > 1) {
       offsetY = 1;
     }
@@ -136,9 +139,11 @@ class Photo {
     if (nw < w) {
       ar = w / nw;
     }
+
     if (Math.abs(ar - 1) < 1e-14 && nh < h) {
       ar = h / nh;
     }
+
     nw *= ar;
     nh *= ar;
 
@@ -153,12 +158,15 @@ class Photo {
     if (cx < 0) {
       cx = 0;
     }
+
     if (cy < 0) {
       cy = 0;
     }
+
     if (cw > iw) {
       cw = iw;
     }
+
     if (ch > ih) {
       ch = ih;
     }
