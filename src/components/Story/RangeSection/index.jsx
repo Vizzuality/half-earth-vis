@@ -24,13 +24,14 @@ class RangeSection extends React.Component{
 
   showRange() {
     const containRange = document.querySelector('.c-ranger-d3');
+    const height = this.range.offsetHeight;
     const state = {
       minY: this.range.offsetTop,
       maxY: this.range.offsetTop + 280
     };
 
-    const isRange = (this.props.scrollTop > (state.minY - 100)
-    && this.props.scrollTop < (state.maxY));
+    const isRange = (this.props.scrollTop > (state.minY - (height / 3))
+    && this.props.scrollTop < (state.maxY - (height / 3)));
 
     if (isRange) {
       containRange.style.opacity = '1';

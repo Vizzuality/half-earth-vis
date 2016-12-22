@@ -9,7 +9,6 @@ import Mesh from './components/Mesh';
 import RangerD3 from './components/RangerD3';
 import RangerHalfD3 from './components/RangerHalfD3';
 import 'normalize.css';
-import './styles/lib/foundation.css';
 import './styles/index.scss';
 
 

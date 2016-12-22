@@ -18,8 +18,8 @@ class RangerD3 extends React.Component {
   }
 
   createRangeD3() {
-    const width = Math.ceil(window.innerHeight * 1) + 100;
-    const height = Math.ceil(window.innerHeight * 1) + 100;
+    const width = 700 + 300;
+    const height = 700 + 300;
     const radius = width;
 
     const svg = d3.select('.c-ranger-half-d3')

@@ -22,13 +22,14 @@ class RangeHalfSection extends React.Component {
   }
 
   showRange() {
+    const height = this.range.offsetHeight;
     const containRange = document.querySelector('.c-ranger-half-d3');
     const state = {
       minY: this.range.offsetTop,
       maxY: this.range.offsetTop + 300
     };
 
-    const isRange = (this.props.scrollTop > (state.minY - 100)
+    const isRange = (this.props.scrollTop > (state.minY)
     && this.props.scrollTop < (state.maxY));
 
     if (isRange) {
