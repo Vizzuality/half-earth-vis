@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const path = require('path');
+const env = process.env.NODE_ENV || 'development';
 
 const config = {
 
@@ -64,13 +65,17 @@ const config = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new webpack.DefinePlugin({})
+    new webpack.DefinePlugin({
+      config: {
+        env: JSON.stringify(env)
+      }
+    })
   ]
 
 };
 
 // Environment configuration
-if (process.env.NODE_ENV === 'production') {
+if (env === 'production') {
   config.plugins.push(new webpack.optimize.UglifyJsPlugin({
     compress: {
       warnings: false,

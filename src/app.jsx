@@ -43,7 +43,7 @@ class AppComponent extends React.Component {
   render() {
     return (
       <div>
-        <Globe autorotate={false} />
+        <Globe autorotate={true} width={700} height={700} />
         <Mesh />
         <Header />
         <Sidebar />
