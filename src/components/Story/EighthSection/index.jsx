@@ -33,10 +33,12 @@ class EighthSection extends React.Component{
       document.querySelector('.c-mesh').classList.add('hidden');
       document.querySelector('.c-ranger-d3').classList.add('hidden');
       document.querySelector('.c-ranger-half-d3').classList.add('hidden');
+      document.querySelector('.c-line-circles').classList.add('hidden');
     } else {
       document.querySelector('.c-mesh').classList.remove('hidden');
       document.querySelector('.c-ranger-d3').classList.remove('hidden');
       document.querySelector('.c-ranger-half-d3').classList.remove('hidden');
+      document.querySelector('.c-line-circles').classList.remove('hidden');
     }
   }
 

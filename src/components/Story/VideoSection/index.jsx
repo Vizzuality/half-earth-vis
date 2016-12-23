@@ -23,6 +23,8 @@ class VideoSection extends React.Component{
   }
 
   checkPlayVideo() {
+    const containBackground = document.querySelector('.c-background-change');
+    const containCirclesLines = document.querySelector('.c-line-circles');
     const state = {
       minY: this.video.offsetTop,
       maxY: this.video.offsetTop + window.innerHeight,
@@ -34,6 +36,13 @@ class VideoSection extends React.Component{
     && this.props.scrollTop < (state.maxY + half));
 
     isVideoPlay ? this.videoplayer.play() : this.videoplayer.pause();
+    isVideoPlay ? containBackground.style.background = 'transparent' : null;
+    isVideoPlay ? containCirclesLines.style.opacity = '0' : null;
+
+    if (this.props.scrollTop > (state.maxY + half)) {
+      containBackground.style.background = 'transparent';
+      containCirclesLines.style.opacity = '0';
+    }
   }
 
   render() {

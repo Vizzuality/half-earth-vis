@@ -10,6 +10,7 @@ import RangerD3 from './components/RangerD3';
 import RangerHalfD3 from './components/RangerHalfD3';
 import Circles from './components/Circles';
 import BackgroundChange from './components/BackgroundChange';
+import LineCircles from './components/LineCircles'
 import 'normalize.css';
 import './styles/index.scss';
 
@@ -46,6 +47,7 @@ class AppComponent extends React.Component {
         <RangerD3 />
         <RangerHalfD3 />
         <Circles />
+        <LineCircles />
         <BackgroundChange />
         <Header />
         <Sidebar />

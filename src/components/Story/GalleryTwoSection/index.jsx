@@ -25,6 +25,7 @@ class GalleryTwoSection extends React.Component {
   }
 
   moveGallery() {
+    const containCircleLines = document.querySelector('.c-line-circles');
     const height = this.gallery.offsetHeight;
     const transYRegex = /\.*translateY\((.*)px\)/i;
     let firstTranslate = 0;
@@ -66,6 +67,12 @@ class GalleryTwoSection extends React.Component {
       this.sixthImage.style.transform = `translateY(${sixthTranslate}px)`;
     } else {
       // not animate the gallery
+    }
+
+    if (this.props.scrollTop > (this.gallery.offsetTop + window.innerHeight)) {
+      containCircleLines.style.opacity = '1';
+    } else {
+      containCircleLines.style.opacity = '0';
     }
   }
 
