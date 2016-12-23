@@ -28,7 +28,7 @@ class CoverStorySection extends React.Component {
   render() {
     const isMouseActive = (this.state.scrollTop < ((this.state.maxY - this.state.minY) + 125) / 2);
     return (
-      <div className="c-cover z2" ref={(c) => { this.cover = c; }}>
+      <div className="c-cover z3" ref={(c) => { this.cover = c; }}>
         <h1>
           We  live<br />
           in a<br />
