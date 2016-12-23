@@ -1,8 +1,8 @@
 import * as THREE from 'three';
 
 export function latLongToVector3(lat, lon, radius, heigth) {
-  const phi = (lat) * Math.PI / 180;
-  const theta = (lon - 180) * Math.PI / 180;
+  const phi = (lat) * (Math.PI / 180);
+  const theta = (lon - 180) * (Math.PI / 180);
 
   const x = -(radius + heigth) * Math.cos(phi) * Math.cos(theta);
   const y = (radius + heigth) * Math.sin(phi);
@@ -18,7 +18,7 @@ export function addStats() {
     document.body.appendChild(stats.dom);
     requestAnimationFrame(function loop() {
       stats.update();
-      requestAnimationFrame(loop)
+      requestAnimationFrame(loop);
     });
   };
   scriptElement.src = '//rawgit.com/mrdoob/stats.js/master/build/stats.min.js';

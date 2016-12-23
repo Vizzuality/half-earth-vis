@@ -46,7 +46,7 @@ class AppComponent extends React.Component {
         <Globe autorotate={true} width={700} height={700} />
         <Mesh />
         <RangerD3 />
-        <RangerHalfD3 />
+        <RangerHalfD3 scrollTop={this.state.scrollTop} />
         <Circles />
         <CirclesDark />
         <LineCircles />
