@@ -4,6 +4,25 @@
   position: fixed;
   height: 100%;
   width: 100%;
-  background: transparent;
-  transition: 2s $cubic;
+  transition: .2s $cubic;
+
+  div {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: fixed;
+    transition: .4s $cubic;
+  }
+
+  .back-transparent {
+    background: transparent;
+  }
+
+  .back-blueOne {
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 220, 252, 0.4));
+  }
+
+  .back-blueTwo {
+    background: linear-gradient(rgba(0, 220, 252, 0.4), rgba(0, 220, 252, 0.8));
+  }
 }

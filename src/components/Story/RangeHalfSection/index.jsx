@@ -25,7 +25,9 @@ class RangeHalfSection extends React.Component {
     const height = this.range.offsetHeight;
     const containRange = document.querySelector('.c-ranger-half-d3');
     const containCircles = document.querySelector('.c-circles');
-    const containBackground = document.querySelector('.c-background-change');
+    const containBackTransparent = document.querySelector('.back-transparent');
+    const containBackBlueOne = document.querySelector('.back-blueOne');
+    const containBackBlueTwo = document.querySelector('.back-blueTwo');
     const state = {
       minY: this.range.offsetTop,
       maxY: this.range.offsetTop + 300
@@ -39,17 +41,22 @@ class RangeHalfSection extends React.Component {
 
     if (isRange) {
       containRange.style.opacity = '1';
-      containBackground.style.background = 'linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 220, 252, 0.4))';
+      containBackTransparent.style.opacity = '0';
+      containBackBlueTwo.style.opacity = '0';
+      containBackBlueOne.style.opacity = '1';
     } else {
       containRange.style.opacity = '0';
     }
 
     if (this.props.scrollTop < (state.minY - (height / 3))) {
-      containBackground.style.background = 'transparent';
+      // containBackground.style.background = 'transparent';
+      containBackBlueOne.style.opacity = '0';
+      containBackTransparent.style.opacity = '1';
     }
 
     if (this.props.scrollTop > (state.maxY + (height / 3))) {
-      containBackground.style.background = 'linear-gradient(rgba(0, 220, 252, 0.4), rgba(0, 220, 252, 0.8))';
+      containBackBlueOne.style.opacity = '0';
+      containBackBlueTwo.style.opacity = '1';
     }
 
     if (isRangeCircles) {
