@@ -13,7 +13,7 @@ class LineCircles extends React.Component {
 
   render() {
     return (
-      <div className="c-line-circles z1">
+      <div className="c-line-circles z2">
         <img src={CircleOne} className="-spin" alt="circle one" />
         <img src={CircleTwo} className="-spin" alt="circle two" />
         <img src={CircleThree} className="-spin" alt="circle three" />

@@ -25,6 +25,7 @@ class VideoSection extends React.Component{
   checkPlayVideo() {
     const containBackground = document.querySelector('.c-background-change');
     const containCirclesLines = document.querySelector('.c-line-circles');
+    const containCirclesDark = document.querySelector('.c-circles-dark');
     const state = {
       minY: this.video.offsetTop,
       maxY: this.video.offsetTop + window.innerHeight,
@@ -37,18 +38,20 @@ class VideoSection extends React.Component{
 
     isVideoPlay ? this.videoplayer.play() : this.videoplayer.pause();
     isVideoPlay ? containBackground.style.background = 'transparent' : null;
-    isVideoPlay ? containCirclesLines.style.opacity = '0' : null;
+    isVideoPlay ? containCirclesLines.style.opacity = '0' : null;  containCirclesDark
+    isVideoPlay ? containCirclesDark.style.opacity = '0' : null;
 
     if (this.props.scrollTop > (state.maxY + half)) {
       containBackground.style.background = 'transparent';
       containCirclesLines.style.opacity = '0';
+      containCirclesDark.style.opacity = '0';
     }
   }
 
   render() {
     return (
-      <div className="c-video-section" ref={(c) => { this.video = c; }}>
-        <video className="video-player" ref={(c) => { this.videoplayer = c; }} autoPlay loop>
+      <div className="c-video-section z3" ref={(c) => { this.video = c; }}>
+        <video className="video-player z3" ref={(c) => { this.videoplayer = c; }} autoPlay loop>
           {/* <source src="https://drive.google.com/uc?export=download&id=0B1__or7KNt_LNjJzMktzOUU0NU0" type="video/mp4"></source> */}
           <source src="src/components/Story/VideoSection/assets/demo.mp4" type="video/mp4"></source>
           Your browser does not support the video tag.

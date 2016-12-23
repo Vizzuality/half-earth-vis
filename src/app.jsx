@@ -9,6 +9,7 @@ import Mesh from './components/Mesh';
 import RangerD3 from './components/RangerD3';
 import RangerHalfD3 from './components/RangerHalfD3';
 import Circles from './components/Circles';
+import CirclesDark from './components/CirclesDark';
 import BackgroundChange from './components/BackgroundChange';
 import LineCircles from './components/LineCircles'
 import 'normalize.css';
@@ -47,6 +48,7 @@ class AppComponent extends React.Component {
         <RangerD3 />
         <RangerHalfD3 />
         <Circles />
+        <CirclesDark />
         <LineCircles />
         <BackgroundChange />
         <Header />

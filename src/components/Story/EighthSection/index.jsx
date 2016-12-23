@@ -45,7 +45,7 @@ class EighthSection extends React.Component{
 
   render() {
     return (
-      <div className="c-eighth-section z2" ref={(c) => { this.eight = c; }}>
+      <div className="c-eighth-section z3" ref={(c) => { this.eight = c; }}>
         <h1>
           Can we save half<br />
           the earth<br />

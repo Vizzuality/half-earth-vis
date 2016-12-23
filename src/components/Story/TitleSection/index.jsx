@@ -7,7 +7,7 @@ class TitleSection extends React.Component{
 
   render() {
     return (
-      <div className="c-title-section">
+      <div className="c-title-section z3">
         <h2 className={"title-section " + this.props.align}>{this.props.text}</h2>
       </div>
     );

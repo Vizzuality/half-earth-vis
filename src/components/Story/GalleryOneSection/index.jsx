@@ -72,7 +72,7 @@ class GalleryOneSection extends React.Component {
 
   render() {
     return (
-      <div className="c-gallery-one-section z2" ref={(c) => { this.gallery = c; }}>
+      <div className="c-gallery-one-section z3" ref={(c) => { this.gallery = c; }}>
         <div className="wrap">
           <img
             className="first-image-one"

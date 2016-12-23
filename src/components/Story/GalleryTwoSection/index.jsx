@@ -26,6 +26,7 @@ class GalleryTwoSection extends React.Component {
 
   moveGallery() {
     const containCircleLines = document.querySelector('.c-line-circles');
+    const containCircleDark = document.querySelector('.c-circles-dark');
     const height = this.gallery.offsetHeight;
     const transYRegex = /\.*translateY\((.*)px\)/i;
     let firstTranslate = 0;
@@ -71,14 +72,16 @@ class GalleryTwoSection extends React.Component {
 
     if (this.props.scrollTop > (this.gallery.offsetTop + window.innerHeight)) {
       containCircleLines.style.opacity = '1';
+      containCircleDark.style.opacity = '1';
     } else {
       containCircleLines.style.opacity = '0';
+      containCircleDark.style.opacity = '0';
     }
   }
 
   render() {
     return (
-      <div className="c-gallery-two-section z1" ref={(c) => { this.gallery = c; }}>
+      <div className="c-gallery-two-section z3" ref={(c) => { this.gallery = c; }}>
         <div className="wrap">
           <img
             className="first-image-two"

@@ -1,0 +1,61 @@
+@import "../../styles/settings";
+$color-dark: #292f6e;
+
+.c-circles-dark {
+  position: fixed;
+  left: calc(50% - 50vh);
+  top: calc(50% - 50vh);
+  transform: translate(-50%,-50%);
+  transition: opacity .4s $cubic;
+  opacity: 0;
+
+  .animatePulse,
+  .animatePulseSecond,
+  .animatePulseThird,
+  .animatePulseFourth {
+    animation: pulse infinite 2s linear;
+    width: 100vh;
+    height: 100vh;
+    border-radius: 100vh;
+    position: absolute;
+    background-color: $color-dark;
+  }
+
+  .animatePulseSecond {
+    animation-delay: .2s;
+  }
+
+  .animatePulseThird{
+    animation-delay: .4s;
+  }
+
+  .animatePulseFourth{
+    animation-delay: .6s;
+  }
+}
+
+@keyframes pulse {
+	 0% {
+	    transform: scale(0);
+	   	opacity: 1;
+	 }
+   1% {
+     transform: scale(0);
+   }
+	 25% {
+	    transform: scale(0.5);
+	   	opacity: 0.3;
+	 }
+	 50% {
+	    transform: scale(1);
+	   	opacity: 0.2;
+	 }
+	 75% {
+	    transform: scale(1.5);
+	   	opacity: 0.1;
+	 }
+	 100% {
+	    transform: scale(2);
+	   	opacity: 0.05;
+	 }
+	}

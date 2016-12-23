@@ -120,7 +120,7 @@ class GlobeComponent extends React.Component {
 
   render() {
     return (
-      <div ref={(node) => this.el = node} className="vizz-component-globe"></div>
+      <div ref={(node) => this.el = node} className="vizz-component-globe z2"></div>
     );
   }
 
