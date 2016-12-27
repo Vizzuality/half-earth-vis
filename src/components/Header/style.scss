@@ -32,10 +32,13 @@
         display: inline-block;
         margin-right: $medium-margin;
 
-        a {
+        a,
+        span {
           color: $white;
           font-size: $base-font-size;
           text-decoration: none;
+          cursor: pointer;
+
         }
 
         &.round {

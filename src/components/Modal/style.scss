@@ -1,0 +1,68 @@
+@import '../../styles/settings';
+
+.c-modal {
+  display: none;
+  position: fixed;;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+
+  .image {
+    width: 75%;
+    height: 100%;
+    background-image: url('./assets/demo-min.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .information {
+    position: relative;
+    width: 25%;
+    height: 100%;
+    padding: 0 20px;
+    background-color: $back-modal;
+    color: $text-modal;
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+
+      svg {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: .4;
+        fill: $pattern-color;
+      }
+
+      span {
+        display: block;
+        font-size: 14px;
+        opacity: .4;
+
+      }
+    }
+
+    .contain-text {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+
+      h2 {
+        margin: 0;
+        font-size: $font-size-h2;
+        font-weight: $font-weight-bold;
+        letter-spacing: 1px;
+        line-height: 1.88;
+      }
+
+      p {
+        font-size: $base-font-size;
+        letter-spacing: .5px;
+        line-height: 1.56;
+      }
+    }
+  }
+}

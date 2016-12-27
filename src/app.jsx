@@ -13,6 +13,7 @@ import Circles from './components/Circles';
 import CirclesDark from './components/CirclesDark';
 import BackgroundChange from './components/BackgroundChange';
 import LineCircles from './components/LineCircles';
+import Modal from './components/Modal';
 import './styles/index.scss';
 
 
@@ -54,6 +55,7 @@ class AppComponent extends React.Component {
         <Header />
         <Sidebar />
         <Story scrollTop={this.state.scrollTop} direction={this.state.direction} />
+        <Modal />
       </div>
     );
   }

@@ -4,6 +4,10 @@ import logoImage from './logo.png';
 
 class HeaderComponent extends React.Component {
 
+  openModal() {
+    document.querySelector('.c-modal').style.display = 'flex';
+  }
+
   render() {
     return (
       <header className="c-header z4">
@@ -13,7 +17,7 @@ class HeaderComponent extends React.Component {
         <nav className="menu">
           <ul>
             <li>
-              <a href="{undefined}">About</a>
+              <span href="{undefined}" onClick={(e) => this.openModal(e)}>About</span>
             </li>
             <li>
               <a href="{undefined}">Videos</a>
