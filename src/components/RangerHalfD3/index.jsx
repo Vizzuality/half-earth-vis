@@ -51,7 +51,8 @@ class RangerD3 extends React.Component {
         .attr('stroke-linejoin', 'round')
         .attr('d', arc)
         .attr('stroke', '#06d5ff')
-        .attr('class', 'outer-arc');
+        .attr('class', 'outer-arc')
+        .attr('transform', 'rotate(220)');
 
     const animation = svg.selectAll('path.arc2')
         .data(values)
@@ -61,7 +62,8 @@ class RangerD3 extends React.Component {
         .attr('stroke-linejoin', 'round')
         .attr('d', arc2)
         .attr('stroke', '#06d5ff')
-        .attr('class', 'inner-arc');
+        .attr('class', 'inner-arc')
+        .attr('transform', 'rotate(-140)');
 
     function animateArc() {
       animation.transition().duration(1500)
