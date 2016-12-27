@@ -19,6 +19,14 @@ p {
   display: none;
 }
 
+.invisible {
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+}
+
 .z1 {
   z-index: 1;
 }

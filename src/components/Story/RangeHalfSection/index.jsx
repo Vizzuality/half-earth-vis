@@ -64,8 +64,6 @@ class RangeHalfSection extends React.Component {
     } else {
       containCircles.style.opacity = '0';
     }
-
-
   }
 
 

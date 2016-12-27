@@ -17,7 +17,6 @@ class RangeSection extends React.Component{
     this.showRange();
   }
 
-
   componentDidUpdate() {
     this.showRange();
   }

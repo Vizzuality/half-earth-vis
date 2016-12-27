@@ -10,7 +10,6 @@ class RangerD3 extends React.Component {
     this.state = {
       minY: 0,
       maxY: 0,
-      animate: false
     };
   }
 
@@ -21,9 +20,9 @@ class RangerD3 extends React.Component {
   componentDidUpdate() {
   }
 
-  createRangeD3(animate) {
-    const width = 700 + 300;
-    const height = 700 + 300;
+  createRangeD3() {
+    const width = this.props.width + 300;
+    const height = this.props.height + 300;
     const radius = width;
     const values = [
         { startAngle: 0, endAngle: 140 * ((Math.PI) / 180) }
@@ -77,7 +76,6 @@ class RangerD3 extends React.Component {
 
     animateArc();
 
-
     svg.append('text')
        .attr('text-anchor', 'middle')
        .attr('dy', ((radius / 4) + 20))
@@ -100,17 +98,22 @@ class RangerD3 extends React.Component {
        .attr('width', 16)
        .attr('height', 40)
        .style('fill', '#FFF');
-     }
+  }
 
 
   render() {
     return (
       <div className="c-ranger-half-d3">
-
+        {''}
       </div>
     );
   }
 
 }
+
+RangerD3.propTypes = {
+  width: React.PropTypes.number,
+  height: React.PropTypes.number,
+};
 
 export default RangerD3;

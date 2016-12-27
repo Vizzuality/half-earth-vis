@@ -5,7 +5,6 @@ import './style.scss';
 class CirclesDark extends React.Component {
 
   render() {
-    const activeClassName = this.props.active ? '' : ' -hidden';
     return (
       <div className="c-circles-dark z1">
         <div className="animatePulse"></div>

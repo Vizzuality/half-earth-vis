@@ -27,18 +27,22 @@ class EighthSection extends React.Component{
       maxY: this.eight.offsetTop
     };
 
+    const mesh = document.querySelector('.c-mesh');
+    const ranger = document.querySelector('.c-ranger-d3');
+    const halfranger = document.querySelector('.c-ranger-half-d3');
+    const circles = document.querySelector('.c-line-circles');
     const isInvisible = (this.props.scrollTop > state.minY);
 
     if (isInvisible) {
-      document.querySelector('.c-mesh').classList.add('hidden');
-      document.querySelector('.c-ranger-d3').classList.add('hidden');
-      document.querySelector('.c-ranger-half-d3').classList.add('hidden');
-      document.querySelector('.c-line-circles').classList.add('hidden');
+      mesh.classList.add('hidden');
+      ranger.classList.add('hidden');
+      halfranger.classList.add('hidden');
+      circles.classList.add('hidden');
     } else {
-      document.querySelector('.c-mesh').classList.remove('hidden');
-      document.querySelector('.c-ranger-d3').classList.remove('hidden');
-      document.querySelector('.c-ranger-half-d3').classList.remove('hidden');
-      document.querySelector('.c-line-circles').classList.remove('hidden');
+      mesh.classList.remove('hidden');
+      ranger.classList.remove('hidden');
+      halfranger.classList.remove('hidden');
+      circles.classList.remove('hidden');
     }
   }
 

@@ -20,7 +20,6 @@ class GalleryOneSection extends React.Component {
     this.moveGallery();
   }
 
-
   componentDidUpdate() {
     this.moveGallery();
   }

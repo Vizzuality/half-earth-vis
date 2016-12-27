@@ -51,4 +51,9 @@ class Story extends React.Component {
 
 }
 
+Story.propTypes = {
+  scrollTop: React.PropTypes.number,
+  direction: React.PropTypes.bool
+};
+
 export default Story;

@@ -17,7 +17,6 @@ class VideoSection extends React.Component{
     this.checkPlayVideo();
   }
 
-
   componentDidUpdate() {
     this.checkPlayVideo();
   }
@@ -37,11 +36,15 @@ class VideoSection extends React.Component{
     const isVideoPlay = (this.props.scrollTop > (state.minY - 200)
     && this.props.scrollTop < (state.maxY + half));
 
-    isVideoPlay ? this.videoplayer.play() : this.videoplayer.pause();
-    isVideoPlay ? containBackground.style.background = 'transparent' : null;
-    isVideoPlay ? containCirclesLines.style.opacity = '0' : null;
-    isVideoPlay ? containCirclesDark.style.opacity = '0' : null;
-    isVideoPlay ? containBackBlueTwo.style.opacity = '0' : null;
+    if (isVideoPlay === true) {
+      this.videoplayer.play();
+      containBackground.style.background = 'transparent';
+      containCirclesLines.style.opacity = '0';
+      containCirclesDark.style.opacity = '0';
+      containBackBlueTwo.style.opacity = '0';
+    } else {
+      this.videoplayer.pause();
+    }
 
     if (this.props.scrollTop > (state.maxY + half)) {
       containCirclesLines.style.opacity = '0';

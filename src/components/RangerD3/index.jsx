@@ -18,8 +18,8 @@ class RangerD3 extends React.Component {
   }
 
   createRangeD3() {
-    const width = 700 + 300;
-    const height = 700 + 300;
+    const width = this.props.width + 300;
+    const height = this.props.height + 300;
     const radius = width;
 
     const svg = d3.select('.c-ranger-d3')
@@ -58,17 +58,17 @@ class RangerD3 extends React.Component {
     svg.append('circle')
       .attr('r', 8)
       .attr('cx', 0)
-      .attr("cy", -((radius/4) + 50))
+      .attr('cy', -((radius / 4) + 50))
       .style('fill', '#FFF');
 
-      svg.append('text')
+    svg.append('text')
        .attr('text-anchor', 'middle')
        .attr('dy', ((radius / 4) + 20))
        .attr('dx', ((+radius / 4) - 20))
        .attr('class', 'text-left')
        .text('Current Pa.');
 
-   svg.append('text')
+    svg.append('text')
      .attr('text-anchor', 'middle')
      .attr('dy', ((radius / 4) + 20))
      .attr('dx', (-radius / 4))
@@ -79,11 +79,16 @@ class RangerD3 extends React.Component {
   render() {
     return (
       <div className="c-ranger-d3">
-
+        {''}
       </div>
     );
   }
 
 }
+
+RangerD3.propTypes = {
+  width: React.PropTypes.number,
+  height: React.PropTypes.number,
+};
 
 export default RangerD3;

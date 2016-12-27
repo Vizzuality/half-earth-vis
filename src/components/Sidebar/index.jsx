@@ -1,5 +1,7 @@
-import './style.scss';
 import React from 'react';
+
+import './style.scss';
+
 
 class SidebarComponent extends React.Component {
 
@@ -7,17 +9,17 @@ class SidebarComponent extends React.Component {
     return (
       <aside className="c-sidebar">
         <div className="share">
-          <a href="#">
+          <a href={undefined}>
             <svg className="c-icon -small">
-              <use xlinkHref="#icon-fb"></use>
+              <use xlinkHref="#icon-fb">{''}</use>
             </svg>
           </a>
         </div>
 
         <div className="share">
-          <a href="#">
+          <a href={undefined}>
             <svg className="c-icon -small">
-              <use xlinkHref="#icon-twitter"></use>
+              <use xlinkHref="#icon-twitter">{''}</use>
             </svg>
           </a>
         </div>
@@ -28,4 +30,3 @@ class SidebarComponent extends React.Component {
 }
 
 export default SidebarComponent;
-

@@ -1,3 +1,4 @@
+import 'normalize.css';
 import _ from 'underscore';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -11,8 +12,7 @@ import RangerHalfD3 from './components/RangerHalfD3';
 import Circles from './components/Circles';
 import CirclesDark from './components/CirclesDark';
 import BackgroundChange from './components/BackgroundChange';
-import LineCircles from './components/LineCircles'
-import 'normalize.css';
+import LineCircles from './components/LineCircles';
 import './styles/index.scss';
 
 
@@ -43,10 +43,10 @@ class AppComponent extends React.Component {
   render() {
     return (
       <div>
-        <Globe autorotate={true} width={700} height={700} />
-        <Mesh />
-        <RangerD3 />
-        <RangerHalfD3 scrollTop={this.state.scrollTop} />
+        <Globe autorotate width={700} height={700} />
+        <Mesh width={700} height={700} />
+        <RangerD3 width={700} height={700} />
+        <RangerHalfD3 width={700} height={700} />
         <Circles />
         <CirclesDark />
         <LineCircles />

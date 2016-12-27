@@ -27,8 +27,9 @@ class Mesh extends React.Component {
     this.options = Object.assign({}, defaults, options);
     options = this.options;
     const τ = Math.PI * 2;
-    const width = Math.ceil(window.innerHeight * 0.75) + 100;
-    const height = Math.ceil(window.innerHeight * 0.75) + 100;
+    // const width = Math.ceil(window.innerHeight * 0.75) + 100;
+    const width = this.props.width + 100;
+    const height = this.props.height + 100;
     const canvas = this.el.append('canvas')
       .attr('width', width)
       .attr('height', height);
@@ -96,5 +97,10 @@ class Mesh extends React.Component {
   }
 
 }
+
+Mesh.propTypes = {
+  width: React.PropTypes.number,
+  height: React.PropTypes.number,
+};
 
 export default Mesh;

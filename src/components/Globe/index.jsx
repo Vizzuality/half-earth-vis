@@ -1,8 +1,8 @@
-import './style.scss';
-
 import React from 'react';
 import * as THREE from 'three';
 import orbitControl from 'three-orbit-controls';
+
+import './style.scss';
 import earthImage from './images/earth-clouds.jpg';
 import earthBumpImage from './images/earth-bump.jpg';
 import { latLongToVector3, addStats } from './utils';
@@ -120,7 +120,7 @@ class GlobeComponent extends React.Component {
 
   render() {
     return (
-      <div ref={(node) => this.el = node} className="vizz-component-globe z2"></div>
+      <div ref={(node) => this.el = node} className="vizz-component-globe z2">{''}</div>
     );
   }
 
@@ -135,6 +135,17 @@ GlobeComponent.defaultProps = {
   scrollTop: 0,
   earthImage: earthImage,
   earthBumpImage: earthBumpImage
+};
+
+GlobeComponent.propTypes = {
+  autorotate: React.PropTypes.bool,
+  width: React.PropTypes.number,
+  scrollTop: React.PropTypes.number,
+  height: React.PropTypes.number,
+  velocity: React.PropTypes.number,
+  radius: React.PropTypes.number,
+  earthImage: React.PropTypes.string,
+  earthBumpImage: React.PropTypes.string,
 };
 
 export default GlobeComponent;
