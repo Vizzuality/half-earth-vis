@@ -7,6 +7,8 @@
   position: absolute;
   bottom: $medium-margin;
   transition: .4s $cubic;
+  left: 50%;
+  transform: translateX(-50%);
 
   &.-hidden {
     opacity: 0;

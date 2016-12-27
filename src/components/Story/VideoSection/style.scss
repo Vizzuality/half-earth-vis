@@ -1,9 +1,7 @@
 @import "../../../styles/settings";
 
 .c-video-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
   margin-top: 340px;
   height: calc(100vh - 50px);
 
