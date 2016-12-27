@@ -44,6 +44,7 @@ class VideoSection extends React.Component{
       containBackBlueTwo.style.opacity = '0';
     } else {
       this.videoplayer.pause();
+      this.videoplayer.currentTime = 0;
     }
 
     if (this.props.scrollTop > (state.maxY + half)) {
