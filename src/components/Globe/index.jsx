@@ -101,6 +101,8 @@ class GlobeComponent extends React.Component {
 
       cube.position.set(position.x, position.y, position.z);
 
+      console.log(cube);
+
       geom.mergeMesh(cube);
     }
 

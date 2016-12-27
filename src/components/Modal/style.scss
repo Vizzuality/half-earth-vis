@@ -1,11 +1,13 @@
 @import '../../styles/settings';
 
 .c-modal {
-  display: none;
-  position: fixed;;
+  display: flex;
+  position: fixed;
   top: 0;
+  left: 100%;
   width: 100%;
   height: 100vh;
+  transition: .7s ease;
 
   .image {
     width: 75%;

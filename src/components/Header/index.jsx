@@ -5,7 +5,7 @@ import logoImage from './logo.png';
 class HeaderComponent extends React.Component {
 
   openModal() {
-    document.querySelector('.c-modal').style.display = 'flex';
+    document.querySelector('.c-modal').style.left = '0';
   }
 
   render() {
