@@ -1,27 +1,27 @@
-@import "../../../styles/settings";
+@import '../../../styles/settings';
 
 .c-cover {
-  height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url("./bg-intro.jpg");
   position: relative;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   min-height: 100vh;
-  background-repeat: no-repeat;
   background-attachment: fixed;
+  background-image: url('./bg-intro.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
 
   h1 {
-    font-size: $font-size-h1;
-    text-transform: uppercase;
-    font-family: $font-family-base;
-    font-weight: $font-weight-bold;
-    line-height: 1.75;
-    letter-spacing: $letter-spacing-h1;
     padding-left: $letter-spacing-h1;
-    text-align: center;
     color: $white;
-    text-shadow: 0 0 34px rgba($pattern-color, 0.3);
+    font-family: $font-family-base;
+    font-size: $font-size-h1;
+    font-weight: $font-weight-bold;
+    letter-spacing: $letter-spacing-h1;
+    line-height: 1.75;
+    text-align: center;
+    text-shadow: 0 0 34px rgba($pattern-color, .3);
+    text-transform: uppercase;
   }
 }

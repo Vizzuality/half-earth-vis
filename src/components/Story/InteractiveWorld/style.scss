@@ -1,9 +1,9 @@
-@import "../../../styles/settings";
+@import '../../../styles/settings';
 
 .c-interactive-world-section {
+  position: relative;
   margin-top: 150px;
   padding-top: 100px;
-  position: relative;
 
   .c-title-section {
     h2 {

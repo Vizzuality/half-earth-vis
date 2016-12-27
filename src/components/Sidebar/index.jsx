@@ -7,7 +7,7 @@ class SidebarComponent extends React.Component {
 
   render() {
     return (
-      <aside className="c-sidebar">
+      <aside className="c-sidebar z4">
         <div className="share">
           <a href={undefined}>
             <svg className="c-icon -small">

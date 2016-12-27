@@ -7,10 +7,10 @@ class CirclesDark extends React.Component {
   render() {
     return (
       <div className="c-circles-dark z1">
-        <div className="animatePulse"></div>
-        <div className="animatePulseSecond"></div>
-        <div className="animatePulseThird"></div>
-        <div className="animatePulseFourth"></div>
+        <div className="animate-pulse">{''}</div>
+        <div className="animate-pulse-second">{''}</div>
+        <div className="animate-pulse-third">{''}</div>
+        <div className="animate-pulse-fourth">{''}</div>
       </div>
     );
   }

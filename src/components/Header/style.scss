@@ -1,15 +1,16 @@
-@import "../../styles/settings";
+@import '../../styles/settings';
 
 .c-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
   position: fixed;
-  width: 100%;
-  padding: $small-margin;
   top: 0;
   left: 0;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: $small-margin;
+
 
   .brand {
     display: block;
@@ -38,9 +39,9 @@
         }
 
         &.round {
+          padding: 10px 20px;
           border: 2px solid $heading-color;
           border-radius: 100px;
-          padding: 10px 20px;
 
           a {
             color: $heading-color;

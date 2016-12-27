@@ -7,9 +7,9 @@ class Circles extends React.Component {
   render() {
     return (
       <div className="c-circles">
-        <div className="animatePulse">{''}</div>
-        <div className="animatePulseSecond">{''}</div>
-        <div className="animatePulseThird">{''}</div>
+        <div className="animate-pulse">{''}</div>
+        <div className="animate-pulse-second">{''}</div>
+        <div className="animate-pulse-third">{''}</div>
       </div>
     );
   }

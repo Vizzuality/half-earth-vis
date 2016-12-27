@@ -25,7 +25,7 @@ class VideoSection extends React.Component{
     const containBackground = document.querySelector('.c-background-change');
     const containCirclesLines = document.querySelector('.c-line-circles');
     const containCirclesDark = document.querySelector('.c-circles-dark');
-    const containBackBlueTwo = document.querySelector('.back-blueTwo');
+    const containBackBlueTwo = document.querySelector('.back-blue-two');
     const state = {
       minY: this.video.offsetTop,
       maxY: this.video.offsetTop + window.innerHeight,

@@ -1,9 +1,9 @@
-@import "../../../styles/settings";
+@import '../../../styles/settings';
 
 .c-gallery-two-section {
-  margin-top: 480px;
   position: relative;
   height: 1360px;
+  margin-top: 480px;
 
   .wrap {
     position: relative;
@@ -12,19 +12,19 @@
       position: absolute;
 
       &.first {
-        left: 0;
         top: 212px;
+        left: 0;
         z-index: 1;
       }
 
       &.second {
+        top: 575px;
         right: 160px;
-        top: 575px
       }
 
       &.third {
-        left: 270px;
         top: 812px;
+        left: 270px;
         z-index: 1;
       }
     }
@@ -34,54 +34,54 @@
       transition: $animation-cubic;
 
       &.first-image-two {
-        box-shadow: 10px 10px 0 0 rgba($pattern-color, .3);
         right: 270px;
         max-width: 340px;
+        box-shadow: 10px 10px 0 0 rgba($pattern-color, .3);
       }
 
       &.second-image-two {
-        box-shadow: 10px 10px 0 0 rgba($pattern-color, .3);
+        top: 190px;
         right: 0;
         max-width: 525px;
-        top: 190px;
+        box-shadow: 10px 10px 0 0 rgba($pattern-color, .3);
       }
 
       &.fifth-image-two {
-        box-shadow: -10px 10px 0 0 rgba($pattern-color, .3);
-        max-width: 430px;
-        right: 360px;
         top: 934px;
+        right: 360px;
+        max-width: 430px;
+        box-shadow: -10px 10px 0 0 rgba($pattern-color, .3);
         z-index: 2;
       }
 
       &.sixth-image-two {
-        box-shadow: -10px 10px 0 0 rgba($pattern-color, .3);
-        max-width: 340px;
-        left: 0;
         top: 1144px;
+        left: 0;
+        max-width: 340px;
+        box-shadow: -10px 10px 0 0 rgba($pattern-color, .3);
         z-index: 1;
       }
     }
   }
 
   .large-image {
-    width: 50%;
     position: relative;
-    float: left;
+    width: 50%;
     height: 1px;
+    float: left;
   }
 
   .third-image-two,
   .fourth-image-two {
-    background-size: cover;
-    background-repeat: no-repeat;
     position: absolute;
     transition: $animation-cubic;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .third-image-two {
-    width: 100%;
     top: 360px;
+    width: 100%;
     height: 420px;
     background-image: url('assets/circle.jpg');
     box-shadow: 0 10px 0 0 rgba($pattern-color, .3);
@@ -89,12 +89,11 @@
   }
 
   .fourth-image-two {
-    width: calc(100% + 70px);
     top: 695px;
+    left: -70px;
+    width: calc(100% + 70px);
     height: 485px;
     background-image: url('assets/huge-tree.jpg');
     box-shadow: 0 10px 0 0 rgba($pattern-color, .3);
-    left: -70px;
   }
-
 }

@@ -1,28 +1,28 @@
-@import "../../styles/settings";
+@import '../../styles/settings';
 
 .c-background-change {
   position: fixed;
-  height: 100%;
   width: 100%;
+  height: 100%;
   transition: .2s $cubic;
 
   div {
+    position: fixed;
     width: 100%;
     height: 100%;
-    opacity: 0;
-    position: fixed;
     transition: .4s $cubic;
+    opacity: 0;
   }
 
   .back-transparent {
     background: transparent;
   }
 
-  .back-blueOne {
-    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 220, 252, 0.4));
+  .back-blue-one {
+    background: linear-gradient(rgba(255, 255, 255, .2), rgba(0, 220, 252, .4));
   }
 
-  .back-blueTwo {
-    background: linear-gradient(rgba(0, 220, 252, 0.4), rgba(0, 220, 252, 0.8));
+  .back-blue-two {
+    background: linear-gradient(rgba(0, 220, 252, .4), rgba(0, 220, 252, .8));
   }
 }

@@ -1,7 +1,7 @@
 body {
-  font-family: $font-family-base;
-  background-image: url("../images/bg-stars-large.jpg");
   background-attachment: fixed;
+  background-image: url('../images/bg-stars-large.jpg');
+  font-family: $font-family-base;
 }
 
 .wrap {
@@ -11,9 +11,9 @@ body {
 }
 
 p {
+  margin: 0;
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
-  margin: 0;
 }
 
 .hidden {

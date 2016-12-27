@@ -1,14 +1,14 @@
-@import "../../styles/settings";
+@import '../../styles/settings';
 
 .c-ranger-d3 {
-  opacity: 0;
+
   position: fixed;
-  position: fixed;
-  left: 50%;
   top: 50%;
-  transform: translate(-50%,-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   transition: .2s $cubic;
-  animation: fadeIn 0.2s $cubic;
+  opacity: 0;
+  animation: fadeIn .2s $cubic;
 
   &.-hidden {
     opacity: 0;
@@ -18,22 +18,19 @@
     display: none;
   }
 
-    .outer-arc {
-      opacity: .2;
-    }
+  .outer-arc {
+    transform: rotate(220deg);
+    opacity: .2;
+  }
 
-    .inner-arc {
-      transform: rotate(-140deg);
-    }
+  .inner-arc {
+    transform: rotate(-140deg);
+  }
 
-    .outer-arc {
-      transform: rotate(220deg);
-    }
-
-    .text-left,
-    .text-right {
-      text-transform: uppercase;
-      fill: #fff;
-      font-size: 14px;
-    }
+  .text-left,
+  .text-right {
+    font-size: 14px;
+    text-transform: uppercase;
+    fill: $white;
+  }
 }

@@ -26,8 +26,8 @@ class RangeHalfSection extends React.Component {
     const containRange = document.querySelector('.c-ranger-half-d3');
     const containCircles = document.querySelector('.c-circles');
     const containBackTransparent = document.querySelector('.back-transparent');
-    const containBackBlueOne = document.querySelector('.back-blueOne');
-    const containBackBlueTwo = document.querySelector('.back-blueTwo');
+    const containBackBlueOne = document.querySelector('.back-blue-one');
+    const containBackBlueTwo = document.querySelector('.back-blue-two');
     const state = {
       minY: this.range.offsetTop,
       maxY: this.range.offsetTop + 300
