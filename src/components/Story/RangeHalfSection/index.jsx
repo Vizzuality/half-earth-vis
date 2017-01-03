@@ -16,7 +16,6 @@ class RangeHalfSection extends React.Component {
     this.showRange();
   }
 
-
   componentDidUpdate() {
     this.showRange();
   }

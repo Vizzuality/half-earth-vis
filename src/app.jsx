@@ -40,7 +40,6 @@ class AppComponent extends React.Component {
         this.setState({ direction: true });
       }
     }, 16));
-
     this.knowBrowser();
   }
 
@@ -50,7 +49,7 @@ class AppComponent extends React.Component {
     }
 
     if (navigator.userAgent.indexOf('Chrome') !== -1) {
-      this.setState({ rotate: true });
+      this.setState({ rotate: false });
     }
 
     if (navigator.userAgent.indexOf('Safari') !== -1) {
