@@ -84,7 +84,11 @@ class GlobeComponent extends React.Component {
   }
 
   addMarkers() {
-    const data = [{ lat: 40, lng: -3 }, { lat: 20, lng: 10 }];
+    const data = [
+      { lat: 40, lng: -3 },
+      { lat: 20, lng: 10 },
+      { lat: 10, lng: -10 }
+    ];
     const geom = new THREE.Geometry();
     // const material = new THREE.MeshBasicMaterial({ color: 0xff0000, side: THREE.DoubleSide });
     let material2 = '';
@@ -97,8 +101,8 @@ class GlobeComponent extends React.Component {
       const lat = data[i].lat;
       const lng = data[i].lng;
       const radio = this.props.radius;
-      const height = 2;
-      const position = latLongToVector3(lat, lng, radio, 6);
+      const height = 6;
+      const position = latLongToVector3(lat, lng, radio, height);
 
       // console.log(material);
 
