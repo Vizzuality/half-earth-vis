@@ -44,7 +44,7 @@ class Story extends React.Component {
         <CirclesSection />
         <VideoSection scrollTop={this.state.scrollTop} />
         <EighthSection scrollTop={this.state.scrollTop} />
-        <InteractiveWorld />
+        <InteractiveWorld scrollTop={this.state.scrollTop} />
       </div>
     );
   }

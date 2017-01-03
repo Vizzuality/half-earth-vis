@@ -4,16 +4,36 @@
   display: flex;
   position: fixed;
   bottom: 0;
-  left: 0;
-  flex-direction: column;
-  margin: 0 0 $medium-margin $medium-margin;
+  width: 100%;
+  margin: 0 $medium-margin $medium-margin;
 
-  .share {
-    margin-top: $medium-margin;
-    cursor: pointer;
+  .contain-share {
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
 
-    &:first-child {
-      margin-top: 0;
+    .share {
+      margin-top: $medium-margin;
+      cursor: pointer;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .info-world {
+    position: relative;
+    flex-basis: 50%;
+    margin-right: 80px;
+    transition: $animation-cubic;
+    opacity: 0;
+
+    p {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      color: $white;
     }
   }
 }
