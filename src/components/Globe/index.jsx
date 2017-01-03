@@ -1,7 +1,6 @@
 import React from 'react';
 import * as THREE from 'three';
 import orbitControl from 'three-orbit-controls';
-import THREEX from 'threex.domevents';
 
 import customData from './assets/data.json';
 
@@ -22,6 +21,11 @@ class GlobeComponent extends React.Component {
   }
 
   componentDidMount() {
+    this.state = {
+      scrollTop: this.props.scrollTop
+    };
+    console.log(this.state)
+
     const width = this.props.width;
     const height = this.props.height;
 
@@ -34,6 +38,9 @@ class GlobeComponent extends React.Component {
     this.camera = new THREE.PerspectiveCamera(fov, width / height, near, far);
     this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 
+    this.raycaster = new THREE.Raycaster(); // interactive
+    this.mouse = new THREE.Vector3(); // interactive
+
     this.camera.position.z = (far / 2) * 0.90;
     this.renderer.setSize(width, height);
 
@@ -43,13 +50,28 @@ class GlobeComponent extends React.Component {
     this.addControls();
     this.addLights();
     this.addGlobe();
-    this.addMarkers();
+    // this.addMarkers();
 
     this.draw();
 
     // Adding frame stats for development
     if (config.env === 'development') {
       addStats();
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const interactive = document.querySelector('.c-interactive-world-section');
+    this.setState(
+      {
+        scrollTop: nextProps.scrollTop
+      }
+    );
+    const conditional = interactive.offsetTop < this.state.scrollTop;
+    if (conditional) {
+      this.addMarkers();
+    } else {
+      this.removeMarkers();
     }
   }
 
@@ -80,9 +102,7 @@ class GlobeComponent extends React.Component {
     });
     const geometry = new THREE.SphereGeometry(this.props.radius, 40, 30);
     const earth = new THREE.Mesh(geometry, material);
-
     earth.updateMatrix();
-
     this.scene.add(earth);
   }
 
@@ -102,14 +122,11 @@ class GlobeComponent extends React.Component {
       const height = 6;
       const position = latLongToVector3(lat, lng, radio, height);
 
-      // console.log(material);
-
       const geometry = new THREE.PlaneGeometry(14, 20);
       const marker = new THREE.Mesh(geometry, material2);
 
       marker.position.set(position.x, position.y, position.z);
-      marker.rotateY((-Math.PI / 2) + lng);
-      marker.addEventListener("click", function(){ alert("Hello World!"); });
+      marker.rotateY(-Math.PI);
 
       geom.mergeMesh(marker);
     }
@@ -119,6 +136,10 @@ class GlobeComponent extends React.Component {
 
     // and add the total mesh to the scene
     this.scene.add(total);
+  }
+
+  removeMarkers() {
+    
   }
 
   draw() {

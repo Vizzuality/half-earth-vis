@@ -29,6 +29,11 @@ class AppComponent extends React.Component {
   }
 
   componentDidMount() {
+
+    this.state = {
+      scrollTop: window.pageYOffset
+    };
+
     window.addEventListener('scroll', _.debounce(() => {
       this.setState({ scrollTop: window.pageYOffset });
     }, 16));
@@ -72,7 +77,7 @@ class AppComponent extends React.Component {
   render() {
     return (
       <div>
-        <Globe autorotate={this.state.rotate} width={700} height={700} />
+        <Globe autorotate={this.state.rotate} width={700} height={700} scrollTop={this.state.scrollTop} />
         <Mesh width={700} height={700} />
         <RangerD3 width={700} height={700} />
         <RangerHalfD3 width={700} height={700} />
