@@ -23,7 +23,6 @@ class InteractiveWorld extends React.Component {
   }
 
   showInstruction() {
-
     const state = {
       minY: this.interactive.offsetTop,
       maxY: this.interactive.offsetTop

@@ -96,12 +96,12 @@ class GlobeComponent extends React.Component {
       const height = 2;
       const position = latLongToVector3(lat, lng, radio, height);
 
+      // console.log(material);
+
       const geometry = new THREE.BoxGeometry(10, 10, 10);
       const cube = new THREE.Mesh(geometry, material);
 
       cube.position.set(position.x, position.y, position.z);
-
-      console.log(cube);
 
       geom.mergeMesh(cube);
     }
