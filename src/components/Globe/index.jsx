@@ -88,7 +88,8 @@ class GlobeComponent extends React.Component {
     const data = [
       { lat: 40, lng: -3 },
       { lat: 20, lng: 10 },
-      { lat: 10, lng: -10 }
+      { lat: 10, lng: -10 },
+      { lat: -10, lng: -60 }
     ];
     const geom = new THREE.Geometry();
     // const material = new THREE.MeshBasicMaterial({ color: 0xff0000, side: THREE.DoubleSide });
@@ -111,7 +112,7 @@ class GlobeComponent extends React.Component {
       const marker = new THREE.Mesh(geometry, material2);
 
       marker.position.set(position.x, position.y, position.z);
-      marker.rotateY(-Math.PI / 2);
+      marker.rotateY((-Math.PI / 2) + lng);
 
       geom.mergeMesh(marker);
     }
