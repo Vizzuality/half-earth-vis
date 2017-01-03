@@ -1,6 +1,7 @@
 import React from 'react';
 import * as THREE from 'three';
 import orbitControl from 'three-orbit-controls';
+import THREEX from 'threex.domevents';
 
 import './style.scss';
 import earthImage from './images/earth-clouds.jpg';
@@ -107,10 +108,10 @@ class GlobeComponent extends React.Component {
       // console.log(material);
 
       const geometry = new THREE.PlaneGeometry(14, 20);
-      const marker = new THREE.Mesh(geometry, material2)
+      const marker = new THREE.Mesh(geometry, material2);
 
       marker.position.set(position.x, position.y, position.z);
-      marker.rotateY(- Math.PI / 2);
+      marker.rotateY(-Math.PI / 2);
 
       geom.mergeMesh(marker);
     }
