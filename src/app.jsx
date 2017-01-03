@@ -23,7 +23,8 @@ class AppComponent extends React.Component {
     super(props);
     this.state = {
       scrollTop: 0,
-      direction: false
+      direction: false,
+      rotate: true
     };
   }
 
@@ -39,12 +40,40 @@ class AppComponent extends React.Component {
         this.setState({ direction: true });
       }
     }, 16));
+
+    this.knowBrowser();
+  }
+
+  knowBrowser() {
+    if ((navigator.userAgent.indexOf('Opera') || navigator.userAgent.indexOf('OPR')) !== -1) {
+      this.setState({ rotate: true });
+    }
+
+    if (navigator.userAgent.indexOf('Chrome') !== -1) {
+      this.setState({ rotate: true });
+    }
+
+    if (navigator.userAgent.indexOf('Safari') !== -1) {
+      this.setState({ rotate: true });
+    }
+
+    if (navigator.userAgent.indexOf('Firefox') !== -1) {
+      this.setState({ rotate: true });
+    }
+
+    if ((navigator.userAgent.indexOf('MSIE') !== -1) || (!!document.documentMode === true)) {
+      this.setState({ rotate: false });
+    }
+
+    if (navigator.userAgent.indexOf('Edge') > -1) {
+      this.setState({ rotate: false });
+    }
   }
 
   render() {
     return (
       <div>
-        <Globe autorotate width={700} height={700} />
+        <Globe autorotate={this.state.rotate} width={700} height={700} />
         <Mesh width={700} height={700} />
         <RangerD3 width={700} height={700} />
         <RangerHalfD3 width={700} height={700} />
