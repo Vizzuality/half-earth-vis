@@ -10,7 +10,7 @@
   transition: .7s ease;
 
   .image {
-    width: 75%;
+    width: 60%;
     height: 100%;
     background-image: url('./assets/demo-min.png');
     background-repeat: no-repeat;
@@ -19,7 +19,7 @@
 
   .information {
     position: relative;
-    width: 25%;
+    width: 40%;
     height: 100%;
     padding: 0 20px;
     background-color: $back-modal;

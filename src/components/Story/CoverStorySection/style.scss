@@ -16,12 +16,16 @@
     padding-left: $letter-spacing-h1;
     color: $white;
     font-family: $font-family-base;
-    font-size: $font-size-h1;
+    font-size: $font-size-h1-laptop;
     font-weight: $font-weight-bold;
     letter-spacing: $letter-spacing-h1;
     line-height: 1.75;
     text-align: center;
     text-shadow: 0 0 34px rgba($pattern-color, .3);
     text-transform: uppercase;
+
+    @media screen and (min-width: 1281px) {
+      font-size: $font-size-h1;
+    }
   }
 }

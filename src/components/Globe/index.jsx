@@ -125,7 +125,6 @@ class GlobeComponent extends React.Component {
 
       this.marker.position.set(position.x, position.y, position.z);
       this.marker.rotateY(-Math.PI);
-      // this.marker.rotateX(45);
 
       geom.mergeMesh(this.marker);
     }
