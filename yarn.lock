@@ -4830,6 +4830,10 @@ three@^0.82.1:
   version "0.82.1"
   resolved "https://registry.yarnpkg.com/three/-/three-0.82.1.tgz#f63c3730971520c54479e3627d370d764a4a8383"
 
+threex.domevents@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/threex.domevents/-/threex.domevents-1.0.1.tgz#1c02d2f0fbf5f369125f46d5ae329160c9bbf676"
+
 through@^2.3.6:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
