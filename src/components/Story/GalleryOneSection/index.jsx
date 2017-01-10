@@ -64,6 +64,8 @@ class GalleryOneSection extends React.Component {
       this.fourthImage.style.transform = `translateY(${fourthTranslate}px)`;
       this.fifthImage.style.transform = `translateY(${fifthTranslate}px)`;
       this.sixthImage.style.transform = `translateY(${sixthTranslate}px)`;
+      this.firstText.style.transform = `translateY(${fourthTranslate}px)`;
+      this.secondText.style.transform = `translateY(${sixthTranslate}px)`;
     } else {
       // not animate the gallery
     }
@@ -97,15 +99,21 @@ class GalleryOneSection extends React.Component {
             alt="Mallard"
             ref={(c) => { this.sixthImage = c; }}
           />
-          <div className="text-section first z4">
+          <div
+            className="text-section first z4"
+            ref={(c) => { this.firstText = c; }}
+          >
             <p>Suitable habitat, crucial to nature’s survival,</p>
             <p>is shrinking fast. In fact the rate of</p>
             <p>extinction today is at least 1,000 times</p>
             <p>higher than at any time in Earth’s history.</p>
           </div>
 
-          <div className="text-section second z4">
-            <TitleSection text="We must acT NOW" />
+          <div
+            className="text-section second z4"
+            ref={(c) => { this.secondText = c; }}
+          >
+            <TitleSection text="We must act now" />
             <p>Before we’ve lost irreplaceable species</p>
             <p>and ecosystems forever.</p>
           </div>
