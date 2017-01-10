@@ -19,7 +19,6 @@ class GalleryTwoSection extends React.Component {
     this.moveGallery();
   }
 
-
   componentDidUpdate() {
     this.moveGallery();
   }
@@ -66,6 +65,9 @@ class GalleryTwoSection extends React.Component {
       this.fourthImage.style.transform = `translateY(${fourthTranslate}px)`;
       this.fifthImage.style.transform = `translateY(${fifthTranslate}px)`;
       this.sixthImage.style.transform = `translateY(${sixthTranslate}px)`;
+      this.firstText.style.transform = `translateY(${thirdTranslate}px)`;
+      this.secondText.style.transform = `translateY(${fourthTranslate}px)`;
+      this.thirdText.style.transform = `translateY(${fifthTranslate}px)`;
     } else {
       // not animate the gallery
     }
@@ -107,16 +109,25 @@ class GalleryTwoSection extends React.Component {
             alt="Helicopter"
             ref={(c) => { this.sixthImage = c; }}
           />
-          <div className="text-section first z4">
+          <div
+            className="text-section first z4"
+            ref={(c) => { this.firstText = c; }}
+          >
             <p>The Half-Earth Project will drive</p>
             <p>the research needed to better understand</p>
             <p>and care for our world,</p>
           </div>
-          <div className="text-section second z4">
+          <div
+            className="text-section second z4"
+            ref={(c) => { this.secondText = c; }}
+          >
             <p>provide leadership</p>
             <p>to guide conservation efforts,</p>
           </div>
-          <div className="text-section third z4">
+          <div
+            className="text-section third z4"
+            ref={(c) => { this.thirdText = c; }}
+          >
             <p>and engage people</p>
             <p>in the transcendent goal of Half-Earth.</p>
           </div>
