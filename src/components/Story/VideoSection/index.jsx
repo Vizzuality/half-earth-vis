@@ -23,8 +23,6 @@ class VideoSection extends React.Component{
 
   checkPlayVideo() {
     const containBackground = document.querySelector('.c-background-change');
-    const containCirclesLines = document.querySelector('.c-line-circles');
-    const containCirclesDark = document.querySelector('.c-circles-dark');
     const containBackBlueTwo = document.querySelector('.back-blue-two');
     const state = {
       minY: this.video.offsetTop,

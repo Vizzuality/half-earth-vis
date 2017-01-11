@@ -21,17 +21,12 @@ class RangeHalfSection extends React.Component {
   }
 
   showRange() {
-
     const circleOne = document.querySelector('.animate-pulse');
     const circleTwo = document.querySelector('.animate-pulse-second');
     const circleThree = document.querySelector('.animate-pulse-third');
     const containBackTransparent = document.querySelector('.back-transparent');
     const containBackBlueOne = document.querySelector('.back-blue-one');
     const containBackBlueTwo = document.querySelector('.back-blue-two');
-
-    circleOne.style.transform = 'scale(0)';
-    circleTwo.style.transform = 'scale(0)';
-    circleThree.style.transform = 'scale(0)';
 
     const height = this.range.offsetHeight;
     const containRange = document.querySelector('.c-ranger-half-d3');
@@ -86,6 +81,9 @@ class RangeHalfSection extends React.Component {
       circleTwo.style.transform = `scale(${circleAnimation * 2})`;
       circleThree.style.transform = `scale(${circleAnimation * 1.5})`;
     } else {
+      circleOne.style.transform = 'scale(0)';
+      circleTwo.style.transform = 'scale(0)';
+      circleThree.style.transform = 'scale(0)';
       containCircles.style.opacity = '0';
     }
   }
