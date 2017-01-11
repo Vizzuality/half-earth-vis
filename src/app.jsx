@@ -36,7 +36,7 @@ class AppComponent extends React.Component {
 
     window.addEventListener('scroll', _.debounce(() => {
       this.setState({ scrollTop: window.pageYOffset });
-    }, 16));
+    }, 1));
 
     window.addEventListener('wheel', _.debounce((e) => {
       if (e.deltaY < 0) {
@@ -44,7 +44,7 @@ class AppComponent extends React.Component {
       } else {
         this.setState({ direction: true });
       }
-    }, 16));
+    }, 1));
     this.knowBrowser();
   }
 

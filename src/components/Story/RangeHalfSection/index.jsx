@@ -21,12 +21,21 @@ class RangeHalfSection extends React.Component {
   }
 
   showRange() {
-    const height = this.range.offsetHeight;
-    const containRange = document.querySelector('.c-ranger-half-d3');
-    const containCircles = document.querySelector('.c-circles');
+
+    const circleOne = document.querySelector('.animate-pulse');
+    const circleTwo = document.querySelector('.animate-pulse-second');
+    const circleThree = document.querySelector('.animate-pulse-third');
     const containBackTransparent = document.querySelector('.back-transparent');
     const containBackBlueOne = document.querySelector('.back-blue-one');
     const containBackBlueTwo = document.querySelector('.back-blue-two');
+
+    circleOne.style.transform = 'scale(0)';
+    circleTwo.style.transform = 'scale(0)';
+    circleThree.style.transform = 'scale(0)';
+
+    const height = this.range.offsetHeight;
+    const containRange = document.querySelector('.c-ranger-half-d3');
+    const containCircles = document.querySelector('.c-circles');
     const state = {
       minY: this.range.offsetTop,
       maxY: this.range.offsetTop + 300
@@ -38,6 +47,11 @@ class RangeHalfSection extends React.Component {
     const isRangeCircles = (this.props.scrollTop > (state.minY - (height / 3))
     && this.props.scrollTop < (state.maxY + (height / 3)));
 
+    const minY = state.minY - (height / 3);
+    const maxY = state.maxY + (height / 3);
+    const total = maxY - minY;
+    const circleAnimation = ((this.props.scrollTop - minY) / total);
+
     if (isRange) {
       containRange.style.opacity = '1';
       containBackTransparent.style.opacity = '0';
@@ -48,7 +62,6 @@ class RangeHalfSection extends React.Component {
     }
 
     if (this.props.scrollTop < (state.minY - (height / 3))) {
-      // containBackground.style.background = 'transparent';
       containBackBlueOne.style.opacity = '0';
       containBackTransparent.style.opacity = '1';
     }
@@ -60,6 +73,12 @@ class RangeHalfSection extends React.Component {
 
     if (isRangeCircles) {
       containCircles.style.opacity = '1';
+      circleOne.style.opacity = `${circleAnimation * 0.8}`;
+      circleTwo.style.opacity = `${circleAnimation * 0.6}`;
+      circleThree.style.opacity = `${circleAnimation * 0.4}`;
+      circleOne.style.transform = `scale(${circleAnimation * 2.5})`;
+      circleTwo.style.transform = `scale(${circleAnimation * 2})`;
+      circleThree.style.transform = `scale(${circleAnimation * 1.5})`;
     } else {
       containCircles.style.opacity = '0';
     }
