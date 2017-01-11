@@ -39,8 +39,6 @@ class VideoSection extends React.Component{
     if (isVideoPlay === true) {
       this.videoplayer.play();
       containBackground.style.background = 'transparent';
-      containCirclesLines.style.opacity = '0';
-      containCirclesDark.style.opacity = '0';
       containBackBlueTwo.style.opacity = '0';
     } else {
       this.videoplayer.pause();
@@ -48,8 +46,6 @@ class VideoSection extends React.Component{
     }
 
     if (this.props.scrollTop > (state.maxY + half)) {
-      containCirclesLines.style.opacity = '0';
-      containCirclesDark.style.opacity = '0';
       containBackBlueTwo.style.opacity = '0';
     }
   }

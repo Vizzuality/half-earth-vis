@@ -6,61 +6,17 @@ $color-dark: #292f6e;
   top: calc(50% - 50vh);
   left: calc(50% - 50vh);
   transform: translate(-50%, -50%);
-  transition: opacity .4s $cubic;
+  transition: .4s $cubic;
   opacity: 0;
 
-  .animate-pulse,
-  .animate-pulse-second,
-  .animate-pulse-third,
-  .animate-pulse-fourth {
+  .animate-pulse-dark,
+  .animate-pulse-second-dark,
+  .animate-pulse-third-dark,
+  .animate-pulse-fourth-dark {
     position: absolute;
     width: 100vh;
     height: 100vh;
     border-radius: 100vh;
     background-color: $color-dark;
-    animation: pulse infinite 2s linear;
-  }
-
-  .animate-pulse-second {
-    animation-delay: .2s;
-  }
-
-  .animate-pulse-third {
-    animation-delay: .4s;
-  }
-
-  .animate-pulse-fourth {
-    animation-delay: .6s;
   }
 }
-
-@keyframes pulse {
-  0% {
-    transform: scale(0);
-    opacity: 1;
-	 }
-
-  1% {
-    transform: scale(0);
-   }
-
-  25% {
-    transform: scale(.5);
-    opacity: .3;
-	 }
-
-  50% {
-    transform: scale(1);
-    opacity: .2;
-	 }
-
-  75% {
-    transform: scale(1.5);
-    opacity: .1;
-	 }
-
-  100% {
-    transform: scale(2);
-    opacity: .05;
-	 }
-	}

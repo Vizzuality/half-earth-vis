@@ -51,6 +51,12 @@ class RangeHalfSection extends React.Component {
     const maxY = state.maxY + (height / 3);
     const total = maxY - minY;
     const circleAnimation = ((this.props.scrollTop - minY) / total);
+    const circleAnimationOpacity = circleAnimation * 0.5;
+    if (circleAnimationOpacity <= 0.6) {
+
+    } else {
+      circleAnimationOpacity = 0.6;
+    }
 
     if (isRange) {
       containRange.style.opacity = '1';
@@ -73,9 +79,9 @@ class RangeHalfSection extends React.Component {
 
     if (isRangeCircles) {
       containCircles.style.opacity = '1';
-      circleOne.style.opacity = `${circleAnimation * 0.8}`;
-      circleTwo.style.opacity = `${circleAnimation * 0.6}`;
-      circleThree.style.opacity = `${circleAnimation * 0.4}`;
+      circleOne.style.opacity = `${circleAnimationOpacity}`;
+      circleTwo.style.opacity = `${circleAnimationOpacity}`;
+      circleThree.style.opacity = `${circleAnimationOpacity}`;
       circleOne.style.transform = `scale(${circleAnimation * 2.5})`;
       circleTwo.style.transform = `scale(${circleAnimation * 2})`;
       circleThree.style.transform = `scale(${circleAnimation * 1.5})`;
