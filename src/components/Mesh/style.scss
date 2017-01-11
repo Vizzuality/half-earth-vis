@@ -8,6 +8,10 @@
   transition: .2s $cubic;
   opacity: 0;
 
+  &.-hidden {
+    opacity: 0;
+  }
+
   canvas {
     display: block;
     margin: 0 auto;

@@ -35,6 +35,7 @@ class Mesh extends React.Component {
       .attr('height', height);
     const context = canvas.node().getContext('2d');
     const nodes = d3.range(200).map(() => {
+      console.log(Math.random() * width);
       return {
         x: Math.random() * width,
         y: Math.random() * height
@@ -90,7 +91,7 @@ class Mesh extends React.Component {
 
   render() {
     return (
-      <div className="c-mesh z3">
+      <div className="c-mesh -hidden z3">
 
       </div>
     );

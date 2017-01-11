@@ -16,7 +16,6 @@ import LineCircles from './components/LineCircles';
 import Modal from './components/Modal';
 import './styles/index.scss';
 
-
 class AppComponent extends React.Component {
 
   constructor(props) {
