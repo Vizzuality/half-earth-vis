@@ -23,7 +23,7 @@ class AppComponent extends React.Component {
     this.state = {
       scrollTop: 0,
       direction: false,
-      rotate: true
+      rotate: false
     };
   }
 
@@ -44,7 +44,8 @@ class AppComponent extends React.Component {
         this.setState({ direction: true });
       }
     }, 1));
-    this.knowBrowser();
+
+    // this.knowBrowser();
   }
 
   knowBrowser() {
