@@ -54,7 +54,7 @@ class GlobeComponent extends React.Component {
       addStats();
     }
 
-    // Events
+    // On scroll event
     if (this.props.scrollRotate) {
       let lastScrollTop = 0;
       window.addEventListener('scroll', function(e) {
@@ -70,6 +70,7 @@ class GlobeComponent extends React.Component {
       }.bind(this));
     }
 
+    // On click event
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2();
 
@@ -86,7 +87,7 @@ class GlobeComponent extends React.Component {
 
       if (intersects && intersects.length > 1 ) {
         const userData = intersects[0].object.data;
-        console.log(userData);
+        // Hector your magic here :)
       }
     }.bind(this), false);
   }
@@ -142,36 +143,10 @@ class GlobeComponent extends React.Component {
     this.earth.material.needsUpdate = this.imageLoader.load(imagePath);
   }
 
-  // addDivOnMarkers() {
-  //   const locations = this.calculateLocations();
-
-  //   this.removeMarkers();
-
-  //   this.currentMarkers = locations.map((l, i) => {
-  //     const marker = document.createElement('div');
-  //     marker.className = 'marker';
-  //     marker.style.left = `${locations[i].x}px`;
-  //     marker.style.top = `${locations[i].y}px`;
-  //     marker.style.transform = `translate(${this.props.width / 2}px, ${this.props.height / 2}px)`;
-  //     marker.onclick = function showmodal() {
-          //   document.querySelector('.c-modal').style.left = '0';
-          //   document.querySelector('.title-modal').innerHTML = information[i].region;
-          //   document.querySelector('.description-modal').style.left = information[i].description;
-          // };
-  //     this.el.appendChild(marker);
-  //     return marker;
-  //   });
-  // }
-
-  // removeDivOnMarkers() {
-  //   if (this.currentMarkers && this.currentMarkers.length) {
-  //     for (let i = this.currentMarkers.length - 1; i >= 0; i--) {
-  //       this.currentMarkers[i].removeElement();
-  //     }
-  //   }
-  // }
-
   showmodal() {
+    document.querySelector('.c-modal').style.left = '0';
+    document.querySelector('.title-modal').innerHTML = information[i].region;
+    document.querySelector('.description-modal').style.left = information[i].description;
   }
 
   /**
@@ -213,6 +188,9 @@ class GlobeComponent extends React.Component {
   }
 
   removeMarkers() {
+    if (this.markers && this.markers.length) {
+      // Remove markers
+    }
   }
 
   calculateLocations() {
