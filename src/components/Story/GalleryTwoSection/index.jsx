@@ -24,7 +24,6 @@ class GalleryTwoSection extends React.Component {
   }
 
   moveGallery() {
-
     const circles = [
       { el: document.querySelector('.animate-pulse-dark'), velocity: 2.4 },
       { el: document.querySelector('.animate-pulse-second-dark'), velocity: 2 },
@@ -44,11 +43,7 @@ class GalleryTwoSection extends React.Component {
     const containCircleLines = document.querySelector('.c-line-circles');
     const containCircleDark = document.querySelector('.c-circles-dark');
     let opacityAnimation = circleAnimation / 5;
-    if (opacityAnimation <= 0.6) {
-
-    } else {
-      opacityAnimation = 0.6;
-    }
+    opacityAnimation <= 0.6 ? null : opacityAnimation = 0.6;
 
     const y = window.pageYOffset - this.gallery.offsetTop;
     const elements = [
@@ -146,7 +141,6 @@ class GalleryTwoSection extends React.Component {
 
 GalleryTwoSection.propTypes = {
   scrollTop: React.PropTypes.number,
-  direction: React.PropTypes.bool,
 };
 
 export default GalleryTwoSection ;

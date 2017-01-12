@@ -21,9 +21,12 @@ class RangeHalfSection extends React.Component {
   }
 
   showRange() {
-    const circleOne = document.querySelector('.animate-pulse');
-    const circleTwo = document.querySelector('.animate-pulse-second');
-    const circleThree = document.querySelector('.animate-pulse-third');
+    const circles = [
+      { el: document.querySelector('.animate-pulse'), velocity: 2.4 },
+      { el: document.querySelector('.animate-pulse-second'), velocity: 2 },
+      { el: document.querySelector('.animate-pulse-third'), velocity: 1.6 },
+    ];
+
     const containBackTransparent = document.querySelector('.back-transparent');
     const containBackBlueOne = document.querySelector('.back-blue-one');
     const containBackBlueTwo = document.querySelector('.back-blue-two');
@@ -47,11 +50,7 @@ class RangeHalfSection extends React.Component {
     const total = maxY - minY;
     const circleAnimation = ((this.props.scrollTop - minY) / total);
     let circleAnimationOpacity = circleAnimation * 0.5;
-    if (circleAnimationOpacity <= 0.6) {
-
-    } else {
-      circleAnimationOpacity = 0.6;
-    }
+    circleAnimationOpacity <= 0.6 ? null : circleAnimationOpacity = 0.6;
 
     if (isRange) {
       containRange.style.opacity = '1';
@@ -74,16 +73,14 @@ class RangeHalfSection extends React.Component {
 
     if (isRangeCircles) {
       containCircles.style.opacity = '1';
-      circleOne.style.opacity = `${circleAnimationOpacity}`;
-      circleTwo.style.opacity = `${circleAnimationOpacity}`;
-      circleThree.style.opacity = `${circleAnimationOpacity}`;
-      circleOne.style.transform = `scale(${circleAnimation * 2.5})`;
-      circleTwo.style.transform = `scale(${circleAnimation * 2})`;
-      circleThree.style.transform = `scale(${circleAnimation * 1.5})`;
+      for (let i = circles.length - 1; i >= 0; i--) {
+        circles[i].el.style.opacity = `${circleAnimationOpacity}`;
+        circles[i].el.style.transform = `scale(${circleAnimation * circles[i].velocity})`;
+      }
     } else {
-      circleOne.style.transform = 'scale(0)';
-      circleTwo.style.transform = 'scale(0)';
-      circleThree.style.transform = 'scale(0)';
+      for (let i = circles.length - 1; i >= 0; i--) {
+        circles[i].el.style.transform = 'scale(0)';
+      }
       containCircles.style.opacity = '0';
     }
   }
