@@ -3,11 +3,6 @@ import './style.scss';
 import logoImage from './logo.png';
 
 class HeaderComponent extends React.Component {
-
-  openModal() {
-    document.querySelector('.c-modal').style.left = '0';
-  }
-
   render() {
     return (
       <header className="c-header z4">
@@ -17,7 +12,7 @@ class HeaderComponent extends React.Component {
         <nav className="menu">
           <ul>
             <li>
-              <span href="{undefined}" onClick={(e) => this.openModal(e)}>About</span>
+              <span href="{undefined}">About</span>
             </li>
             <li>
               <a href="{undefined}">Videos</a>

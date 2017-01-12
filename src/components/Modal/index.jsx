@@ -21,8 +21,8 @@ class Modal extends React.Component {
             <span>esc</span>
           </div>
           <div className="contain-text">
-            <h2>Madagascar</h2>
-            <p>
+            <h2 className="title-modal"></h2>
+            <p className="description-modal">
             Being very big, ancient, and tropical, Madagascar harbors a very
             large and unique fauna and flora, with 70 percent or more of
             its species found nowhere else... Examples of evolutionary
