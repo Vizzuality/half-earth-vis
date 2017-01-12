@@ -69,7 +69,6 @@ class GlobeComponent extends React.Component {
     }
 
     window.globe = this;
-
   }
 
   componentWillReceiveProps(nextProps) {
