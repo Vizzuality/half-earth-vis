@@ -67,6 +67,8 @@ class GlobeComponent extends React.Component {
         lastScrollTop = st;
       }.bind(this));
     }
+
+    window.globe = this;
   }
 
   componentWillReceiveProps(nextProps) {
@@ -93,7 +95,6 @@ class GlobeComponent extends React.Component {
     this.control.enableZoom = false;
     this.control.rotateSpeed = this.props.velocity;
     this.control.autoRotateSpeed = this.props.velocity;
-    window.control = this.control;
   }
 
   addLights() {
@@ -113,7 +114,12 @@ class GlobeComponent extends React.Component {
     const geometry = new THREE.SphereGeometry(this.props.radius, 40, 30);
     const earth = new THREE.Mesh(geometry, material);
     earth.updateMatrix();
+    this.earth = earth;
     this.scene.add(earth);
+  }
+
+  setTexture(imagePath) {
+    this.earth.material.needsUpdate = this.imageLoader.load(imagePath);
   }
 
   addMarkers() {
