@@ -24,20 +24,25 @@ class GalleryTwoSection extends React.Component {
   }
 
   moveGallery() {
-    const circleOne = document.querySelector('.animate-pulse-dark');
-    const circleTwo = document.querySelector('.animate-pulse-second-dark');
-    const circleThree = document.querySelector('.animate-pulse-third-dark');
-    const circleFour = document.querySelector('.animate-pulse-fourth-dark');
-    circleOne.style.transform = 'scale(0)';
-    circleTwo.style.transform = 'scale(0)';
-    circleThree.style.transform = 'scale(0)';
-    circleFour.style.transform = 'scale(0)';
+
+    const circles = [
+      { el: document.querySelector('.animate-pulse-dark'), velocity: 2.4 },
+      { el: document.querySelector('.animate-pulse-second-dark'), velocity: 2 },
+      { el: document.querySelector('.animate-pulse-third-dark'), velocity: 1.6 },
+      { el: document.querySelector('.animate-pulse-fourth-dark'), velocity: 1.2 }
+    ];
+
+    for (let i = circles.length - 1; i >= 0; i--) {
+      circles[i].el.style.transform = 'scale(0)';
+    }
 
     const videoContainer = document.querySelector('.c-video-section');
     const minYVideo = videoContainer.offsetTop;
     const maxYVideo = videoContainer.offsetTop + window.innerHeight;
     const half = (maxYVideo - minYVideo) / 2;
     const circleAnimation = ((this.props.scrollTop - ((this.gallery.offsetTop + window.innerHeight) - half)) / half) - 1;
+    const containCircleLines = document.querySelector('.c-line-circles');
+    const containCircleDark = document.querySelector('.c-circles-dark');
     let opacityAnimation = circleAnimation / 5;
     if (opacityAnimation <= 0.6) {
 
@@ -45,8 +50,6 @@ class GalleryTwoSection extends React.Component {
       opacityAnimation = 0.6;
     }
 
-    const containCircleLines = document.querySelector('.c-line-circles');
-    const containCircleDark = document.querySelector('.c-circles-dark');
     const y = window.pageYOffset - this.gallery.offsetTop;
     const elements = [
       { el: this.firstImage, velocity: 0.4 },
@@ -62,14 +65,10 @@ class GalleryTwoSection extends React.Component {
     if (this.props.scrollTop > (this.gallery.offsetTop + window.innerHeight) && this.props.scrollTop < (minYVideo - half)) {
       containCircleLines.style.opacity = '1';
       containCircleDark.style.opacity = '1';
-      circleOne.style.opacity = `${opacityAnimation}`;
-      circleTwo.style.opacity = `${opacityAnimation}`;
-      circleThree.style.opacity = `${opacityAnimation}`;
-      circleFour.style.opacity = `${opacityAnimation}`;
-      circleOne.style.transform = `scale(${circleAnimation * 2.4})`;
-      circleTwo.style.transform = `scale(${circleAnimation * 2})`;
-      circleThree.style.transform = `scale(${circleAnimation * 1.6})`;
-      circleFour.style.transform = `scale(${circleAnimation * 1.2})`;
+      for (let i = circles.length - 1; i >= 0; i--) {
+        circles[i].el.style.opacity = `${opacityAnimation}`;
+        circles[i].el.style.transform = `scale(${circleAnimation * circles[i].velocity})`;
+      }
     } else {
       containCircleLines.style.opacity = '0';
       containCircleDark.style.opacity = '0';
