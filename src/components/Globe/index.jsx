@@ -85,9 +85,9 @@ class GlobeComponent extends React.Component {
 
       const intersects = raycaster.intersectObjects( this.scene.children );
 
-      if (intersects && intersects.length > 1 ) {
+      if (intersects && intersects.length > 1) {
         const userData = intersects[0].object.data;
-        // Hector your magic here :)
+        this.showmodal(userData.Region, userData.Description);
       }
     }.bind(this), false);
   }
@@ -143,10 +143,10 @@ class GlobeComponent extends React.Component {
     this.earth.material.needsUpdate = this.imageLoader.load(imagePath);
   }
 
-  showmodal() {
-    document.querySelector('.c-modal').style.left = '0';
-    document.querySelector('.title-modal').innerHTML = information[i].region;
-    document.querySelector('.description-modal').style.left = information[i].description;
+  showmodal(title, description) {
+    document.querySelector('.c-modal').style.top = '0';
+    document.querySelector('.title-modal').innerHTML = title;
+    document.querySelector('.description-modal').style.left = description;
   }
 
   /**

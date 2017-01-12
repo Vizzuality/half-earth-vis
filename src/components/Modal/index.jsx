@@ -4,7 +4,7 @@ import './style.scss';
 class Modal extends React.Component {
 
   closeModal() {
-    document.querySelector('.c-modal').style.left = '100%';
+    document.querySelector('.c-modal').style.top = '100%';
   }
 
   render() {
