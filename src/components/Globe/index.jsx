@@ -139,8 +139,15 @@ class GlobeComponent extends React.Component {
     this.scene.add(earth);
   }
 
-  setTexture(imagePath) {
-    this.earth.material.needsUpdate = this.imageLoader.load(imagePath);
+  setTexture(e) {
+    const value = e.target.value;
+    if (value === 'one') {
+      this.earth.material.needsUpdate = this.imageLoader.load('src/images/earth-clouds.jpg');
+    }
+    if (value === 'two') {
+      this.earth.material.needsUpdate = this.imageLoader.load('src/images/bg-stars-large.jpg');
+    }
+    // this.earth.material.needsUpdate = this.imageLoader.load(imagePath);
   }
 
   showmodal(title, description) {
@@ -225,7 +232,12 @@ class GlobeComponent extends React.Component {
 
   render() {
     return (
-      <div ref={(node) => this.el = node} className="vizz-component-globe z2">{''}</div>
+        <div ref={(node) => this.el = node} className="vizz-component-globe z2">
+          <select onChange={(e) => this.setTexture(e)}>
+            <option value="one">one</option>
+            <option value="two">two</option>
+          </select>
+        </div>
     );
   }
 

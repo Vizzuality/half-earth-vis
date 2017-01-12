@@ -15,4 +15,12 @@
     transform: translate(50vh, 50vw);
     cursor: pointer;
   }
+
+  select {
+    position: absolute;
+    right: -30px;
+    bottom: 0;
+    z-index: 5;
+
+  }
 }
