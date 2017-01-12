@@ -67,8 +67,6 @@ class GlobeComponent extends React.Component {
         lastScrollTop = st;
       }.bind(this));
     }
-
-    window.globe = this;
   }
 
   componentWillReceiveProps(nextProps) {

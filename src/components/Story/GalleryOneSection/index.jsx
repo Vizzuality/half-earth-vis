@@ -25,49 +25,16 @@ class GalleryOneSection extends React.Component {
   }
 
   moveGallery() {
-    const height = this.gallery.offsetHeight;
-    const transYRegex = /\.*translateY\((.*)px\)/i;
-    let firstTranslate = 0;
-    let secondTranslate = 0;
-    let thirdTranslate = 0;
-    let fourthTranslate = 0;
-    let fifthTranslate = 0;
-    let sixthTranslate = 0;
-    if (
-        this.firstImage.style.transform && this.secondImage.style.transform
-        && this.thirdImage.style.transform && this.fourthImage.style.transform
-        && this.fifthImage.style.transform && this.sixthImage.style.transform
-    ) {
-      if (this.props.direction === false) { // up
-        firstTranslate = parseFloat(transYRegex.exec(this.firstImage.style.transform)[1]) - 0.4;
-        secondTranslate = parseFloat(transYRegex.exec(this.secondImage.style.transform)[1]) + 0.45;
-        thirdTranslate = parseFloat(transYRegex.exec(this.thirdImage.style.transform)[1]) - 0.35;
-        fourthTranslate = parseFloat(transYRegex.exec(this.fourthImage.style.transform)[1]) + 0.45;
-        fifthTranslate = parseFloat(transYRegex.exec(this.fifthImage.style.transform)[1]) - 0.4;
-        sixthTranslate = parseFloat(transYRegex.exec(this.sixthImage.style.transform)[1]) + 0.3;
-      } else { // down
-        firstTranslate = parseFloat(transYRegex.exec(this.firstImage.style.transform)[1]) + 0.4;
-        secondTranslate = parseFloat(transYRegex.exec(this.secondImage.style.transform)[1]) - 0.45;
-        thirdTranslate = parseFloat(transYRegex.exec(this.thirdImage.style.transform)[1]) + 0.35;
-        fourthTranslate = parseFloat(transYRegex.exec(this.fourthImage.style.transform)[1]) - 0.45;
-        fifthTranslate = parseFloat(transYRegex.exec(this.fifthImage.style.transform)[1]) + 0.4;
-        sixthTranslate = parseFloat(transYRegex.exec(this.sixthImage.style.transform)[1]) - 0.3;
-      }
-    }
+    const y = window.pageYOffset - this.gallery.offsetTop;
+    const elements = [
+      { el: this.firstImage, velocity: 0.4 },
+      { el: this.secondImage, velocity: 0.35 }
+    ];
 
-    if (this.props.scrollTop >= (this.gallery.offsetTop - (height / 2)) &&
-    this.props.scrollTop <= (this.gallery.offsetTop + window.innerHeight)) {
-      // animate the gallery
-      this.firstImage.style.transform = `translateY(${firstTranslate}px)`;
-      this.secondImage.style.transform = `translateY(${secondTranslate}px)`;
-      this.thirdImage.style.transform = `translateY(${thirdTranslate}px)`;
-      this.fourthImage.style.transform = `translateY(${fourthTranslate}px)`;
-      this.fifthImage.style.transform = `translateY(${fifthTranslate}px)`;
-      this.sixthImage.style.transform = `translateY(${sixthTranslate}px)`;
-      this.firstText.style.transform = `translateY(${fourthTranslate}px)`;
-      this.secondText.style.transform = `translateY(${sixthTranslate}px)`;
-    } else {
-      // not animate the gallery
+    for (let i = elements.length - 1; i >= 0; i--) {
+      const diff = elements[i].el.offsetTop - y;
+      const y1 = diff * (elements[i].velocity || 0);
+      elements[i].el.style.transform = `translateY(${y1}px)`;
     }
   }
 
