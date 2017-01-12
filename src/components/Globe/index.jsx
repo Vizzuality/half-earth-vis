@@ -69,6 +69,7 @@ class GlobeComponent extends React.Component {
     }
 
     window.globe = this;
+
   }
 
   componentWillReceiveProps(nextProps) {
@@ -124,7 +125,18 @@ class GlobeComponent extends React.Component {
 
   addMarkers() {
     const locations = this.calculateLocations();
+    const containmarker = document.createElement('div');
+    containmarker.className = 'contain-marker';
+    // this.el.appendChild(containmarker);
     // Hector, you can make your magic here :)
+    for (let i = 0; i < locations.length; i++) {
+      const marker = document.createElement('div');
+      marker.className = 'marker';
+      // marker.style.transform = `translate(${locations[i].x}px, ${locations[i].y}px)`;
+      marker.style.left = `${locations[i].x}px`;
+      marker.style.top = `${locations[i].y}px`;
+      this.el.appendChild(marker);
+    }
   }
 
   /**
@@ -175,12 +187,13 @@ class GlobeComponent extends React.Component {
   calculateLocations() {
     return customData.map((data) => {
       // calculate the position
+      const id = data.id;
       const lat = data.Latitude;
       const lng = data.Longtitude;
       const radio = this.props.radius;
       const height = 6;
       const position = latLongToVector3(lat, lng, radio, height);
-      return Object.assign({}, position);
+      return Object.assign({}, position, id);
     });
   }
 
@@ -208,7 +221,7 @@ GlobeComponent.defaultProps = {
   scrollTop: 0,
   earthImage: earthImage,
   earthBumpImage: earthBumpImage,
-  scrollRotate: true,
+  scrollRotate: false,
 };
 
 GlobeComponent.propTypes = {
