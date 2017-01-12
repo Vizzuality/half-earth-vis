@@ -153,6 +153,11 @@ class GlobeComponent extends React.Component {
   //     marker.style.left = `${locations[i].x}px`;
   //     marker.style.top = `${locations[i].y}px`;
   //     marker.style.transform = `translate(${this.props.width / 2}px, ${this.props.height / 2}px)`;
+  //     marker.onclick = function showmodal() {
+          //   document.querySelector('.c-modal').style.left = '0';
+          //   document.querySelector('.title-modal').innerHTML = information[i].region;
+          //   document.querySelector('.description-modal').style.left = information[i].description;
+          // };
   //     this.el.appendChild(marker);
   //     return marker;
   //   });
@@ -165,6 +170,9 @@ class GlobeComponent extends React.Component {
   //     }
   //   }
   // }
+
+  showmodal() {
+  }
 
   /**
    * Rotate globe to given angle in X axis
@@ -204,16 +212,29 @@ class GlobeComponent extends React.Component {
     this.markers = markers;
   }
 
+  removeMarkers() {
+  }
+
   calculateLocations() {
     return customData.map((data) => {
       // calculate the position
-      const id = data.id;
       const lat = data.Latitude;
       const lng = data.Longtitude;
       const radio = this.props.radius;
       const height = 6;
       const position = latLongToVector3(lat, lng, radio, height);
-      return Object.assign({}, position, id);
+      return Object.assign({}, position);
+    });
+  }
+
+  getInfoModal() {
+    return customData.map((data) => {
+      return {
+        id: data.ID,
+        region: data.Region,
+        place: data.Places,
+        description: data.Description
+      };
     });
   }
 
