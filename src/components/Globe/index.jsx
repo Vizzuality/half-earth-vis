@@ -126,7 +126,8 @@ class GlobeComponent extends React.Component {
     const locations = this.calculateLocations();
     const information = this.getInfoModal();
     for (let i = 0; i < locations.length; i++) {
-      const marker = document.createElement('div');
+      const marker = document.createElement('img');
+      marker.src = './src/components/Globe/images/marker.png';
       marker.className = 'marker';
       marker.style.left = `${locations[i].x}px`;
       marker.style.top = `${locations[i].y}px`;
