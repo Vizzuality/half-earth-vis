@@ -2,10 +2,16 @@
   background-image: url('./images/halo.png');
   background-repeat: no-repeat;
   background-position: center;
+  width: 100%;
+  height: 100%;
 
   > canvas {
     width: 100%;
     height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
   }
 
   .marker {
@@ -16,11 +22,56 @@
     cursor: pointer;
   }
 
-  select {
+  .contain-checks {
     position: absolute;
-    right: -30px;
-    bottom: 0;
-    z-index: 5;
-
+    z-index: 10;
+    display: flex;
+    right: 35px;
+    bottom: 35px;
+    flex-direction: column;
   }
+
+  .label-contain {
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    label {
+      margin-left: 10px;
+      font-size: 18px;
+    }
+  }
+
+  .select-legend {
+    border: 1px solid #fff;
+    width: 35px;
+    height: 20px;
+    border-radius: 25px;
+    outline: 0;
+    background: transparent;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -webkit-transition: .25s;
+
+    &::after {
+      display: block;
+      position: relative;
+      top: 3px;
+      left: 3px;
+      width: 12px;
+      height: 12px;
+      border-radius: 12px;
+      background-color: #fff;
+      content: '';
+    }
+    &.-selected {
+      padding-right: 0;
+      padding-left: 15px;
+     }
+   }
 }

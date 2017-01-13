@@ -140,14 +140,13 @@ class GlobeComponent extends React.Component {
   }
 
   setTexture(e) {
-    const value = e.target.value;
-    if (value === 'one') {
-      this.earth.material.map = this.imageLoader.load(this.props.earthImage);
+    const target = e.target;
+    const checks = document.querySelectorAll('.select-legend');
+    for(let i = 0; i < checks.length; i++) {
+      checks[i].classList.remove('-selected');
     }
-    if (value === 'two') {
-      this.earth.material.map = this.imageLoader.load(this.props.earthBumpImage);
-    }
-    this.earth.material.needsUpdate = true;
+    target.classList.add('-selected');
+    this.earth.material.map = this.imageLoader.load(target.getAttribute('data-layer'));
   }
 
   showmodal(title, description) {
@@ -238,10 +237,20 @@ class GlobeComponent extends React.Component {
   render() {
     return (
         <div ref={(node) => this.el = node} className="vizz-component-globe z2">
-          <select onChange={(e) => this.setTexture(e)}>
-            <option value="one">one</option>
-            <option value="two">two</option>
-          </select>
+          <div className="contain-checks">
+            <div className="label-contain">
+              <input className="select-legend -selected" id="protected" data-layer={earthImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
+              <label htmlFor="protected">Protected Areas</label>
+            </div>
+            <div className="label-contain">
+              <input className="select-legend" id="eco" data-layer="./src/images/deer.jpg" type="checkbox" onChange={(e) => this.setTexture(e)}></input>
+              <label htmlFor="eco">Eco-regions</label>
+            </div>
+            <div className="label-contain">
+              <input className="select-legend" id="animalia" data-layer="./src/images/elephants.jpg" type="checkbox" onChange={(e) => this.setTexture(e)}></input>
+              <label htmlFor="animalia">Animalia</label>
+            </div>
+          </div>
         </div>
     );
   }

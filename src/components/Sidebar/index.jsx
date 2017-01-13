@@ -25,11 +25,6 @@ class SidebarComponent extends React.Component {
             </a>
           </div>
         </div>
-        <div className="info-world">
-          <p>
-            *Touch and move the world with mouse.
-          </p>
-        </div>
       </aside>
     );
   }

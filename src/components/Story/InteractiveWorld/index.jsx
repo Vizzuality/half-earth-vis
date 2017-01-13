@@ -28,7 +28,7 @@ class InteractiveWorld extends React.Component {
       maxY: this.interactive.offsetTop
     };
 
-    const info = document.querySelector('.info-world');
+    const info = document.querySelector('.contain-checks');
     const isInfoShow = this.props.scrollTop > (state.minY - 200);
 
     if (isInfoShow) {
