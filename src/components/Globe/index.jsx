@@ -167,18 +167,20 @@ class GlobeComponent extends React.Component {
    * Method to add markers on globe
    */
   addMarkers() {
-    const material = new THREE.MeshBasicMaterial({ color: 0xff0000, side: THREE.DoubleSide });
+    const material = new THREE.MeshBasicMaterial({ color: 0x1bcec7, side: THREE.DoubleSide });
     const markers = [];
+    const markerRadio = 5;
+    const segments = 64;
 
     for (let i = customData.length - 1; i >= 0; i--) {
       // calculate the position
       const lat = customData[i].Latitude;
       const lng = customData[i].Longtitude;
       const radio = this.props.radius;
-      const height = 6;
+      const height = 5;
       const position = latLongToVector3(lat, lng, radio, height);
 
-      const geometry = new THREE.PlaneGeometry(14, 20);
+      const geometry = new THREE.CircleGeometry(markerRadio, segments);
       const marker = new THREE.Mesh(geometry, material);
 
       marker.position.set(position.x, position.y, position.z);
