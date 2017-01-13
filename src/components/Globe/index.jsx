@@ -194,9 +194,14 @@ class GlobeComponent extends React.Component {
     this.markers = markers;
   }
 
+  /**
+   * Removing markers from globe
+   */
   removeMarkers() {
     if (this.markers && this.markers.length) {
-      // Remove markers
+      for (var i = this.markers.length - 1; i >= 0; i--) {
+        this.scene.remove(this.markers[i]);
+      }
     }
   }
 
