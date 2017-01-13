@@ -142,12 +142,12 @@ class GlobeComponent extends React.Component {
   setTexture(e) {
     const value = e.target.value;
     if (value === 'one') {
-      this.earth.material.needsUpdate = this.imageLoader.load('src/images/earth-clouds.jpg');
+      this.earth.material.map = this.imageLoader.load(this.props.earthImage);
     }
     if (value === 'two') {
-      this.earth.material.needsUpdate = this.imageLoader.load('src/images/bg-stars-large.jpg');
+      this.earth.material.map = this.imageLoader.load(this.props.earthBumpImage);
     }
-    // this.earth.material.needsUpdate = this.imageLoader.load(imagePath);
+    this.earth.material.needsUpdate = true;
   }
 
   showmodal(title, description) {
