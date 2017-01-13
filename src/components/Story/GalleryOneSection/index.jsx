@@ -27,8 +27,10 @@ class GalleryOneSection extends React.Component {
   moveGallery() {
     const y = window.pageYOffset - this.gallery.offsetTop;
     const elements = [
-      { el: this.firstImage, velocity: 0.4 },
-      { el: this.secondImage, velocity: 0.35 }
+      { el: this.thirdImage, velocity: 0.1 },
+      { el: this.secondImage, velocity: 0.05 },
+      { el: this.fourthImage, velocity: 0.2 }
+      { el: this.fifthImage, velocity: 0.16 }
     ];
 
     for (let i = elements.length - 1; i >= 0; i--) {
