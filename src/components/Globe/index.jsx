@@ -20,8 +20,7 @@ class GlobeComponent extends React.Component {
     super(props);
     this.state = {
       scrollTop: props.scrollTop,
-      markers: false,
-      texture: false
+      markers: false
     };
   }
 
@@ -112,16 +111,13 @@ class GlobeComponent extends React.Component {
     const changeWorldOne = galeryOne.offsetTop < this.state.scrollTop;
     const changeWorldTwo = galeryTwo.offsetTop < this.state.scrollTop;
 
-    console.log(changeWorldOne);
 
-    if (changeWorldOne) {
-      console.log('one');
+    if (changeWorldOne && !changeWorldTwo) {
       if (this.imageTexture === earthImage) {
         this.earth.material.map = this.imageLoader.load(protectedImage);
         this.imageTexture = protectedImage;
       }
     } else {
-      console.log('two');
       if (this.imageTexture === protectedImage) {
         this.earth.material.map = this.imageLoader.load(earthImage);
         this.imageTexture = earthImage;
@@ -129,7 +125,6 @@ class GlobeComponent extends React.Component {
     }
 
     if (changeWorldTwo) {
-      console.log(this.imageTexture, protectedImage);
       if (this.imageTexture === protectedImage) {
         this.earth.material.map = this.imageLoader.load(earthImage);
         this.imageTexture = earthImage;
