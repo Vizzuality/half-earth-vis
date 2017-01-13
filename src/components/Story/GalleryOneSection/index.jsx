@@ -29,7 +29,7 @@ class GalleryOneSection extends React.Component {
     const elements = [
       { el: this.thirdImage, velocity: 0.1 },
       { el: this.secondImage, velocity: 0.05 },
-      { el: this.fourthImage, velocity: 0.2 }
+      { el: this.fourthImage, velocity: 0.2 },
       { el: this.fifthImage, velocity: 0.16 }
     ];
 
