@@ -11,6 +11,7 @@ import earthBumpImage from './images/earth-bump.jpg';
 import { latLongToVector3, addStats } from './utils';
 
 const Control = orbitControl(THREE);
+const markersShow = false;
 
 const imageTexture = earthImage;
 
@@ -32,6 +33,7 @@ class GlobeComponent extends React.Component {
     };
 
     this.imageTexture = earthImage;
+    this.markersShow = false;
 
     const width = this.props.width;
     const height = this.props.height;
@@ -134,21 +136,13 @@ class GlobeComponent extends React.Component {
 
     const conditional = interactive.offsetTop < this.state.scrollTop;
     if (conditional) {
-      if (!this.state.markers) {
+      if (!this.markersShow) {
         this.addMarkers();
       }
-      this.setState(
-        {
-          markers: true
-        }
-      );
+      this.markersShow = true;
     } else {
       this.removeMarkers();
-      this.setState(
-        {
-          markers: false
-        }
-      );
+      this.markersShow = false;
     }
   }
 
