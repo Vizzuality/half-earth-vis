@@ -12,20 +12,27 @@ import { latLongToVector3, addStats } from './utils';
 
 const Control = orbitControl(THREE);
 
+const imageTexture = earthImage;
+
 class GlobeComponent extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
       scrollTop: props.scrollTop,
-      markers: false
+      markers: false,
+      texture: false
     };
   }
 
   componentDidMount() {
     this.state = {
-      scrollTop: this.props.scrollTop
+      scrollTop: this.props.scrollTop,
+      markers: false,
+      texture: false
     };
+
+    this.imageTexture = earthImage;
 
     const width = this.props.width;
     const height = this.props.height;
@@ -63,10 +70,8 @@ class GlobeComponent extends React.Component {
       window.addEventListener('scroll', function(e) {
         const st = window.pageYOffset || document.documentElement.scrollTop;
         if (st > lastScrollTop) {
-          // downscroll code
           this.rotateX(1);
         } else {
-          // upscroll code
           this.rotateX(-1);
         }
         lastScrollTop = st;
@@ -97,11 +102,41 @@ class GlobeComponent extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const interactive = document.querySelector('.c-interactive-world-section');
+    const galeryOne = document.querySelector('.c-gallery-one-section');
+    const galeryTwo = document.querySelector('.c-gallery-two-section');
     this.setState(
       {
         scrollTop: nextProps.scrollTop
       }
     );
+    const changeWorldOne = galeryOne.offsetTop < this.state.scrollTop;
+    const changeWorldTwo = galeryTwo.offsetTop < this.state.scrollTop;
+
+    console.log(changeWorldOne);
+
+    if (changeWorldOne) {
+      console.log('one');
+      if (this.imageTexture === earthImage) {
+        this.earth.material.map = this.imageLoader.load(protectedImage);
+        this.imageTexture = protectedImage;
+      }
+    } else {
+      console.log('two');
+      if (this.imageTexture === protectedImage) {
+        this.earth.material.map = this.imageLoader.load(earthImage);
+        this.imageTexture = earthImage;
+      }
+    }
+
+    if (changeWorldTwo) {
+      console.log(this.imageTexture, protectedImage);
+      if (this.imageTexture === protectedImage) {
+        this.earth.material.map = this.imageLoader.load(earthImage);
+        this.imageTexture = earthImage;
+      }
+      this.imageTexture = earthImage;
+    }
+
     const conditional = interactive.offsetTop < this.state.scrollTop;
     if (conditional) {
       if (!this.state.markers) {
@@ -157,11 +192,12 @@ class GlobeComponent extends React.Component {
   setTexture(e) {
     const target = e.target;
     const checks = document.querySelectorAll('.select-legend');
-    for(let i = 0; i < checks.length; i++) {
+    for (let i = 0; i < checks.length; i++) {
       checks[i].classList.remove('-selected');
     }
     target.classList.add('-selected');
     this.earth.material.map = this.imageLoader.load(target.getAttribute('data-layer'));
+    this.imageTexture = target.getAttribute('data-layer');
   }
 
   showmodal(title, description) {
