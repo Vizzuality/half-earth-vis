@@ -1,0 +1,16 @@
+@import '../../styles/settings';
+
+.c-story {
+  margin-bottom: 100vh;
+}
+
+.text-section {
+  p {
+    color: $white;
+    font-family: $font-family-base;
+    font-size: $font-size-text-section;
+    letter-spacing: $letter-spacing-text-section;
+    line-height: 1.83;
+    text-shadow: 0 1px 4px rgba($base-font-color, .2);
+  }
+}

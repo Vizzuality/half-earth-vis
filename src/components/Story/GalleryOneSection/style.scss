@@ -1,0 +1,91 @@
+@import '../../../styles/settings';
+
+.c-gallery-one-section {
+  position: relative;
+  height: 1240px;
+  margin-top: 180px;
+
+  .wrap {
+    position: relative;
+  }
+
+  .text-section {
+    position: absolute;
+
+    &.first {
+      top: 710px;
+      right: 0;
+      z-index: 1;
+    }
+
+    &.second {
+      top: 1100px;
+      left: 0;
+    }
+  }
+
+  img {
+    position: absolute;
+    transition: $animation-cubic;
+    box-shadow: -10px 10px 0 0 rgba($pattern-color, .3);
+
+    &.first-image-one {
+      top: 0;
+      max-width: 250px;
+      z-index: 1;
+    }
+
+    &.second-image-one {
+      top: 150px;
+      left: 110px;
+      max-width: 430px;
+      z-index: 2;
+    }
+
+    &.fourth-image-one {
+      top: 710px;
+      left: 200px;
+      max-width: 340px;
+      z-index: 1;
+    }
+
+    &.sixth-image-one {
+      top: 920px;
+      right: 180px;
+      max-width: 340px;
+    }
+  }
+
+  .large-image {
+    position: relative;
+    width: 50%;
+    height: 1px;
+    float: left;
+  }
+
+  .third-image-one,
+  .fifth-image-one {
+    position: absolute;
+    transition: $animation-cubic;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .third-image-one {
+    top: 410px;
+    width: calc(100% + 90px);
+    height: 480px;
+    background-image: url('assets/meanders.jpg');
+    box-shadow: -10px 10px 0 0 rgba($pattern-color, .3);
+  }
+
+  .fifth-image-one {
+    top: 240px;
+    left: 20px;
+    width: calc(100% - 20px);
+    height: 420px;
+    background-image: url('assets/lake.jpg');
+    box-shadow: 10px 10px 0 0 rgba($pattern-color, .3);
+  }
+
+}

@@ -1,0 +1,115 @@
+@import '../../styles/settings';
+
+.c-scroll-animation {
+  display: flex;
+  position: absolute;
+  bottom: $medium-margin;
+  left: 50%;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(-50%);
+  transition: .4s $cubic;
+
+  &.-hidden {
+    opacity: 0;
+  }
+
+  .footnote {
+    margin-top: $small-margin;
+    color: rgba($white, .6);
+    font-size: $base-font-size;
+  }
+
+  .arrow {
+    display: block;
+    width: 8px;
+    height: 8px;
+    margin: 0 0 1px;
+    transform: rotate(45deg);
+    border-right: 2px solid rgba($white, .6);
+    border-bottom: 2px solid rgba($white, .6);
+
+
+    .-one,
+    .-two {
+      animation: mouse-scroll 1s infinite;
+    }
+
+    .-one {
+      margin-top: 6px;
+      animation-delay: .1s;
+      animation-direction: alternate;
+    }
+
+    .-two {
+      animation-delay: .2s;
+      animation-direction: alternate;
+    }
+  }
+
+  .mouse {
+    top: 170px;
+    width: 20px;
+    height: 34px;
+    margin-bottom: 3px;
+    transform: none;
+    border: 2px solid rgba($white, .6);
+    border-radius: 10px;
+  }
+
+  .wheel {
+    display: block;
+    position: relative;
+    width: 2px;
+    height: 5px;
+    margin: 5px auto;
+    background: $white;
+    animation: mouse-wheel 1.2s ease infinite;
+  }
+
+  @-webkit-keyframes mouse-wheel
+  {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(6px);
+      opacity: 0;
+    }
+  }
+
+  @-moz-keyframes mouse-wheel
+  {
+    0% { top: 1px; }
+    50% { top: 2px; }
+    100% { top: 3px;}
+  }
+
+  @-webkit-keyframes mouse-scroll {
+
+    0%   { opacity: 0;}
+    50%  { opacity: .5;}
+    100% { opacity: 1;}
+  }
+  @-moz-keyframes mouse-scroll {
+
+    0%   { opacity: 0; }
+    50%  { opacity: .5; }
+    100% { opacity: 1; }
+  }
+
+  @-o-keyframes mouse-scroll {
+
+    0%   { opacity: 0; }
+    50%  { opacity: .5; }
+    100% { opacity: 1; }
+  }
+  @keyframes mouse-scroll {
+
+    0%   { opacity: 0; }
+    50%  { opacity: .5; }
+    100% { opacity: 1; }
+  }
+}

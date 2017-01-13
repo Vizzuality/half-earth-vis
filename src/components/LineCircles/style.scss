@@ -1,0 +1,53 @@
+@import '../../styles/settings';
+
+.c-line-circles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  transition: .4s $cubic;
+  opacity: 0;
+
+  img {
+    display: block;
+    position: fixed;
+    top: -100%;
+    right: -100%;
+    bottom: -100%;
+    left: -100%;
+    margin: auto;
+    transform-origin: 50% 50%;
+    z-index: 11;
+
+    &.-spin {
+      animation: spin infinite 25s linear;
+    }
+
+    &.-spin-reverse {
+      animation: spinReverse infinite 20s linear;
+    }
+
+    &.-spin-reverse-slow {
+      animation: spinReverse infinite 40s linear;
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinReverse {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}

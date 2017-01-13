@@ -1,13 +1,16 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 const path = require('path');
+
+const env = process.env.NODE_ENV || 'development';
 
 const config = {
 
   context: path.join(__dirname, 'src'),
 
   entry: [
-    './app.js'
+    './app.jsx'
   ],
 
   output: {
@@ -18,9 +21,10 @@ const config = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules\/(?!vizz-*)/
+
       },
       {
         test: /\.json$/,
@@ -28,7 +32,7 @@ const config = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        loader: 'style-loader!css-loader!postcss-loader'
       },
       {
         test: /\.(scss|sass)$/,
@@ -45,8 +49,12 @@ const config = {
     ]
   },
 
+  postcss() {
+    return [autoprefixer];
+  },
+
   resolve: {
-    extensions: ['', '.js', '.jsx', 'css', '.scss']
+    extensions: ['', '.js', '.jsx', '.css']
   },
 
   plugins: [
@@ -58,13 +66,17 @@ const config = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new webpack.DefinePlugin({})
+    new webpack.DefinePlugin({
+      config: {
+        env: JSON.stringify(env)
+      }
+    })
   ]
 
 };
 
 // Environment configuration
-if (process.env.NODE_ENV === 'production') {
+if (env === 'production') {
   config.plugins.push(new webpack.optimize.UglifyJsPlugin({
     compress: {
       warnings: false,

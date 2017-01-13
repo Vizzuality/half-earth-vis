@@ -1,0 +1,13 @@
+@import '../../../styles/settings';
+
+.c-range-half-section {
+  display: table;
+  position: relative;
+  padding-top: 685px;
+
+  .text-section {
+    position: absolute;
+    right: 0;
+  }
+
+}

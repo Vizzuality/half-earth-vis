@@ -1,0 +1,31 @@
+@import '../../styles/settings';
+
+.c-ranger-d3 {
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .2s $cubic;
+  opacity: 0;
+  animation: fadeIn .2s $cubic;
+
+  &.-hidden {
+    opacity: 0;
+  }
+
+  &.-invisible {
+    display: none;
+  }
+
+  .outer-arc {
+    opacity: .2;
+  }
+
+  .text-left,
+  .text-right {
+    font-size: 14px;
+    text-transform: uppercase;
+    fill: $white;
+  }
+}

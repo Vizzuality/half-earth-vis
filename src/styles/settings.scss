@@ -3,16 +3,34 @@ $font-color: #1bcec7;
 $pattern-color: #000;
 $bg-color: #1b65a3;
 $heading-color: #63cc30;
-$white: #ffffff;
+$white: #fff;
+$back-modal: #f4f4f4;
+$text-modal: #292f6e;
 
 //Fonts
 $base-font-color: $white;
-$font-family-base: "pier-sans-regular", Helvetica, Arial, sans-serif;
-$font-size-h1: 36px;
+$font-family-base: 'pier-sans-regular', Helvetica, Arial, sans-serif;
+$font-size-h1: 60px;
+$font-size-h1-laptop: 45px;
+$font-size-h2: 30px;
+$font-size-text-section: 24px;
 $base-font-size: 18px;
 
 $font-weight-bold: bold;
 $letter-spacing-h1: 30px;
+$letter-spacing-h2: 7px;
+$letter-spacing-text-section: .6px;
 
 //Margins
-$small-margin: 23px;
+$small-margin: 20px;
+$medium-margin: 40px;
+$large-margin: 80px;
+
+//Wrap
+
+// Animation
+$animation-cubic: .1s cubic-bezier(.445, .05, .55, .95);
+$cubic: cubic-bezier(.445, .05, .55, .95);
+
+// Break Points
+// laptop mac 1281px

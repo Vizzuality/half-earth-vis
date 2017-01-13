@@ -1,0 +1,56 @@
+@import '../../styles/settings';
+
+.c-header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: $small-margin;
+
+
+  .brand {
+    display: block;
+
+    > img {
+      display: block;
+      width: 107px;
+      height: 50px;
+      object-fit: contain;
+    }
+  }
+
+  .menu {
+
+    ul {
+      list-style: none;
+
+      li {
+        display: inline-block;
+        margin-right: $medium-margin;
+
+        a,
+        span {
+          color: $white;
+          font-size: $base-font-size;
+          text-decoration: none;
+          cursor: pointer;
+
+        }
+
+        &.round {
+          padding: 10px 20px;
+          border: 2px solid $heading-color;
+          border-radius: 100px;
+
+          a {
+            color: $heading-color;
+          }
+        }
+      }
+    }
+  }
+}

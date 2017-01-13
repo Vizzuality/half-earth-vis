@@ -1,0 +1,15 @@
+@import '../../../styles/settings';
+
+.c-video-section {
+  position: relative;
+  height: calc(100vh - 50px);
+  margin-top: 340px;
+
+  .video-player {
+    min-width: 100%;
+    height: 100%;
+    transition: .7s ease;
+    font-family: 'object-fit: fill;';
+    object-fit: fill;
+  }
+}

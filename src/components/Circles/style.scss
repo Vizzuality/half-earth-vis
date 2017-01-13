@@ -1,0 +1,20 @@
+@import '../../styles/settings';
+
+.c-circles {
+  position: fixed;
+  top: calc(50% - 50vh);
+  left: calc(50% - 50vh);
+  transform: translate(-50%, -50%);
+  transition: .4s $cubic;
+
+  .animate-pulse,
+  .animate-pulse-second,
+  .animate-pulse-third {
+    position: absolute;
+    width: 100vh;
+    height: 100vh;
+    border-radius: 100vh;
+    background-color: $white;
+    opacity: 0;
+  }
+}
