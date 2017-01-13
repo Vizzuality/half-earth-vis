@@ -4,7 +4,9 @@ import orbitControl from './control';
 import customData from './assets/data.json';
 
 import './style.scss';
-import earthImage from './images/earth-clouds.jpg';
+import earthImage from './images/globe/1-clean.jpg';
+import animaliaImage from './images/globe/animmalia-2.jpg';
+import protectedImage from './images/globe/protected-areas-2.jpg';
 import earthBumpImage from './images/earth-bump.jpg';
 import { latLongToVector3, addStats } from './utils';
 
@@ -256,11 +258,11 @@ class GlobeComponent extends React.Component {
               <label htmlFor="protected">Protected Areas</label>
             </div>
             <div className="label-contain">
-              <input className="select-legend" id="eco" data-layer="./src/images/deer.jpg" type="checkbox" onChange={(e) => this.setTexture(e)}></input>
+              <input className="select-legend" id="eco" data-layer={animaliaImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
               <label htmlFor="eco">Eco-regions</label>
             </div>
             <div className="label-contain">
-              <input className="select-legend" id="animalia" data-layer="./src/images/elephants.jpg" type="checkbox" onChange={(e) => this.setTexture(e)}></input>
+              <input className="select-legend" id="animalia" data-layer={protectedImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
               <label htmlFor="animalia">Animalia</label>
             </div>
           </div>
