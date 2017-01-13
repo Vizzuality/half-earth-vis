@@ -15,7 +15,8 @@ class GlobeComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      scrollTop: props.scrollTop
+      scrollTop: props.scrollTop,
+      markers: false
     };
   }
 
@@ -99,12 +100,24 @@ class GlobeComponent extends React.Component {
         scrollTop: nextProps.scrollTop
       }
     );
-    // const conditional = interactive.offsetTop < this.state.scrollTop;
-    // if (conditional) {
-    //   this.addMarkers();
-    // } else {
-    //   this.removeMarkers();
-    // }
+    const conditional = interactive.offsetTop < this.state.scrollTop;
+    if (conditional) {
+      if (!this.state.markers) {
+        this.addMarkers();
+      }
+      this.setState(
+        {
+          markers: true
+        }
+      );
+    } else {
+      this.removeMarkers();
+      this.setState(
+        {
+          markers: false
+        }
+      );
+    }
   }
 
   addControls() {
