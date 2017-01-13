@@ -7,6 +7,7 @@ import './style.scss';
 import earthImage from './images/globe/1-clean.jpg';
 import animaliaImage from './images/globe/animmalia-2.jpg';
 import protectedImage from './images/globe/protected-areas-2.jpg';
+import ecoImage from './images/globe/eco-regions.jpg';
 import earthBumpImage from './images/earth-bump.jpg';
 import { latLongToVector3, addStats } from './utils';
 
@@ -179,14 +180,24 @@ class GlobeComponent extends React.Component {
   }
 
   setTexture(e) {
+    let same = false;
     const target = e.target;
+    if (e.target.classList.contains('-selected')) {
+      same = true;
+    }
     const checks = document.querySelectorAll('.select-legend');
     for (let i = 0; i < checks.length; i++) {
       checks[i].classList.remove('-selected');
     }
-    target.classList.add('-selected');
-    this.earth.material.map = this.imageLoader.load(target.getAttribute('data-layer'));
-    this.imageTexture = target.getAttribute('data-layer');
+    if (!same) {
+      target.classList.add('-selected');
+      this.earth.material.map = this.imageLoader.load(target.getAttribute('data-layer'));
+      this.imageTexture = target.getAttribute('data-layer');
+    } else {
+      this.earth.material.map = this.imageLoader.load(earthImage);
+      this.imageTexture = earthImage;
+    }
+
   }
 
   showmodal(title, description) {
@@ -281,15 +292,15 @@ class GlobeComponent extends React.Component {
         <div ref={(node) => this.el = node} className="vizz-component-globe z2">
           <div className="contain-checks">
             <div className="label-contain">
-              <input className="select-legend -selected" id="protected" data-layer={earthImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
+              <input className="select-legend" id="protected" data-layer={protectedImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
               <label htmlFor="protected">Protected Areas</label>
             </div>
             <div className="label-contain">
-              <input className="select-legend" id="eco" data-layer={animaliaImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
+              <input className="select-legend" id="eco" data-layer={ecoImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
               <label htmlFor="eco">Eco-regions</label>
             </div>
             <div className="label-contain">
-              <input className="select-legend" id="animalia" data-layer={protectedImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
+              <input className="select-legend" id="animalia" data-layer={animaliaImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
               <label htmlFor="animalia">Animalia</label>
             </div>
           </div>
