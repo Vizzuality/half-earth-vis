@@ -13,7 +13,7 @@ export function latLongToVector3(lat, lon, radius, heigth) {
 
 export function addStats() {
   const scriptElement = document.createElement('script');
-  scriptElement.onload = function () {
+  scriptElement.onload = function onLoad() {
     const stats = new Stats();
     document.body.appendChild(stats.dom);
     requestAnimationFrame(function loop() {

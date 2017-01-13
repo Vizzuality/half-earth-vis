@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --progress --colors",
-    "test": "./node_modules/.bin/eslint . && ./node_modules/.bin/jscs ./src",
+    "test": "./node_modules/.bin/eslint .",
     "build": "NODE_ENV=production ./node_modules/.bin/webpack",
     "publish": "NODE_ENV=production yarn run build && node ./scripts/publish"
   },
