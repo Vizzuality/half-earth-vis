@@ -45,6 +45,10 @@ const config = {
       {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'url-loader?prefix=image/&limit=5000&context=./src/images'
+      },
+      {
+        test: /\.mp4$/,
+        loader: 'url-loader?limit=8192'
       }
     ]
   },
