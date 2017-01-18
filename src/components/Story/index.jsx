@@ -3,7 +3,6 @@ import CoverStorySection from './CoverStorySection';
 import MeshSection from './MeshSection';
 import GalleryOneSection from './GalleryOneSection'; // first gallery
 import RangeSection from './RangeSection';
-import RangeHalfSection from './RangeHalfSection';
 import GalleryTwoSection from './GalleryTwoSection';
 import CirclesSection from './CirclesSection';
 import VideoSection from './VideoSection';
@@ -39,7 +38,6 @@ class Story extends React.Component {
         <MeshSection scrollTop={this.state.scrollTop} />
         <GalleryOneSection scrollTop={this.state.scrollTop} direction={this.state.direction} />
         <RangeSection scrollTop={this.state.scrollTop} />
-        <RangeHalfSection scrollTop={this.state.scrollTop} />
         <GalleryTwoSection scrollTop={this.state.scrollTop} direction={this.state.direction} />
         <CirclesSection />
         <VideoSection scrollTop={this.state.scrollTop} />
