@@ -16,9 +16,7 @@ class RangerD3 extends React.Component {
     this.createRangeD3();
   }
 
-  componentDidUpdate() {
-
-  }
+  componentDidUpdate() {}
 
   createRangeD3() {
     const width = this.props.width + 300;
