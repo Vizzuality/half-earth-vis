@@ -10,7 +10,7 @@ class Modal extends React.Component {
   render() {
     return (
       <div className="c-modal z4">
-        <div className="image">
+        <div className="image image-modal">
           {''}
         </div>
         <div className="information">
