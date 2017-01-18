@@ -39,6 +39,10 @@ class RangeSection extends React.Component{
     if (isRange) {
       containRange.style.opacity = '1';
     } else {
+      containRange.style.opacity = '0';
+    }
+
+    if (this.props.scrollTop > (state.maxY - (height / 3))) {
       containRange.style.opacity = '1';
     }
   }
