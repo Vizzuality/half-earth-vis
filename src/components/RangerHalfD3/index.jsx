@@ -2,14 +2,13 @@ import * as d3 from 'd3';
 import React from 'react';
 import './style.scss';
 
-
 class RangerD3 extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
       minY: 0,
       maxY: 0,
+      animation: 'no'
     };
   }
 
@@ -18,6 +17,7 @@ class RangerD3 extends React.Component {
   }
 
   componentDidUpdate() {
+
   }
 
   createRangeD3() {
@@ -69,19 +69,6 @@ class RangerD3 extends React.Component {
         .attr('class', 'inner-arc')
         .attr('transform', 'rotate(-140)');
 
-    function animateArc() {
-      animation.transition().duration(10500)
-        .attrTween('d', function (d) {
-          const start = { startAngle: 0, endAngle: (40 * ((Math.PI) / 180)) };
-          const interpolate = d3.interpolate(start, d);
-          return function (t) {
-            return arc2(interpolate(t));
-          };
-        });
-    }
-
-    animateArc();
-
     svg.append('text')
        .attr('text-anchor', 'middle')
        .attr('dy', ((radius / 4) + 20))
@@ -104,6 +91,19 @@ class RangerD3 extends React.Component {
        .attr('width', 16)
        .attr('height', 40)
        .style('fill', '#FFF');
+
+    function animateArc() {
+      animation.transition().duration(10500)
+       .attrTween('d', function (d) {
+         const start = { startAngle: 0, endAngle: (40 * ((Math.PI) / 180)) };
+         const interpolate = d3.interpolate(start, d);
+         return function (t) {
+           return arc2(interpolate(t));
+         };
+       });
+    }
+
+    animateArc();
   }
 
 

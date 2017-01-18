@@ -74,9 +74,19 @@ class AppComponent extends React.Component {
   render() {
     return (
       <div>
-        <Globe autorotate={this.state.rotate} width={700} height={700} scrollTop={this.state.scrollTop} />
+        <Globe
+          autorotate={this.state.rotate}
+          width={700}
+          height={700}
+          scrollTop={this.state.scrollTop}
+        />
         <Mesh width={700} height={700} />
-        <RangerHalfD3 width={700} height={700} />
+        <RangerHalfD3
+          scrollTop={this.state.scrollTop}
+          direction={this.state.direction}
+          width={700}
+          height={700}
+        />
         <Circles />
         <CirclesDark />
         <LineCircles />

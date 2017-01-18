@@ -27,6 +27,7 @@ class RangeHalfSection extends React.Component {
       { el: document.querySelector('.animate-pulse-third'), velocity: 1.6 },
     ];
 
+    const containRange = document.querySelector('.c-ranger-d3');
     const containBackTransparent = document.querySelector('.back-transparent');
     const containBackBlueOne = document.querySelector('.back-blue-one');
     const containBackBlueTwo = document.querySelector('.back-blue-two');
@@ -53,12 +54,9 @@ class RangeHalfSection extends React.Component {
     circleAnimationOpacity <= 0.6 ? null : circleAnimationOpacity = 0.6;
 
     if (isRange) {
-      // containRange.style.opacity = '1';
       containBackTransparent.style.opacity = '0';
       containBackBlueTwo.style.opacity = '0';
       containBackBlueOne.style.opacity = '1';
-    } else {
-      // containRange.style.opacity = '0';
     }
 
     if (this.props.scrollTop < (state.minY - (height / 3))) {
@@ -82,6 +80,10 @@ class RangeHalfSection extends React.Component {
         circles[i].el.style.transform = 'scale(0)';
       }
       containCircles.style.opacity = '0';
+    }
+
+    if (this.props.scrollTop > (state.maxY + (height / 2))) {
+      containRange.style.opacity = '0';
     }
   }
 
