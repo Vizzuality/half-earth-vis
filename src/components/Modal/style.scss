@@ -7,13 +7,158 @@
   width: 100%;
   height: 100vh;
   transition: .7s ease;
+  z-index: 10;
 
   .image {
     width: 60%;
     height: 100%;
     background: url('./assets/demo-min.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+
+    &.-modal1-image {
+      background: url('./assets/1.jpg');
+    }
+
+    &.-modal2-image {
+      background: url('./assets/2.jpg');
+    }
+
+    &.-modal3-image {
+      background: url('./assets/3.jpg');
+    }
+
+    &.-modal4-image {
+      background: url('./assets/4.jpg');
+    }
+
+    &.-modal5-image {
+      background: url('./assets/5.jpg');
+    }
+
+    &.-modal6-image {
+      background: url('./assets/6.jpg');
+    }
+
+    &.-modal7-image {
+      background: url('./assets/7.jpg');
+    }
+
+    &.-modal8-image {
+      background: url('./assets/8.jpg');
+    }
+
+    &.-modal9-image {
+      background: url('./assets/9.jpg');
+    }
+
+    &.-modal10-image {
+      background: url('./assets/10.jpg');
+    }
+
+    &.-modal11-image {
+      background: url('./assets/11.jpg');
+    }
+
+    &.-modal12-image {
+      background: url('./assets/12.jpg');
+    }
+
+    &.-modal13-image {
+      background: url('./assets/13.jpg');
+    }
+
+    &.-modal14-image {
+      background: url('./assets/14.jpg');
+    }
+
+    &.-modal15-image {
+      background: url('./assets/15.jpg');
+    }
+
+    &.-modal16-image {
+      background: url('./assets/16.jpg');
+    }
+
+    &.-modal17-image {
+      background: url('./assets/17.jpg');
+    }
+
+    &.-modal18-image {
+      background: url('./assets/18.jpg');
+    }
+
+    &.-modal19-image {
+      background: url('./assets/19.jpg');
+    }
+
+    &.-modal20-image {
+      background: url('./assets/20.jpg');
+    }
+
+    &.-modal21-image {
+      background: url('./assets/21.jpg');
+    }
+
+    &.-modal22-image {
+      background: url('./assets/22.jpg');
+    }
+
+    &.-modal23-image {
+      background: url('./assets/23.jpg');
+    }
+
+    &.-modal24-image {
+      background: url('./assets/24.jpg');
+    }
+
+    &.-modal25-image {
+      background: url('./assets/25.jpg');
+    }
+
+    &.-modal26-image {
+      background: url('./assets/26.jpg');
+    }
+
+    &.-modal27-image {
+      background: url('./assets/27.jpg');
+    }
+
+    &.-modal28-image {
+      background: url('./assets/28.jpg');
+    }
+
+    &.-modal29-image {
+      background: url('./assets/29.jpg');
+    }
+
+    &.-modal30-image {
+      background: url('./assets/30.jpg');
+    }
+
+    &.-modal31-image {
+      background: url('./assets/31.jpg');
+    }
+
+    &.-modal32-image {
+      background: url('./assets/32.jpg');
+    }
+
+    &.-modal33-image {
+      background: url('./assets/33.jpg');
+    }
+
+    &.-modal34-image {
+      background: url('./assets/34.jpg');
+    }
+
+    &.-modal35-image {
+      background: url('./assets/35.jpg');
+    }
+
+    &.-modal36-image {
+      background: url('./assets/36.jpg');
+    }
   }
 
   .information {

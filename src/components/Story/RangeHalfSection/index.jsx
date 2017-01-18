@@ -32,7 +32,7 @@ class RangeHalfSection extends React.Component {
     const containBackBlueTwo = document.querySelector('.back-blue-two');
 
     const height = this.range.offsetHeight;
-    const containRange = document.querySelector('.c-ranger-half-d3');
+    // const containRange = document.querySelector('.c-ranger-half-d3');
     const containCircles = document.querySelector('.c-circles');
     const state = {
       minY: this.range.offsetTop,
@@ -53,12 +53,12 @@ class RangeHalfSection extends React.Component {
     circleAnimationOpacity <= 0.6 ? null : circleAnimationOpacity = 0.6;
 
     if (isRange) {
-      containRange.style.opacity = '1';
+      // containRange.style.opacity = '1';
       containBackTransparent.style.opacity = '0';
       containBackBlueTwo.style.opacity = '0';
       containBackBlueOne.style.opacity = '1';
     } else {
-      containRange.style.opacity = '0';
+      // containRange.style.opacity = '0';
     }
 
     if (this.props.scrollTop < (state.minY - (height / 3))) {

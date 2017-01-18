@@ -7,13 +7,11 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Story from './components/Story';
 import Mesh from './components/Mesh';
-import RangerD3 from './components/RangerD3';
 import RangerHalfD3 from './components/RangerHalfD3';
 import Circles from './components/Circles';
 import CirclesDark from './components/CirclesDark';
 import BackgroundChange from './components/BackgroundChange';
 import LineCircles from './components/LineCircles';
-import Modal from './components/Modal';
 import './styles/index.scss';
 
 class AppComponent extends React.Component {
@@ -28,7 +26,6 @@ class AppComponent extends React.Component {
   }
 
   componentDidMount() {
-
     this.state = {
       scrollTop: window.pageYOffset
     };
@@ -79,7 +76,6 @@ class AppComponent extends React.Component {
       <div>
         <Globe autorotate={this.state.rotate} width={700} height={700} scrollTop={this.state.scrollTop} />
         <Mesh width={700} height={700} />
-        <RangerD3 width={700} height={700} />
         <RangerHalfD3 width={700} height={700} />
         <Circles />
         <CirclesDark />
@@ -88,7 +84,6 @@ class AppComponent extends React.Component {
         <Header />
         <Sidebar />
         <Story scrollTop={this.state.scrollTop} direction={this.state.direction} />
-        <Modal />
       </div>
     );
   }

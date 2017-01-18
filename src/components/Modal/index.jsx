@@ -3,14 +3,35 @@ import './style.scss';
 
 class Modal extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      image: props.image
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState(
+      {
+        image: nextProps.image
+      }
+    );
+    // this.image.style.background = { one };
+    // this.image.style.background = `url(${one})`;
+  }
+
   closeModal() {
-    document.querySelector('.c-modal').style.top = '100%';
+    this.el.style.top = '100%';
   }
 
   render() {
+    const imageClass = ['image', 'image-modal'];
+    if (this.props.image) {
+      imageClass.push(`-modal${this.props.image}-image`);
+    }
     return (
-      <div className="c-modal z4">
-        <div className="image image-modal">
+      <div className="c-modal" ref={(node) => this.el = node}>
+        <div className={imageClass.join(' ')} ref={(node) => this.image = node}>
           {''}
         </div>
         <div className="information">
@@ -21,16 +42,8 @@ class Modal extends React.Component {
             <span>esc</span>
           </div>
           <div className="contain-text">
-            <h2 className="title-modal"></h2>
-            <p className="description-modal">
-            Being very big, ancient, and tropical, Madagascar harbors a very
-            large and unique fauna and flora, with 70 percent or more of
-            its species found nowhere else... Examples of evolutionary
-             radiation in Madagascar´s animals are the may, yet closely
-             related, species of lemurs (primitive primates), chameleons,
-             vangid shrikes, ranid frogs, and among the twelve thousand
-             species of plants, complex palms, orchids, baobabs, and cactus-like Didiereaceae.
-           </p>
+            <h2 className="title-modal">{this.props.title}</h2>
+            <p className="description-modal">{this.props.description}</p>
           </div>
         </div>
       </div>

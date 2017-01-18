@@ -1,6 +1,7 @@
 import React from 'react';
 import * as THREE from 'three';
 import orbitControl from './control';
+import Modal from '../Modal';
 import customData from './assets/data.json';
 
 import './style.scss';
@@ -12,9 +13,6 @@ import earthBumpImage from './images/earth-bump.jpg';
 import { latLongToVector3, addStats } from './utils';
 
 const Control = orbitControl(THREE);
-const markersShow = false;
-
-const imageTexture = earthImage;
 
 class GlobeComponent extends React.Component {
 
@@ -22,7 +20,10 @@ class GlobeComponent extends React.Component {
     super(props);
     this.state = {
       scrollTop: props.scrollTop,
-      markers: false
+      markers: false,
+      modalImage: null,
+      modalText: null,
+      modalTitle: null
     };
   }
 
@@ -197,14 +198,15 @@ class GlobeComponent extends React.Component {
       this.earth.material.map = this.imageLoader.load(earthImage);
       this.imageTexture = earthImage;
     }
-
   }
 
   showmodal(title, description, id) {
-    document.querySelector('.image-modal').style.background = `url(./src/components/Modal/assets/${id}.jpg`;
     document.querySelector('.c-modal').style.top = '0';
-    document.querySelector('.title-modal').innerHTML = title;
-    document.querySelector('.description-modal').style.left = description;
+    this.setState({
+      modalText: description,
+      modalImage: id,
+      modalTitle: title
+    });
   }
 
   /**
@@ -219,6 +221,7 @@ class GlobeComponent extends React.Component {
    * Method to add markers on globe
    */
   addMarkers() {
+    document.querySelector('.c-header').classList.remove('z4');
     const material = new THREE.MeshBasicMaterial({ color: 0x1bcec7, side: THREE.DoubleSide });
     const markers = [];
     const markerRadio = 5;
@@ -251,6 +254,7 @@ class GlobeComponent extends React.Component {
    * Removing markers from globe
    */
   removeMarkers() {
+    document.querySelector('.c-header').classList.add('z4');
     if (this.markers && this.markers.length) {
       for (var i = this.markers.length - 1; i >= 0; i--) {
         this.scene.remove(this.markers[i]);
@@ -305,6 +309,11 @@ class GlobeComponent extends React.Component {
               <label htmlFor="animalia">Animalia</label>
             </div>
           </div>
+          <Modal
+            image={this.state.modalImage}
+            description={this.state.modalText}
+            title={this.state.modalTitle}
+          />
         </div>
     );
   }
