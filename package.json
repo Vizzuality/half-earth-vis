@@ -7,7 +7,7 @@
     "start": "./node_modules/.bin/webpack-dev-server --progress --colors",
     "test": "./node_modules/.bin/eslint .",
     "build": "NODE_ENV=production ./node_modules/.bin/webpack",
-    "publish": "NODE_ENV=production yarn run build && node ./scripts/publish"
+    "publish": "NODE_ENV=production npm run build && node ./scripts/publish"
   },
   "repository": {
     "type": "git",
