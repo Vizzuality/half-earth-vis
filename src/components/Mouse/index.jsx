@@ -7,7 +7,7 @@ class Mouse extends React.Component {
   render() {
     const activeClassName = this.props.active ? '' : ' -hidden';
     return (
-      <div className={'c-scroll-animation' + activeClassName}>
+      <div className="c-scroll-animation" ref={(c) => { this.mouse = c; }}>
         <div className="mouse">
         <div className="wheel"></div>
         </div>

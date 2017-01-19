@@ -3,12 +3,12 @@
 .c-scroll-animation {
   display: flex;
   position: absolute;
-  bottom: $medium-margin;
+  bottom: 60px;
   left: 50%;
   flex-direction: column;
   align-items: center;
   transform: translateX(-50%);
-  transition: .4s $cubic;
+  transition: 1s linear;
 
   &.-hidden {
     opacity: 0;
@@ -53,6 +53,7 @@
     height: 34px;
     margin-bottom: 3px;
     transform: none;
+    transition: .4s $cubic;
     border: 2px solid rgba($white, .6);
     border-radius: 10px;
   }
