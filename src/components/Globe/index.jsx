@@ -150,8 +150,8 @@ class GlobeComponent extends React.Component {
 
   addControls() {
     this.control = new Control(this.camera, this.renderer.domElement);
-    this.control.enableDamping = true;
-    this.control.dampingFactor = 0.1;
+    this.control.enableDamping = false;
+    this.control.dampingFactor = 0;
     this.control.autoRotate = this.props.autorotate;
     this.control.enablePan = false;
     this.control.enableZoom = false;
@@ -325,7 +325,7 @@ GlobeComponent.defaultProps = {
   height: 500,
   radius: 200,
   autorotate: true,
-  velocity: 0.05,
+  velocity: 0.1,
   scrollTop: 0,
   earthImage: earthImage,
   earthBumpImage: earthBumpImage,
