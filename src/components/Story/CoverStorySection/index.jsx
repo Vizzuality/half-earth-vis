@@ -19,6 +19,8 @@ class CoverStorySection extends React.Component {
       minY: this.cover.offsetTop,
       maxY: this.cover.offsetTop + window.innerHeight
     });
+    console.log(this.title);
+    this.title.style.opacity = '1';
   }
 
   componentWillReceiveProps(nextProps) {
@@ -29,7 +31,7 @@ class CoverStorySection extends React.Component {
     const isMouseActive = (this.state.scrollTop < ((this.state.maxY - this.state.minY) + 125) / 2);
     return (
       <div className="c-cover z3" ref={(c) => { this.cover = c; }}>
-        <h1>
+        <h1 ref={(c) => { this.title = c; }}>
           We  live<br />
           in a<br />
           disappearing<br />
