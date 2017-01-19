@@ -160,9 +160,10 @@ class GlobeComponent extends React.Component {
   }
 
   addLights() {
-    const ambientLight = new THREE.AmbientLight(0x333333);
-    this.directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    this.directionalLight.position.set(5, 3, 40);
+    const ambientLight = new THREE.AmbientLight(0x555555);
+    this.directionalLight = new THREE.PointLight(0xf6f6f6, 1);
+    this.directionalLight.position.set(-this.props.width / 2, this.props.height / 2, 1500);
+    // this.directionalLight.position.set(5, 3, 40);
     this.scene.add(ambientLight);
     this.scene.add(this.directionalLight);
   }
@@ -287,7 +288,7 @@ class GlobeComponent extends React.Component {
 
   draw() {
     requestAnimationFrame(this.draw.bind(this));
-    this.directionalLight.position.copy(this.camera.position);
+    // this.directionalLight.position.copy(this.camera.position);
     this.control.update();
     this.renderer.render(this.scene, this.camera);
   }
@@ -325,7 +326,7 @@ GlobeComponent.defaultProps = {
   height: 500,
   radius: 200,
   autorotate: true,
-  velocity: 0.1,
+  velocity: 0.25,
   scrollTop: 0,
   earthImage: earthImage,
   earthBumpImage: earthBumpImage,
