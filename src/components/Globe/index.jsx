@@ -160,8 +160,8 @@ class GlobeComponent extends React.Component {
   }
 
   addLights() {
-    const ambientLight = new THREE.AmbientLight(0x555555);
-    this.directionalLight = new THREE.PointLight(0xf6f6f6, 1);
+    const ambientLight = new THREE.AmbientLight(0x222222);
+    this.directionalLight = new THREE.PointLight(0xcfcfcf, 1);
     this.directionalLight.position.set(-this.props.width / 2, this.props.height / 2, 1500);
     // this.directionalLight.position.set(5, 3, 40);
     this.scene.add(ambientLight);
@@ -172,7 +172,7 @@ class GlobeComponent extends React.Component {
     const material = new THREE.MeshPhongMaterial({
       map: this.imageLoader.load(this.props.earthImage),
       bumpMap: this.imageLoader.load(this.props.earthBumpImage),
-      bumpScale: 2
+      bumpScale: 4
     });
     const geometry = new THREE.SphereGeometry(this.props.radius, 40, 30);
     const earth = new THREE.Mesh(geometry, material);
@@ -324,7 +324,7 @@ class GlobeComponent extends React.Component {
 GlobeComponent.defaultProps = {
   width: window.innerWidth,
   height: 500,
-  radius: 200,
+  radius: 226,
   autorotate: true,
   velocity: 0.25,
   scrollTop: 0,
