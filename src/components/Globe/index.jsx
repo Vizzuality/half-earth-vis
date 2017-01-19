@@ -160,7 +160,7 @@ class GlobeComponent extends React.Component {
   }
 
   addLights() {
-    const ambientLight = new THREE.AmbientLight(0x222222);
+    const ambientLight = new THREE.AmbientLight(0x444444);
     this.directionalLight = new THREE.PointLight(0xcfcfcf, 1);
     this.directionalLight.position.set(-this.props.width / 2, this.props.height / 2, 1500);
     // this.directionalLight.position.set(5, 3, 40);
