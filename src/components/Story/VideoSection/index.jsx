@@ -9,11 +9,13 @@ const keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
 class VideoSection extends React.Component{
 
   constructor(props) {
+    console.log(window.scrollY);
     super(props);
     this.state = {
       minY: 0,
       maxY: 0,
-      video: ''
+      video: '',
+      scroll: 0
     };
   }
 
@@ -25,10 +27,11 @@ class VideoSection extends React.Component{
     this.checkPlayVideo();
   }
 
-  openWorld(e) {
-    document.querySelector('.vizz-component-globe').classList.add('back');
-    document.querySelector('.vizz-component-globe').style.top = '50%';
-  }
+  //openWorld(e) {
+  //   console.log('hello');
+  //   document.querySelector('.vizz-component-globe').classList.add('back');
+  //   document.querySelector('.vizz-component-globe').style.top = '50%';
+  // }
 
   checkPlayVideo() {
     const containBackground = document.querySelector('.c-background-change');
@@ -39,23 +42,40 @@ class VideoSection extends React.Component{
       video: this.videoplayer
     };
 
-
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      document.querySelector('.vizz-component-globe').style.top = '150%';
-      document.querySelector('.vizz-component-globe').classList.add('max-z');
-    }
+     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+       document.querySelector('.vizz-component-globe').classList.add('back');
+       document.querySelector('canvas').classList.add('back');
+       this.video.classList.add('stop');
+       this.state = {
+         scroll: window.scrollY
+       };
+       setTimeout(function(){
+         document.querySelector('.c-story').style.height = `calc(${window.scrollY + 100}px + 100vh)`;
+       }, 1000);
+     } else {
+        // document.querySelector('.vizz-component-globe').classList.remove('back');
+        this.videoplayer.pause();
+     }
+     if ((this.state.scroll + 100) - window.scrollY < 1 && (this.state.scroll + 100) - window.scrollY > 0) {
+       document.querySelector('.vizz-component-globe').style.top = '0';
+       document.querySelector('.vizz-component-globe').style.zIndex = '30';
+       document.querySelector('canvas').classList.remove('back');
+       this.videoplayer.pause();
+       this.videoplayer.currentTime = 0;
+     } else {
+      //  console.log('hello');
+     }
 
     const half = (state.minY - state.maxY) / 2;
     const isVideoPlay = (this.props.scrollTop > (state.minY - 200)
     && this.props.scrollTop < (state.maxY + half));
 
     if (isVideoPlay === true) {
-      this.videoplayer.play();
       containBackground.style.background = 'transparent';
       containBackBlueTwo.style.opacity = '0';
     } else {
-      this.videoplayer.pause();
-      this.videoplayer.currentTime = 0;
+      // this.videoplayer.pause();
+      // this.videoplayer.currentTime = 0;
     }
 
     if (this.props.scrollTop > (state.maxY + half)) {
@@ -71,8 +91,6 @@ class VideoSection extends React.Component{
           <source src={videoPath} type="video/mp4"></source>
           Your browser does not support the video tag.
         </video>
-        <div className="button" onClick={(e) => this.openWorld(e)}>
-        </div>
       </div>
     );
   }

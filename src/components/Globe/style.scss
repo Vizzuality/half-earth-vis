@@ -12,15 +12,23 @@
   &.back {
     transition: top .5s linear;
     background-image: url('./images/galaxy.png');
+    transform: none;
+    top: 100%;
+    left: 0;
   }
 
   > canvas {
+    transition: top .5s linear;
     position: fixed;
     top: 50%;
     left: 50%;
     width: 100%;
     height: 100%;
     transform: translate(-50%, -50%);
+
+    &.back {
+      top: 150%;
+    }
   }
 
   .marker {
