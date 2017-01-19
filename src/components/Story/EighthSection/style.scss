@@ -2,11 +2,15 @@
 
 .c-eighth-section {
   position: relative;
-  margin-top: 200px;
-
+  height: 100vh;
 
   h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
     padding-left: $letter-spacing-h1;
+    transform: translate(-50%, -50%);
     color: $white;
     font-family: $font-family-base;
     font-size: $font-size-h1;

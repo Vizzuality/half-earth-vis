@@ -1,9 +1,18 @@
 .vizz-component-globe {
   width: 100%;
-  height: 100%;
+  height: calc(100% + 100vh);
   background-image: url('./images/halo.png');
   background-repeat: no-repeat;
   background-position: center;
+
+  &.max-z {
+    z-index: 10;
+  }
+
+  &.back {
+    transition: top .5s linear;
+    background-image: url('./images/galaxy.png');
+  }
 
   > canvas {
     position: fixed;

@@ -104,7 +104,7 @@ class GlobeComponent extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const interactive = document.querySelector('.c-interactive-world-section');
+    // const interactive = document.querySelector('.c-interactive-world-section');
     const galeryOne = document.querySelector('.c-gallery-one-section');
     const galeryTwo = document.querySelector('.c-gallery-two-section');
     this.setState(
@@ -135,17 +135,17 @@ class GlobeComponent extends React.Component {
       }
       this.imageTexture = earthImage;
     }
-
-    const conditional = interactive.offsetTop < this.state.scrollTop;
-    if (conditional) {
-      if (!this.markersShow) {
-        this.addMarkers();
-      }
-      this.markersShow = true;
-    } else {
-      this.removeMarkers();
-      this.markersShow = false;
-    }
+    //
+    // const conditional = interactive.offsetTop < this.state.scrollTop;
+    // if (conditional) {
+    //   if (!this.markersShow) {
+    //     this.addMarkers();
+    //   }
+    //   this.markersShow = true;
+    // } else {
+    //   this.removeMarkers();
+    //   this.markersShow = false;
+    // }
   }
 
   addControls() {

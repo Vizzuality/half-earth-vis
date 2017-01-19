@@ -1,6 +1,10 @@
 import React from 'react';
+import stars from '../../../images/bg-stars-large.jpg';
 import videoPath from './assets/demo.mp4';
 import './style.scss';
+
+const keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
+
 
 class VideoSection extends React.Component{
 
@@ -21,6 +25,11 @@ class VideoSection extends React.Component{
     this.checkPlayVideo();
   }
 
+  openWorld(e) {
+    document.querySelector('.vizz-component-globe').classList.add('back');
+    document.querySelector('.vizz-component-globe').style.top = '50%';
+  }
+
   checkPlayVideo() {
     const containBackground = document.querySelector('.c-background-change');
     const containBackBlueTwo = document.querySelector('.back-blue-two');
@@ -29,6 +38,12 @@ class VideoSection extends React.Component{
       maxY: this.video.offsetTop + window.innerHeight,
       video: this.videoplayer
     };
+
+
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      document.querySelector('.vizz-component-globe').style.top = '150%';
+      document.querySelector('.vizz-component-globe').classList.add('max-z');
+    }
 
     const half = (state.minY - state.maxY) / 2;
     const isVideoPlay = (this.props.scrollTop > (state.minY - 200)
@@ -56,6 +71,8 @@ class VideoSection extends React.Component{
           <source src={videoPath} type="video/mp4"></source>
           Your browser does not support the video tag.
         </video>
+        <div className="button" onClick={(e) => this.openWorld(e)}>
+        </div>
       </div>
     );
   }
