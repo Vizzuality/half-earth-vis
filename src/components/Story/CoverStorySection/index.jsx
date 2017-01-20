@@ -19,7 +19,6 @@ class CoverStorySection extends React.Component {
       minY: this.cover.offsetTop,
       maxY: this.cover.offsetTop + window.innerHeight
     });
-    console.log(this.title);
     this.title.style.opacity = '1';
   }
 

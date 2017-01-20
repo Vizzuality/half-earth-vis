@@ -60,6 +60,8 @@ class GlobeComponent extends React.Component {
     this.addGlobe();
     this.addMarkers();
 
+    this.scene.add(this.camera);
+
     this.draw();
 
     // Adding frame stats for development
@@ -155,17 +157,16 @@ class GlobeComponent extends React.Component {
     this.control.autoRotate = this.props.autorotate;
     this.control.enablePan = false;
     this.control.enableZoom = false;
-    this.control.rotateSpeed = this.props.velocity;
+    this.control.rotateSpeed = 0.1;
     this.control.autoRotateSpeed = this.props.velocity;
   }
 
   addLights() {
-    const ambientLight = new THREE.AmbientLight(0x444444);
-    this.directionalLight = new THREE.PointLight(0xcfcfcf, 1);
-    this.directionalLight.position.set(-this.props.width / 2, this.props.height / 2, 1500);
-    // this.directionalLight.position.set(5, 3, 40);
+    const ambientLight = new THREE.AmbientLight(0x758a99);
+    this.directionalLight = new THREE.DirectionalLight(0x9aaab8, 1);
+    this.directionalLight.position.set(-this.props.width, this.props.height, 0);
     this.scene.add(ambientLight);
-    this.scene.add(this.directionalLight);
+    this.camera.add(this.directionalLight);
   }
 
   addGlobe() {
@@ -228,6 +229,8 @@ class GlobeComponent extends React.Component {
     const markerRadio = 5;
     const segments = 64;
 
+    this.control.rotateSpeed = 0.5;
+
     for (let i = customData.length - 1; i >= 0; i--) {
       // calculate the position
       const lat = customData[i].Latitude;
@@ -255,6 +258,8 @@ class GlobeComponent extends React.Component {
    * Removing markers from globe
    */
   removeMarkers() {
+    this.control.rotateSpeed = 0.1;
+
     document.querySelector('.c-header').classList.add('z4');
     if (this.markers && this.markers.length) {
       for (var i = this.markers.length - 1; i >= 0; i--) {
@@ -288,7 +293,11 @@ class GlobeComponent extends React.Component {
 
   draw() {
     requestAnimationFrame(this.draw.bind(this));
-    // this.directionalLight.position.copy(this.camera.position);
+    // this.directionalLight.position.copy({
+    //   x: this.camera.position.x - 1000,
+    //   y: this.camera.position.y - 1000,
+    //   z: this.camera.position.z
+    // });
     this.control.update();
     this.renderer.render(this.scene, this.camera);
   }
@@ -324,7 +333,7 @@ class GlobeComponent extends React.Component {
 GlobeComponent.defaultProps = {
   width: window.innerWidth,
   height: 500,
-  radius: 226,
+  radius: 200,
   autorotate: true,
   velocity: 0.25,
   scrollTop: 0,
