@@ -58,6 +58,7 @@ class VideoSection extends React.Component{
      }
      if ((this.state.scroll + 100) - window.scrollY < 1 && (this.state.scroll + 100) - window.scrollY > 0) {
        document.querySelector('.vizz-component-globe').style.top = '0';
+       document.querySelector('.first-text').style.opacity = '1';
        document.querySelector('.vizz-component-globe').style.zIndex = '30';
        document.querySelector('canvas').classList.remove('back');
        this.videoplayer.pause();

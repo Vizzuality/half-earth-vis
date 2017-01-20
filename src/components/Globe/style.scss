@@ -5,6 +5,29 @@
   background-repeat: no-repeat;
   background-position: center;
 
+  .first-text {
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    z-index: 90;
+    color: #fff;
+    /* padding-top: 50%; */
+    position: relative;
+    align-items: center;
+    margin: 0;
+    font-family: "pier-sans-regular", Helvetica, Arial, sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    letter-spacing: 47px;
+    line-height: 1.75;
+    text-align: center;
+    text-shadow: 0 0 34px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+  }
+
   &.max-z {
     z-index: 10;
   }

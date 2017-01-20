@@ -314,6 +314,12 @@ class GlobeComponent extends React.Component {
             description={this.state.modalText}
             title={this.state.modalTitle}
           />
+        <h1 className="first-text">
+          Can we save half<br></br>
+          the earth<br></br>
+          for the rest<br></br>
+          of life?<br></br>
+        </h1>
         </div>
     );
   }
