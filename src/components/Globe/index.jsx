@@ -100,7 +100,7 @@ class GlobeComponent extends React.Component {
 
       if (intersects && intersects.length > 1) {
         const userData = intersects[0].object.data;
-        this.showmodal(userData.Region, userData.Description, userData.ID);
+        this.showmodal(userData.Places, userData.Description, userData.ID);
       }
     }.bind(this), false);
   }
