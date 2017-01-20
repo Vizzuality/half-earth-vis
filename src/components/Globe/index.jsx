@@ -162,9 +162,9 @@ class GlobeComponent extends React.Component {
   }
 
   addLights() {
-    const ambientLight = new THREE.AmbientLight(0x758a99);
+    const ambientLight = new THREE.AmbientLight(0x364047);
     this.directionalLight = new THREE.DirectionalLight(0x9aaab8, 1);
-    this.directionalLight.position.set(-this.props.width, this.props.height, 0);
+    this.directionalLight.position.set(this.props.width, this.props.height * 0.7, 0);
     this.scene.add(ambientLight);
     this.camera.add(this.directionalLight);
   }
@@ -224,10 +224,13 @@ class GlobeComponent extends React.Component {
    */
   addMarkers() {
     document.querySelector('.c-header').classList.remove('z4');
+
+    const material0 = new THREE.MeshBasicMaterial({ color: 0x1bcec7, side: THREE.DoubleSide, opacity: 0.5, transparent: true });
     const material = new THREE.MeshBasicMaterial({ color: 0x1bcec7, side: THREE.DoubleSide });
     const markers = [];
-    const markerRadio = 5;
+    const markerRadio = 3;
     const segments = 64;
+    const height = 1;
 
     this.control.rotateSpeed = 0.5;
 
@@ -236,8 +239,15 @@ class GlobeComponent extends React.Component {
       const lat = customData[i].Latitude;
       const lng = customData[i].Longtitude;
       const radio = this.props.radius;
-      const height = 5;
-      const position = latLongToVector3(lat, lng, radio, height);
+      const position = latLongToVector3(lat, lng, radio, height + (i * 0.2));
+
+      const geometry0 = new THREE.CircleGeometry(markerRadio + 5, segments);
+      const marker0 = new THREE.Mesh(geometry0, material0);
+
+      marker0.position.set(position.x, position.y, position.z);
+      marker0.lookAt(new THREE.Vector3(0, 0, 0));
+      marker0.rotateX(Math.PI);
+      marker0.data = customData[i];
 
       const geometry = new THREE.CircleGeometry(markerRadio, segments);
       const marker = new THREE.Mesh(geometry, material);
@@ -246,6 +256,9 @@ class GlobeComponent extends React.Component {
       marker.lookAt(new THREE.Vector3(0, 0, 0));
       marker.rotateX(Math.PI);
       marker.data = customData[i];
+
+      markers.push(marker0);
+      this.scene.add(marker0);
 
       markers.push(marker);
       this.scene.add(marker);
@@ -333,7 +346,7 @@ class GlobeComponent extends React.Component {
 GlobeComponent.defaultProps = {
   width: window.innerWidth,
   height: 500,
-  radius: 200,
+  radius: 205,
   autorotate: true,
   velocity: 0.25,
   scrollTop: 0,
