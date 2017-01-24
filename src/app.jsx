@@ -26,6 +26,7 @@ class AppComponent extends React.Component {
   }
 
   componentDidMount() {
+    location.hash = (location.hash) ? location.hash : ' '; // improve scrollTop reload
     this.state = {
       scrollTop: window.pageYOffset
     };

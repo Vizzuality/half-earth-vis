@@ -107,7 +107,7 @@ class RangerD3 extends React.Component {
 
   render() {
     return (
-      <div className="c-ranger-d3">
+      <div className="c-ranger-d3 z2">
         {''}
       </div>
     );

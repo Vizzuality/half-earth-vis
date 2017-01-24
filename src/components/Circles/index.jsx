@@ -6,7 +6,7 @@ class Circles extends React.Component {
 
   render() {
     return (
-      <div className="c-circles">
+      <div className="c-circles z1">
         <div className="animate-pulse">{''}</div>
         <div className="animate-pulse-second">{''}</div>
         <div className="animate-pulse-third">{''}</div>
