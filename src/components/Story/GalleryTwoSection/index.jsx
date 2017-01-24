@@ -43,7 +43,7 @@ class GalleryTwoSection extends React.Component {
     const containCircleLines = document.querySelector('.c-line-circles');
     const containCircleDark = document.querySelector('.c-circles-dark');
     let opacityAnimation = circleAnimation / 5;
-    opacityAnimation <= 0.4 ? null : opacityAnimation = 0.4;
+    opacityAnimation <= 0.1 ? null : opacityAnimation = 0.1;
 
     const y = window.pageYOffset - this.gallery.offsetTop;
     const elements = [

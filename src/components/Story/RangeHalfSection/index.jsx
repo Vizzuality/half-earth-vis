@@ -51,7 +51,7 @@ class RangeHalfSection extends React.Component {
     const total = maxY - minY;
     const circleAnimation = ((this.props.scrollTop - minY) / total);
     let circleAnimationOpacity = circleAnimation * 0.5;
-    circleAnimationOpacity <= 0.4 ? null : circleAnimationOpacity = 0.4;
+    circleAnimationOpacity <= 0.1 ? null : circleAnimationOpacity = 0.1;
 
     if (isRange) {
       containBackTransparent.style.opacity = '0';
