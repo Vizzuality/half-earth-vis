@@ -106,7 +106,7 @@ class GlobeComponent extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const interactive = document.querySelector('.c-interactive-world-section');
+    // const interactive = document.querySelector('.c-interactive-world-section');
     const galeryOne = document.querySelector('.c-gallery-one-section');
     const galeryTwo = document.querySelector('.c-gallery-two-section');
     this.setState(
@@ -137,17 +137,17 @@ class GlobeComponent extends React.Component {
       }
       this.imageTexture = earthImage;
     }
-
-    const conditional = interactive.offsetTop < this.state.scrollTop;
-    if (conditional) {
-      if (!this.markersShow) {
-        this.addMarkers();
-      }
-      this.markersShow = true;
-    } else {
-      this.removeMarkers();
-      this.markersShow = false;
-    }
+    //
+    // const conditional = interactive.offsetTop < this.state.scrollTop;
+    // if (conditional) {
+    //   if (!this.markersShow) {
+    //     this.addMarkers();
+    //   }
+    //   this.markersShow = true;
+    // } else {
+    //   this.removeMarkers();
+    //   this.markersShow = false;
+    // }
   }
 
   addControls() {
@@ -337,6 +337,12 @@ class GlobeComponent extends React.Component {
             description={this.state.modalText}
             title={this.state.modalTitle}
           />
+        <h1 className="first-text">
+          Can we save half<br></br>
+          the earth<br></br>
+          for the rest<br></br>
+          of life?<br></br>
+        </h1>
         </div>
     );
   }

@@ -6,6 +6,14 @@
   margin-top: 340px;
   overflow: hidden;
 
+  &.stop {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    margin-top: 0;
+    top: 0;
+  }
+
   .video-player {
     position: relative;
     left: 50%;
@@ -16,5 +24,14 @@
     transition: .7s ease;
     font-family: 'object-fit: fill;';
     object-fit: fill;
+  }
+
+  .button {
+    width: 30px;
+    height: 30px;
+    background-color: blue;
+    position: absolute;
+    bottom: 0;
+    z-index: 50;
   }
 }

@@ -43,8 +43,6 @@ class Story extends React.Component {
         <GalleryTwoSection scrollTop={this.state.scrollTop} direction={this.state.direction} />
         <CirclesSection />
         <VideoSection scrollTop={this.state.scrollTop} />
-        <EighthSection scrollTop={this.state.scrollTop} />
-        <InteractiveWorld scrollTop={this.state.scrollTop} />
       </div>
     );
   }
