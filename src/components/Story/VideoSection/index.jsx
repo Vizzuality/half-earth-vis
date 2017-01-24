@@ -34,6 +34,12 @@ class VideoSection extends React.Component{
     const isVideoPlay = (this.props.scrollTop > (state.minY - 200)
     && this.props.scrollTop < (state.maxY + half));
 
+    if (window.scrollY >= state.minY) {
+      document.querySelector('body').classList.add('-stop-scrolling');
+    } else {
+      document.querySelector('body').classList.remove('-stop-scrolling');
+    }
+
     if (isVideoPlay === true) {
       this.videoplayer.play();
       containBackground.style.background = 'transparent';
