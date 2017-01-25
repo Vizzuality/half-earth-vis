@@ -16,3 +16,15 @@
     justify-content: space-between;
   }
 }
+
+.include-mapping {
+  position: fixed;
+  bottom: 70px;
+  width: 100%;
+
+  .images {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
