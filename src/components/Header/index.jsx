@@ -9,7 +9,7 @@ class HeaderComponent extends React.Component {
         <a href="/" className="brand">
           <img src={logoImage} alt="Half Earth project" />
         </a>
-        <nav className="menu">
+      {/* <nav className="menu">
           <ul>
             <li>
               <span href="{undefined}">About</span>
@@ -24,7 +24,7 @@ class HeaderComponent extends React.Component {
               <a href="{undefined}">Donate</a>
             </li>
           </ul>
-        </nav>
+        </nav> */}
       </header>
     );
   }

@@ -4,3 +4,15 @@
   position: relative;
   padding-top: 340px;
 }
+
+.include-partners {
+  position: fixed;
+  top: 70px;
+  width: 100%;
+
+  .images {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

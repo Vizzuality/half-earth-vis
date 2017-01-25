@@ -24,6 +24,22 @@ class SidebarComponent extends React.Component {
               </svg>
             </a>
           </div>
+
+          <div className="share">
+            <a href={undefined}>
+              <svg className="c-icon -small">
+                <use xlinkHref="#icon-youtube">{''}</use>
+              </svg>
+            </a>
+          </div>
+
+          <div className="share">
+            <a href={undefined}>
+              <svg className="c-icon -small">
+                <use xlinkHref="#icon-vimeo">{''}</use>
+              </svg>
+            </a>
+          </div>
         </div>
       </aside>
     );

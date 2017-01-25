@@ -246,8 +246,6 @@ class GlobeComponent extends React.Component {
    * Method to add markers on globe
    */
   addMarkers() {
-    document.querySelector('.c-header').classList.remove('z4');
-
     const material0 = new THREE.MeshBasicMaterial({ color: 0x1bcec7, side: THREE.DoubleSide, opacity: 0.5, transparent: true });
     const material = new THREE.MeshBasicMaterial({ color: 0x1bcec7, side: THREE.DoubleSide });
     const markers = [];
