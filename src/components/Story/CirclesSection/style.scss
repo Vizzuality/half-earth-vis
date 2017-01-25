@@ -9,6 +9,8 @@
   position: fixed;
   top: 70px;
   width: 100%;
+  transition: .1s linear;
+  opacity: 0;
 
   .images {
     display: flex;
@@ -21,6 +23,9 @@
   position: fixed;
   bottom: 70px;
   width: 100%;
+  transition: .1s linear;
+  opacity: 0;
+
 
   .images {
     display: flex;
