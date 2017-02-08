@@ -25,10 +25,37 @@ import './style.scss';
 
 class CirclesSection extends React.Component{
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      minY: 0,
+      maxY: 0
+    };
+  }
+
+  componentDidMount() {
+    this.showLogos();
+  }
+
+  componentDidUpdate() {
+    this.showLogos();
+  }
+
+  showLogos() {
+    if (this.props.scrollTop > (this.circlesSection.offsetTop)
+    && this.props.scrollTop < (this.circlesSection.offsetTop + 100)) {
+      this.partnerLogo.style.opacity = '1';
+      this.includeLogo.style.opacity = '1';
+    } else {
+      this.partnerLogo.style.opacity = '0';
+      this.includeLogo.style.opacity = '0';
+    }
+  }
+
   render() {
     return (
-      <div className="c-circles-section wrap z2">
-        <div className="include-partners wrap">
+      <div className="c-circles-section wrap z2" ref={(c) => { this.circlesSection = c; }}>
+        <div className="include-partners wrap" ref={(c) => { this.partnerLogo = c; }}>
           <div className="images">
             <img src={eowilson}></img>
             <img src={dlia}></img>
@@ -49,7 +76,7 @@ class CirclesSection extends React.Component{
           <p>the planet are protected now, and where</p>
           <p>should be protected in the future{'?'}</p>
         </div>
-        <div className="include-mapping wrap">
+        <div className="include-mapping wrap" ref={(c) => { this.includeLogo = c; }}>
           <div className="images">
             <img src={unep}></img>
             <img src={natureserve}></img>
@@ -67,5 +94,9 @@ class CirclesSection extends React.Component{
   }
 
 }
+
+CirclesSection.propTypes = {
+  scrollTop: React.PropTypes.number,
+};
 
 export default CirclesSection;
