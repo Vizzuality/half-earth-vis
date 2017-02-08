@@ -2,8 +2,9 @@
 
 .c-eighth-section {
   position: relative;
-  margin-top: 200px;
-
+  height: 100vh;
+  padding-top: 200px;
+  transition: .5s linear;
 
   h1 {
     padding-left: $letter-spacing-h1;
