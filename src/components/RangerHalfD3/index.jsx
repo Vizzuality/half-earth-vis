@@ -101,7 +101,7 @@ class RangerD3 extends React.Component {
        });
     }
 
-    animateArc();
+    // animateArc();
   }
 
 

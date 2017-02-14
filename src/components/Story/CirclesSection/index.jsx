@@ -42,8 +42,9 @@ class CirclesSection extends React.Component{
   }
 
   showLogos() {
-    if (this.props.scrollTop > (this.circlesSection.offsetTop)
-    && this.props.scrollTop < (this.circlesSection.offsetTop + 100)) {
+    if (this.props.scrollTop > (this.circlesSection.offsetTop - 100)
+    && this.props.scrollTop < (this.circlesSection.offsetTop)) {
+      console.log('hello');
       this.partnerLogo.style.opacity = '1';
       this.includeLogo.style.opacity = '1';
     } else {

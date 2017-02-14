@@ -106,7 +106,7 @@ class GlobeComponent extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const interactive = document.querySelector('.c-interactive-world-section');
+    // const interactive = document.querySelector('.c-interactive-world-section');
     const galeryOne = document.querySelector('.c-gallery-one-section');
     const galeryTwo = document.querySelector('.c-gallery-two-section');
     this.setState(
@@ -161,7 +161,7 @@ class GlobeComponent extends React.Component {
       this.imageTexture = earthImage;
     }
 
-    const conditional = interactive.offsetTop < this.state.scrollTop;
+    const conditional = window.scrollY >= document.querySelector('.c-video-section').offsetTop;
     if (conditional) {
       if (!this.markersShow) {
         this.addMarkers();
@@ -171,6 +171,14 @@ class GlobeComponent extends React.Component {
       this.removeMarkers();
       this.markersShow = false;
     }
+
+    // if () {
+    //   setTimeout(function(){
+    //
+    //   }, (27800));
+    // } else {
+    //
+    // }
   }
 
   addControls() {
@@ -293,7 +301,6 @@ class GlobeComponent extends React.Component {
    */
   removeMarkers() {
     this.control.rotateSpeed = 0.1;
-
     document.querySelector('.c-header').classList.add('z4');
     if (this.markers && this.markers.length) {
       for (var i = this.markers.length - 1; i >= 0; i--) {
@@ -339,6 +346,9 @@ class GlobeComponent extends React.Component {
   render() {
     return (
         <div ref={(node) => this.el = node} className="vizz-component-globe z2">
+          <div className="back-stars"></div>
+          <h1 className="title-section center first-text-globe">Can we save half<br />the earth<br />for the rest<br />of life{'?'}</h1>
+          <h2 className="title-section center second-text-globe">We can if we want to</h2>
           <div className="contain-checks">
             <div className="label-contain">
               <input className="select-legend" id="protected" data-layer={protectedImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
