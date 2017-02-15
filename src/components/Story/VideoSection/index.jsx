@@ -36,8 +36,15 @@ class VideoSection extends React.Component{
 
     if (window.scrollY >= state.minY) {
       document.querySelector('body').classList.add('-stop-scrolling');
+      window.scrollTo(0, state.minY);
+      setTimeout(function(){
+        document.querySelector('.c-interactive-world-section').style.top = '-200vh';
+        document.querySelector('.c-interactive-world-section').classList.add('z4');
+      }, (/* this.videoplayer.duration * */1000));
     } else {
       document.querySelector('body').classList.remove('-stop-scrolling');
+      document.querySelector('.c-interactive-world-section').style.top = '0';
+      document.querySelector('.c-interactive-world-section').classList.remove('z4');
     }
 
     if (isVideoPlay === true) {
