@@ -235,6 +235,7 @@ class GlobeComponent extends React.Component {
 
   showmodal(title, description, id) {
     document.querySelector('.c-modal').style.top = '0';
+    document.querySelector('.c-header').style.zIndex = '1';
     this.setState({
       modalText: description,
       modalImage: id,
@@ -301,7 +302,6 @@ class GlobeComponent extends React.Component {
    */
   removeMarkers() {
     this.control.rotateSpeed = 0.1;
-    document.querySelector('.c-header').classList.add('z4');
     if (this.markers && this.markers.length) {
       for (var i = this.markers.length - 1; i >= 0; i--) {
         this.scene.remove(this.markers[i]);

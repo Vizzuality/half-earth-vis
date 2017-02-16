@@ -61,17 +61,17 @@ class VideoSection extends React.Component{
       }, (24900));
       setTimeout(function(){
         document.querySelector('.first-text-globe').style.display = 'none';
-      }, (25000));
+      }, (25900));
       setTimeout(function(){
         document.querySelector('.second-text-globe').style.opacity = '1';
-      }, (26300));
+      }, (27300));
       setTimeout(function(){
         document.querySelector('.second-text-globe').style.opacity = '0';
-      }, (27700));
+      }, (28300));
       setTimeout(function(){
         document.querySelector('.second-text-globe').style.display = 'none';
         document.querySelector('.contain-checks').style.opacity = '1';
-      }, (27800));
+      }, (28400));
     } else {
       document.querySelector('body').classList.remove('-stop-scrolling');
       document.querySelector('.vizz-component-globe').classList.remove('to-top');

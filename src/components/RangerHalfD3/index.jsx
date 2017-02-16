@@ -72,14 +72,14 @@ class RangerD3 extends React.Component {
        .attr('dy', ((radius / 4) + 20))
        .attr('dx', ((+radius / 4) - 20))
        .attr('class', 'text-left')
-       .text('Current Pa.');
+       .text('NOT PROTECTED.');
 
     svg.append('text')
        .attr('text-anchor', 'middle')
        .attr('dy', ((radius / 4) + 20))
        .attr('dx', (-radius / 4))
        .attr('class', 'text-right')
-       .text('NOT PROTECTED.');
+       .text('Current Pa.');
 
     svg.append('rect')
        .attr('x', 0)
