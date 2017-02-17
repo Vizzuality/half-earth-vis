@@ -40,7 +40,7 @@ class InteractiveWorld extends React.Component {
 
   render() {
     return (
-      <div className="c-interactive-world-section wrap z2" ref={(c) => { this.interactive = c; }}>
+      <div className="c-interactive-world-section z2" ref={(c) => { this.interactive = c; }}>
         <TitleSection text="We can if we want to" align="center" />
       </div>
     );
