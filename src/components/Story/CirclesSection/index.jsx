@@ -33,39 +33,20 @@ class CirclesSection extends React.Component{
     };
   }
 
-  componentDidMount() {
-    this.showLogos();
-  }
-
-  componentDidUpdate() {
-    this.showLogos();
-  }
-
-  showLogos() {
-    if (this.props.scrollTop > (this.circlesSection.offsetTop)
-    && this.props.scrollTop < (this.circlesSection.offsetTop + 100)) {
-      this.partnerLogo.style.opacity = '1';
-      this.includeLogo.style.opacity = '1';
-    } else {
-      this.partnerLogo.style.opacity = '0';
-      this.includeLogo.style.opacity = '0';
-    }
-  }
-
   render() {
     return (
       <div className="c-circles-section wrap z2" ref={(c) => { this.circlesSection = c; }}>
         <div className="include-partners wrap" ref={(c) => { this.partnerLogo = c; }}>
           <div className="images">
-            <img src={eowilson}></img>
-            <img src={dlia}></img>
-            <img src={esf}></img>
-            <img src={luchoffman}></img>
-            <img src={vizzuality}></img>
-            <img src={turner}></img>
-            <img src={museum}></img>
-            <img src={parquenacional}></img>
-            <img src={tompkins}></img>
+            <img src={eowilson} alt="eo wilson">{}</img>
+            <img src={dlia} alt="dlia">{}</img>
+            <img src={esf} alt="esf">{}</img>
+            <img src={luchoffman} alt="luc hoffmann institute">{}</img>
+            <img src={vizzuality} alt="vizzuality">{}</img>
+            <img src={turner} alt="turner endangered">{}</img>
+            <img src={museum} alt="museum of science industry">{}</img>
+            <img src={parquenacional} alt="parque nacional">{}</img>
+            <img src={tompkins} alt="tompkins">{}</img>
           </div>
         </div>
         <div className="text-section">
@@ -78,15 +59,15 @@ class CirclesSection extends React.Component{
         </div>
         <div className="include-mapping wrap" ref={(c) => { this.includeLogo = c; }}>
           <div className="images">
-            <img src={unep}></img>
-            <img src={natureserve}></img>
-            <img src={iucn}></img>
-            <img src={birdlife}></img>
-            <img src={gbif}></img>
-            <img src={maplife}></img>
-            <img src={naturalm}></img>
-            <img src={cci}></img>
-            <img src={conservation}></img>
+            <img alt="unep" src={unep}>{}</img>
+            <img alt="nature serve" src={natureserve}>{}</img>
+            <img alt="iucn" src={iucn}>{}</img>
+            <img alt="bird life" src={birdlife}>{}</img>
+            <img alt="gbif" src={gbif}>{}</img>
+            <img alt="map life" src={maplife}>{}</img>
+            <img alt="natural" src={naturalm}>{}</img>
+            <img alt="cci" src={cci}>{}</img>
+            <img alt="conservation" src={conservation}>{}</img>
           </div>
         </div>
       </div>

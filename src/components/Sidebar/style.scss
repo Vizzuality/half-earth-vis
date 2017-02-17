@@ -5,6 +5,7 @@
   position: fixed;
   bottom: 0;
   margin: 0 $medium-margin $medium-margin;
+  z-index: 10 !important;
 
   .contain-share {
     display: flex;
