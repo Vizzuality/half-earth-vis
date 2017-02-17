@@ -1,7 +1,7 @@
 import React from 'react';
+import textImage from './text-image.png';
 import TitleSection from '../TitleSection';
 import './style.scss';
-
 
 class MeshSection extends React.Component{
 
@@ -29,8 +29,8 @@ class MeshSection extends React.Component{
       maxY: this.mesh.offsetTop
     };
     const height = this.mesh.offsetHeight;
-    const isMesh = (this.props.scrollTop > (state.minY - (height / 2))
-    && this.props.scrollTop < (state.maxY + (height / 6)));
+    const isMesh = (this.props.scrollTop > (state.minY)
+    && this.props.scrollTop < (state.maxY + (height / 2)));
 
     if (isMesh) {
       containMesh.style.opacity = '1';
@@ -44,6 +44,7 @@ class MeshSection extends React.Component{
     return (
       <div className="c-mesh-section wrap z3" ref={(c) => { this.mesh = c; }}>
         <TitleSection text="Human beings are connected with all of life" align="center" />
+        <img src={textImage}></img>
         <div className="text-section">
           <p>We depend upon all of nature</p>
           <p>in the same way that nature</p>

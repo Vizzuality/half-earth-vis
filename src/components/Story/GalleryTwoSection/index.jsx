@@ -43,12 +43,13 @@ class GalleryTwoSection extends React.Component {
     const containCircleLines = document.querySelector('.c-line-circles');
     const containCircleDark = document.querySelector('.c-circles-dark');
     let opacityAnimation = circleAnimation / 5;
-    opacityAnimation <= 0.6 ? null : opacityAnimation = 0.6;
+    opacityAnimation <= 0.1 ? null : opacityAnimation = 0.1;
 
     const y = window.pageYOffset - this.gallery.offsetTop;
     const elements = [
-      { el: this.firstImage, velocity: 0.4 },
-      { el: this.secondImage, velocity: 0.35 }
+      { el: this.secondImage, velocity: 0.2 },
+      { el: this.thirdImage, velocity: 0.2 },
+      { el: this.fifthImage, velocity: 0.2 }
     ];
 
     for (let i = elements.length - 1; i >= 0; i--) {
@@ -136,7 +137,6 @@ class GalleryTwoSection extends React.Component {
       </div>
     );
   }
-
 }
 
 GalleryTwoSection.propTypes = {

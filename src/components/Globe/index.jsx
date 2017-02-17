@@ -1,6 +1,7 @@
 import React from 'react';
 import * as THREE from 'three';
 import orbitControl from './control';
+import Modal from '../Modal';
 import customData from './assets/data.json';
 
 import './style.scss';
@@ -12,9 +13,6 @@ import earthBumpImage from './images/earth-bump.jpg';
 import { latLongToVector3, addStats } from './utils';
 
 const Control = orbitControl(THREE);
-const markersShow = false;
-
-const imageTexture = earthImage;
 
 class GlobeComponent extends React.Component {
 
@@ -22,7 +20,10 @@ class GlobeComponent extends React.Component {
     super(props);
     this.state = {
       scrollTop: props.scrollTop,
-      markers: false
+      markers: false,
+      modalImage: null,
+      modalText: null,
+      modalTitle: null
     };
   }
 
@@ -58,6 +59,8 @@ class GlobeComponent extends React.Component {
     this.addLights();
     this.addGlobe();
     this.addMarkers();
+
+    this.scene.add(this.camera);
 
     this.draw();
 
@@ -97,7 +100,7 @@ class GlobeComponent extends React.Component {
 
       if (intersects && intersects.length > 1) {
         const userData = intersects[0].object.data;
-        this.showmodal(userData.Region, userData.Description, userData.ID);
+        this.showmodal(userData.Places, userData.Description, userData.ID);
       }
     }.bind(this), false);
   }
@@ -114,6 +117,29 @@ class GlobeComponent extends React.Component {
     const changeWorldOne = galeryOne.offsetTop < this.state.scrollTop;
     const changeWorldTwo = galeryTwo.offsetTop < this.state.scrollTop;
 
+    if ((galeryOne.offsetTop - 50) > this.state.scrollTop) {
+      this.el.style.opacity = '1';
+    }
+
+    if ((galeryOne.offsetTop - 50) < this.state.scrollTop) {
+      this.el.style.opacity = '0';
+    }
+
+    if ((galeryOne.offsetTop + (galeryOne.offsetTop / 4)) < this.state.scrollTop) {
+      this.el.style.opacity = '1';
+    }
+
+    if (changeWorldTwo) {
+      this.el.style.opacity = '0';
+    }
+
+    if (galeryTwo.offsetTop + ((galeryTwo.offsetTop - (galeryTwo.offsetTop )) + (galeryTwo.offsetTop / 8)) < this.state.scrollTop) {
+      this.el.style.opacity = '1';
+    }
+    //
+    // if ((galeryTwo.offsetTop - 50) < this.state.scrollTop) {
+    //   this.el.style.opacity = '1';
+    // }
 
     if (changeWorldOne && !changeWorldTwo) {
       if (this.imageTexture === earthImage) {
@@ -149,28 +175,28 @@ class GlobeComponent extends React.Component {
 
   addControls() {
     this.control = new Control(this.camera, this.renderer.domElement);
-    this.control.enableDamping = true;
-    this.control.dampingFactor = 0.1;
+    this.control.enableDamping = false;
+    this.control.dampingFactor = 0;
     this.control.autoRotate = this.props.autorotate;
     this.control.enablePan = false;
     this.control.enableZoom = false;
-    this.control.rotateSpeed = this.props.velocity;
+    this.control.rotateSpeed = 0.1;
     this.control.autoRotateSpeed = this.props.velocity;
   }
 
   addLights() {
-    const ambientLight = new THREE.AmbientLight(0x333333);
-    this.directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    this.directionalLight.position.set(5, 3, 40);
+    const ambientLight = new THREE.AmbientLight(0x364047);
+    this.directionalLight = new THREE.DirectionalLight(0x9aaab8, 1);
+    this.directionalLight.position.set(this.props.width, this.props.height * 0.7, 0);
     this.scene.add(ambientLight);
-    this.scene.add(this.directionalLight);
+    this.camera.add(this.directionalLight);
   }
 
   addGlobe() {
     const material = new THREE.MeshPhongMaterial({
       map: this.imageLoader.load(this.props.earthImage),
       bumpMap: this.imageLoader.load(this.props.earthBumpImage),
-      bumpScale: 2
+      bumpScale: 4
     });
     const geometry = new THREE.SphereGeometry(this.props.radius, 40, 30);
     const earth = new THREE.Mesh(geometry, material);
@@ -197,14 +223,15 @@ class GlobeComponent extends React.Component {
       this.earth.material.map = this.imageLoader.load(earthImage);
       this.imageTexture = earthImage;
     }
-
   }
 
   showmodal(title, description, id) {
-    document.querySelector('.image-modal').style.background = `url(./src/components/Modal/assets/${id}.jpg`;
     document.querySelector('.c-modal').style.top = '0';
-    document.querySelector('.title-modal').innerHTML = title;
-    document.querySelector('.description-modal').style.left = description;
+    this.setState({
+      modalText: description,
+      modalImage: id,
+      modalTitle: title
+    });
   }
 
   /**
@@ -219,18 +246,29 @@ class GlobeComponent extends React.Component {
    * Method to add markers on globe
    */
   addMarkers() {
+    const material0 = new THREE.MeshBasicMaterial({ color: 0x1bcec7, side: THREE.DoubleSide, opacity: 0.5, transparent: true });
     const material = new THREE.MeshBasicMaterial({ color: 0x1bcec7, side: THREE.DoubleSide });
     const markers = [];
-    const markerRadio = 5;
+    const markerRadio = 3;
     const segments = 64;
+    const height = 1;
+
+    this.control.rotateSpeed = 0.5;
 
     for (let i = customData.length - 1; i >= 0; i--) {
       // calculate the position
       const lat = customData[i].Latitude;
       const lng = customData[i].Longtitude;
       const radio = this.props.radius;
-      const height = 5;
-      const position = latLongToVector3(lat, lng, radio, height);
+      const position = latLongToVector3(lat, lng, radio, height + (i * 0.2));
+
+      const geometry0 = new THREE.CircleGeometry(markerRadio + 5, segments);
+      const marker0 = new THREE.Mesh(geometry0, material0);
+
+      marker0.position.set(position.x, position.y, position.z);
+      marker0.lookAt(new THREE.Vector3(0, 0, 0));
+      marker0.rotateX(Math.PI);
+      marker0.data = customData[i];
 
       const geometry = new THREE.CircleGeometry(markerRadio, segments);
       const marker = new THREE.Mesh(geometry, material);
@@ -239,6 +277,9 @@ class GlobeComponent extends React.Component {
       marker.lookAt(new THREE.Vector3(0, 0, 0));
       marker.rotateX(Math.PI);
       marker.data = customData[i];
+
+      markers.push(marker0);
+      this.scene.add(marker0);
 
       markers.push(marker);
       this.scene.add(marker);
@@ -251,6 +292,9 @@ class GlobeComponent extends React.Component {
    * Removing markers from globe
    */
   removeMarkers() {
+    this.control.rotateSpeed = 0.1;
+
+    document.querySelector('.c-header').classList.add('z4');
     if (this.markers && this.markers.length) {
       for (var i = this.markers.length - 1; i >= 0; i--) {
         this.scene.remove(this.markers[i]);
@@ -283,7 +327,11 @@ class GlobeComponent extends React.Component {
 
   draw() {
     requestAnimationFrame(this.draw.bind(this));
-    this.directionalLight.position.copy(this.camera.position);
+    // this.directionalLight.position.copy({
+    //   x: this.camera.position.x - 1000,
+    //   y: this.camera.position.y - 1000,
+    //   z: this.camera.position.z
+    // });
     this.control.update();
     this.renderer.render(this.scene, this.camera);
   }
@@ -305,6 +353,11 @@ class GlobeComponent extends React.Component {
               <label htmlFor="animalia">Animalia</label>
             </div>
           </div>
+          <Modal
+            image={this.state.modalImage}
+            description={this.state.modalText}
+            title={this.state.modalTitle}
+          />
         </div>
     );
   }
@@ -314,9 +367,9 @@ class GlobeComponent extends React.Component {
 GlobeComponent.defaultProps = {
   width: window.innerWidth,
   height: 500,
-  radius: 200,
+  radius: 205,
   autorotate: true,
-  velocity: 0.05,
+  velocity: 0.25,
   scrollTop: 0,
   earthImage: earthImage,
   earthBumpImage: earthBumpImage,

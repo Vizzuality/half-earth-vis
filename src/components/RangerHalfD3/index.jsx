@@ -2,14 +2,13 @@ import * as d3 from 'd3';
 import React from 'react';
 import './style.scss';
 
-
 class RangerD3 extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
       minY: 0,
       maxY: 0,
+      animation: 'no'
     };
   }
 
@@ -17,18 +16,20 @@ class RangerD3 extends React.Component {
     this.createRangeD3();
   }
 
-  componentDidUpdate() {
-  }
+  componentDidUpdate() {}
 
   createRangeD3() {
     const width = this.props.width + 300;
     const height = this.props.height + 300;
     const radius = width;
     const values = [
-        { startAngle: 0, endAngle: 140 * ((Math.PI) / 180) }
+      {
+        startAngle: 0,
+        endAngle: 140 * ((Math.PI) / 180)
+      }
     ];
 
-    const svg = d3.select('.c-ranger-half-d3')
+    const svg = d3.select('.c-ranger-d3')
     .append('svg:svg')
     .attr('width', width)
     .attr('height', height)
@@ -43,7 +44,8 @@ class RangerD3 extends React.Component {
 
     const arc2 = d3.arc()
       .innerRadius((radius / 4) + 50)
-      .outerRadius((radius / 4) + 50);
+      .outerRadius((radius / 4) + 50)
+      .startAngle(0);
 
 
     svg.append('path')
@@ -64,19 +66,6 @@ class RangerD3 extends React.Component {
         .attr('stroke', '#06d5ff')
         .attr('class', 'inner-arc')
         .attr('transform', 'rotate(-140)');
-
-    function animateArc() {
-      animation.transition().duration(1500)
-        .attrTween('d', function (d) {
-          const start = { startAngle: 0, endAngle: 0 };
-          const interpolate = d3.interpolate(start, d);
-          return function (t) {
-            return arc2(interpolate(t));
-          };
-        });
-    }
-
-    animateArc();
 
     svg.append('text')
        .attr('text-anchor', 'middle')
@@ -100,12 +89,25 @@ class RangerD3 extends React.Component {
        .attr('width', 16)
        .attr('height', 40)
        .style('fill', '#FFF');
+
+    function animateArc() {
+      animation.transition().duration(10500)
+       .attrTween('d', function (d) {
+         const start = { startAngle: 0, endAngle: (40 * ((Math.PI) / 180)) };
+         const interpolate = d3.interpolate(start, d);
+         return function (t) {
+           return arc2(interpolate(t));
+         };
+       });
+    }
+
+    animateArc();
   }
 
 
   render() {
     return (
-      <div className="c-ranger-half-d3">
+      <div className="c-ranger-d3 z2">
         {''}
       </div>
     );

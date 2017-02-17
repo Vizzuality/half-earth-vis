@@ -4,3 +4,32 @@
   position: relative;
   padding-top: 340px;
 }
+
+.include-partners {
+  position: fixed;
+  top: 70px;
+  width: 100%;
+  transition: .1s linear;
+  opacity: 0;
+
+  .images {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.include-mapping {
+  position: fixed;
+  bottom: 70px;
+  width: 100%;
+  transition: .1s linear;
+  opacity: 0;
+
+
+  .images {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

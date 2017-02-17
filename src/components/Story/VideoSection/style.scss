@@ -2,10 +2,15 @@
 
 .c-video-section {
   position: relative;
-  height: calc(100vh - 50px);
+  height: calc(100vh);
   margin-top: 340px;
+  overflow: hidden;
 
   .video-player {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     min-width: 100%;
     height: 100%;
     transition: .7s ease;
