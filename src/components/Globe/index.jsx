@@ -117,30 +117,6 @@ class GlobeComponent extends React.Component {
     const changeWorldOne = galeryOne.offsetTop < this.state.scrollTop;
     const changeWorldTwo = galeryTwo.offsetTop < this.state.scrollTop;
 
-    if ((galeryOne.offsetTop - 50) > this.state.scrollTop) {
-      this.el.style.opacity = '1';
-    }
-
-    if ((galeryOne.offsetTop - 50) < this.state.scrollTop) {
-      this.el.style.opacity = '0';
-    }
-
-    if ((galeryOne.offsetTop + (galeryOne.offsetTop / 4)) < this.state.scrollTop) {
-      this.el.style.opacity = '1';
-    }
-
-    if (changeWorldTwo) {
-      this.el.style.opacity = '0';
-    }
-
-    if (galeryTwo.offsetTop + ((galeryTwo.offsetTop - (galeryTwo.offsetTop )) + (galeryTwo.offsetTop / 8)) < this.state.scrollTop) {
-      this.el.style.opacity = '1';
-    }
-    //
-    // if ((galeryTwo.offsetTop - 50) < this.state.scrollTop) {
-    //   this.el.style.opacity = '1';
-    // }
-
     if (changeWorldOne && !changeWorldTwo) {
       if (this.imageTexture === earthImage) {
         this.earth.material.map = this.imageLoader.load(protectedImage);
