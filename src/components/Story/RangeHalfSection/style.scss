@@ -10,4 +10,20 @@
     right: 0;
   }
 
+  .title-half {
+    color: $white;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.83;
+    letter-spacing: .6px;
+    position: fixed;
+    top: 120px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: .2s linear;
+  }
+
 }
