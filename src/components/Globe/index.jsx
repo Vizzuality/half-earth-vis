@@ -339,6 +339,7 @@ class GlobeComponent extends React.Component {
               <label htmlFor="animalia">Animalia</label>
             </div>
           </div>
+          <h3 className="explore-text">Explore the Best Places in the Biosphere</h3>
           <Modal
             image={this.state.modalImage}
             description={this.state.modalText}
