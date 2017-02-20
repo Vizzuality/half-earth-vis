@@ -24,6 +24,7 @@
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: .2s linear;
+    left: calc(50% + 15px);
   }
 
 }
