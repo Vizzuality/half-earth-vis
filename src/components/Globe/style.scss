@@ -134,4 +134,16 @@
       background-color: $font-color;
      }
    }
+
+   .explore-text {
+    position: absolute;
+    bottom: 0;
+    color: $white;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    letter-spacing: 1.1px;
+    opacity: 0;
+    transition: .2s linear;
+   }
 }

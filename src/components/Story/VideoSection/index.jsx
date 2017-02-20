@@ -71,6 +71,7 @@ class VideoSection extends React.Component{
       setTimeout(function(){
         document.querySelector('.second-text-globe').style.display = 'none';
         document.querySelector('.contain-checks').style.opacity = '1';
+        document.querySelector('.explore-text').style.opacity = '1';
       }, (28400));
     } else {
       document.querySelector('body').classList.remove('-stop-scrolling');

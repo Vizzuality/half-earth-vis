@@ -32,8 +32,10 @@ class InteractiveWorld extends React.Component {
     const isInfoShow = this.props.scrollTop > (state.minY - 200);
 
     if (isInfoShow) {
+      document.querySelector('.explore-text').style.opacity = '1';
       info.style.opacity = '1';
     } else {
+      document.querySelector('.explore-text').style.opacity = '0';
       info.style.opacity = '0';
     }
   }
