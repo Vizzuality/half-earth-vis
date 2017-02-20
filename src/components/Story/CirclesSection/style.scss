@@ -2,15 +2,16 @@
 
 .c-circles-section {
   position: relative;
+  height: 100vh;
   padding-top: 340px;
 }
 
 .include-partners {
-  position: fixed;
-  top: 70px;
+  position: relative;
+  top: -150px;
   width: 100%;
   transition: .1s linear;
-  opacity: 0;
+  opacity: 1;
 
   .images {
     display: flex;
@@ -20,11 +21,11 @@
 }
 
 .include-mapping {
-  position: fixed;
-  bottom: 70px;
+  position: relative;
+  bottom: -150px;
   width: 100%;
   transition: .1s linear;
-  opacity: 0;
+  opacity: 1;
 
 
   .images {

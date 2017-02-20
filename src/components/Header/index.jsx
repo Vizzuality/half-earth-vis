@@ -5,11 +5,11 @@ import logoImage from './logo.png';
 class HeaderComponent extends React.Component {
   render() {
     return (
-      <header className="c-header z4">
+      <header className="c-header">
         <a href="/" className="brand">
           <img src={logoImage} alt="Half Earth project" />
         </a>
-      {/* <nav className="menu">
+        <nav className="menu">
           <ul>
             <li>
               <span href="{undefined}">About</span>
@@ -24,7 +24,7 @@ class HeaderComponent extends React.Component {
               <a href="{undefined}">Donate</a>
             </li>
           </ul>
-        </nav> */}
+        </nav>
       </header>
     );
   }
