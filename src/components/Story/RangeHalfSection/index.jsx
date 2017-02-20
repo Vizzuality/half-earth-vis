@@ -71,11 +71,13 @@ class RangeHalfSection extends React.Component {
 
     if (isRangeCircles) {
       containCircles.style.opacity = '1';
+      document.querySelector('.title-half').style.opacity = '1';
       for (let i = circles.length - 1; i >= 0; i--) {
         circles[i].el.style.opacity = `${circleAnimationOpacity}`;
         circles[i].el.style.transform = `scale(${circleAnimation * circles[i].velocity})`;
       }
     } else {
+      document.querySelector('.title-half').style.opacity = '0';
       for (let i = circles.length - 1; i >= 0; i--) {
         circles[i].el.style.transform = 'scale(0)';
       }
@@ -91,6 +93,7 @@ class RangeHalfSection extends React.Component {
   render() {
     return (
       <div className="c-range-half-section wrap z3" ref={(c) => { this.range = c; }}>
+        <h2 className="title-half">HALF-EARTH</h2>
         <div className="text-section">
           <p>If we conserve half the land and sea, 85% of</p>
           <p>all species will be protected from extinction</p>

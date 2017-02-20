@@ -22,14 +22,14 @@ class Modal extends React.Component {
 
   closeModal() {
     document.querySelector('.c-header').style.zIndex = '10';
-    this.el.style.top = '100%';
+    this.el.style.top = '150%';
   }
 
   render() {
     document.onkeydown = function (evt) {
       evt = evt || window.event;
       if (evt.keyCode === 27) {
-        document.querySelector('.c-modal').style.top = '100%';
+        document.querySelector('.c-modal').style.top = '150%';
       }
     };
     const imageClass = ['image', 'image-modal'];

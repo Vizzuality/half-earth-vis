@@ -1,9 +1,9 @@
 import React from 'react';
 import './style.scss';
-import firstImage from './assets/scouts.jpg';
+import firstImage from './assets/_seal.png';
 import secondImage from './assets/eowilson.jpg';
-import fifthImage from './assets/bird.jpg';
-import sixthImage from './assets/helicopter.jpg';
+import fifthImage from './assets/_bird2.png';
+import sixthImage from './assets/_ducks.png';
 
 
 class GalleryTwoSection extends React.Component {
