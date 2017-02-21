@@ -330,14 +330,17 @@ class GlobeComponent extends React.Component {
               <input className="select-legend" id="protected" data-layer={protectedImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
               <label htmlFor="protected">Protected Areas</label>
             </div>
+            <span className="text-source">(Source: Protected planet)</span>
             <div className="label-contain">
               <input className="select-legend" id="eco" data-layer={ecoImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
               <label htmlFor="eco">Eco-regions</label>
             </div>
+            <span className="text-source">(Source: CIESIN)</span>
             <div className="label-contain">
               <input className="select-legend" id="animalia" data-layer={animaliaImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
               <label htmlFor="animalia">Animalia</label>
             </div>
+            <span className="text-source">(Source: Half Earth book)</span>
           </div>
           <h3 className="explore-text">Explore the Best Places in the Biosphere</h3>
           <Modal
