@@ -77,16 +77,16 @@ class AppComponent extends React.Component {
       <div>
         <Globe
           autorotate={this.state.rotate}
-          width={700}
-          height={700}
+          width={580}
+          height={580}
           scrollTop={this.state.scrollTop}
         />
-        <Mesh width={700} height={700} />
+      <Mesh width={600} height={580} />
         <RangerHalfD3
           scrollTop={this.state.scrollTop}
           direction={this.state.direction}
-          width={700}
-          height={700}
+          width={580}
+          height={580}
         />
         <Circles />
         <CirclesDark />

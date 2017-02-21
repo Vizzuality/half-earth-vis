@@ -2,7 +2,7 @@ import React from 'react';
 import './style.scss';
 import firstImage from './assets/_seal.png';
 import secondImage from './assets/eowilson.jpg';
-import fifthImage from './assets/_bird2.png';
+import fifthImage from './assets/bird.jpg';
 import sixthImage from './assets/_ducks.png';
 
 
