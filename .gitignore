@@ -13,4 +13,6 @@ ngrok
 *.log*
 
 # Generated
-/dist
+dist
+!/dist/favicon.ico
+!/dist/robots.txt
