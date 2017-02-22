@@ -19,6 +19,11 @@ import naturalm from './assets/NaturalHistoryMuseum_London.png';
 import cci from './assets/CCI.png';
 import conservation from './assets/ConservationInternational.png';
 
+import island from './assets/island-conservation.png';
+import tnc from './assets/TNC.png';
+import wcs from './assets/WCS.png';
+
+
 import TitleSection from '../TitleSection';
 import './style.scss';
 
@@ -65,9 +70,14 @@ class CirclesSection extends React.Component{
             <img alt="bird life" src={birdlife}>{}</img>
             <img alt="gbif" src={gbif}>{}</img>
             <img alt="map life" src={maplife}>{}</img>
+          </div>
+          <div className="images">
             <img alt="natural" src={naturalm}>{}</img>
             <img alt="cci" src={cci}>{}</img>
+            <img alt="conservation" src={island}>{}</img>
             <img alt="conservation" src={conservation}>{}</img>
+            <img alt="conservation" src={tnc}>{}</img>
+            <img alt="conservation" src={wcs}>{}</img>
           </div>
         </div>
       </div>

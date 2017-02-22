@@ -197,15 +197,17 @@ class GlobeComponent extends React.Component {
       same = true;
     }
 
-    // if (e.target.classList.contains('eco')) {
-    //   document.querySelector('.legent-text').innerHTML = 'Source: CIESIN';
-    // } else if (e.target.classList.contains('protected')) {
-    //   document.querySelector('.legent-text').innerHTML = 'Source: Protected planet';
-    // } else if (e.target.classList.contains('animalia')) {
-    //   document.querySelector('.legent-text').innerHTML = 'Source: Half Earth book';
-    // } else {
-    //   document.querySelector('.legent-text').innerHTML = '';
-    // }
+    document.querySelector('.eco-text').style.opacity = '0';
+    document.querySelector('.protected-text').style.opacity = '0';
+    document.querySelector('.animalia-text').style.opacity = '0';
+
+    if (e.target.classList.contains('eco')) {
+      document.querySelector('.eco-text').style.opacity = '1';
+    } else if (e.target.classList.contains('protected')) {
+      document.querySelector('.protected-text').style.opacity = '1';
+    } else if (e.target.classList.contains('animalia')) {
+      document.querySelector('.animalia-text').style.opacity = '1';
+    }
 
     const checks = document.querySelectorAll('.select-legend');
     for (let i = 0; i < checks.length; i++) {
@@ -342,19 +344,19 @@ class GlobeComponent extends React.Component {
               <input className="select-legend protected" id="protected" data-layer={protectedImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
               <label htmlFor="protected">Protected Areas</label>
             </div>
-            <span className="text-source">Source: Protected Planet</span>
+            <span className="text-source protected-text">Source: Protected planet</span>
 
             <div className="label-contain">
               <input className="select-legend eco" id="eco" data-layer={ecoImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
               <label htmlFor="eco">Eco-regions</label>
             </div>
-            <span className="text-source">Source: CIESIN</span>
+            <span className="text-source eco-text">Source: CIESIN</span>
 
             <div className="label-contain">
               <input className="select-legend animalia" id="animalia" data-layer={animaliaImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
               <label htmlFor="animalia">Animalia</label>
             </div>
-            <span className="text-source">Source: Half Earth book</span>
+            <span className="text-source animalia-text">Source: Half Earth book</span>
           </div>
           <h3 className="explore-text">Explore the Best Places in the Biosphere</h3>
           <h4 className="footer-text">E.O. Wilson suggests these spots where Earth{"'"}s biodiversity<br />
