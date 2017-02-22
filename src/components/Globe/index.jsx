@@ -192,22 +192,20 @@ class GlobeComponent extends React.Component {
   setTexture(e) {
     let same = false;
     const target = e.target;
+
     if (e.target.classList.contains('-selected')) {
       same = true;
     }
 
-
-    if (e.target.classList.contains('eco')) {
-      document.querySelector('.footer-text').innerHTML = 'Source: CIESIN';
-    }
-
-    if (e.target.classList.contains('protected')) {
-      document.querySelector('.footer-text').innerHTML = 'Source: Protected planet';
-    }
-
-    if (e.target.classList.contains('animalia')) {
-      document.querySelector('.footer-text').innerHTML = 'Source: Half Earth book';
-    }
+    // if (e.target.classList.contains('eco')) {
+    //   document.querySelector('.legent-text').innerHTML = 'Source: CIESIN';
+    // } else if (e.target.classList.contains('protected')) {
+    //   document.querySelector('.legent-text').innerHTML = 'Source: Protected planet';
+    // } else if (e.target.classList.contains('animalia')) {
+    //   document.querySelector('.legent-text').innerHTML = 'Source: Half Earth book';
+    // } else {
+    //   document.querySelector('.legent-text').innerHTML = '';
+    // }
 
     const checks = document.querySelectorAll('.select-legend');
     for (let i = 0; i < checks.length; i++) {
@@ -226,7 +224,6 @@ class GlobeComponent extends React.Component {
   showmodal(title, description, id) {
     document.querySelector('.c-modal').style.top = '50%';
     document.querySelector('.c-header').style.zIndex = '1';
-    document.querySelector('.explore-text').style.opacity = '0';
     this.setState({
       modalText: description,
       modalImage: id,
@@ -345,14 +342,19 @@ class GlobeComponent extends React.Component {
               <input className="select-legend protected" id="protected" data-layer={protectedImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
               <label htmlFor="protected">Protected Areas</label>
             </div>
+            <span className="text-source">Source: Protected Planet</span>
+
             <div className="label-contain">
               <input className="select-legend eco" id="eco" data-layer={ecoImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
               <label htmlFor="eco">Eco-regions</label>
             </div>
+            <span className="text-source">Source: CIESIN</span>
+
             <div className="label-contain">
               <input className="select-legend animalia" id="animalia" data-layer={animaliaImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
               <label htmlFor="animalia">Animalia</label>
             </div>
+            <span className="text-source">Source: Half Earth book</span>
           </div>
           <h3 className="explore-text">Explore the Best Places in the Biosphere</h3>
           <h4 className="footer-text">E.O. Wilson suggests these spots where Earth{"'"}s biodiversity<br />

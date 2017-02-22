@@ -91,8 +91,8 @@
     .text-source {
       display: block;
       margin-top: 8px;
-      color: $white;
       font-size: 13px;
+      color: #90979c;
     }
   }
 
@@ -153,6 +153,7 @@
     opacity: 0;
     transition: .2s linear;
     text-align: center;
+    text-transform: uppercase;
     width: 100%;
     text-align: center;
     margin: 0;
