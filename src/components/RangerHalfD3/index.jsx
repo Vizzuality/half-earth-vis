@@ -20,10 +20,8 @@ class RangerD3 extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log(this.props.scrollTop);
     if(animationArc === false){
       if (this.props.scrollTop > (document.querySelector('.c-range-half-section').offsetTop - (document.querySelector('.c-range-half-section').offsetHeight / 5))) {
-        console.log(animationArc);
         animationArc = true;
         animationArcDo = true;
         this.createRangeD3();
