@@ -64,8 +64,9 @@ h5,
 h6,
 p,
 span,
-b {
-  text-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+b,
+strong {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, .2) !important;
 }
 
 // Animation

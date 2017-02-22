@@ -33,9 +33,11 @@ class InteractiveWorld extends React.Component {
 
     if (isInfoShow) {
       document.querySelector('.explore-text').style.opacity = '1';
+      document.querySelector('.footer-text').style.opacity = '1';
       info.style.opacity = '1';
     } else {
       document.querySelector('.explore-text').style.opacity = '0';
+      document.querySelector('.footer-text').style.opacity = '0';
       info.style.opacity = '0';
     }
   }

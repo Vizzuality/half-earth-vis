@@ -23,6 +23,7 @@ class RangeSection extends React.Component{
 
   showRange() {
     const containRange = document.querySelector('.c-ranger-d3');
+    const containRangeAnim = document.querySelector('.c-ranger-d3-anim');
     const height = this.range.offsetHeight;
     const state = {
       minY: this.range.offsetTop,
@@ -34,20 +35,24 @@ class RangeSection extends React.Component{
 
     if (this.props.scrollTop < (state.minY - (height / 3))) {
       containRange.style.opacity = '0';
+      containRangeAnim.style.opacity = '0';
     }
 
     if (isRange) {
       containRange.style.opacity = '1';
+      containRangeAnim.style.opacity = '1';
     }
     // } else {
     //   containRange.style.opacity = '0';
     // }
     if (this.props.scrollTop < (state.minY - (height / 3))) {
       containRange.style.opacity = '0';
+      containRangeAnim.style.opacity = '0';
     }
 
     if (this.props.scrollTop > (state.maxY - (height / 3))) {
       containRange.style.opacity = '1';
+      containRangeAnim.style.opacity = '1';
     }
   }
 
