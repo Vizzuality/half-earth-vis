@@ -29,6 +29,7 @@ class EighthSection extends React.Component{
 
     const mesh = document.querySelector('.c-mesh');
     const ranger = document.querySelector('.c-ranger-d3');
+    const rangerAnim = document.querySelector('.c-ranger-d3-anim');
     const circles = document.querySelector('.c-line-circles');
     const containCirclesLines = document.querySelector('.c-line-circles');
     const containCirclesDark = document.querySelector('.c-circles-dark');
@@ -37,12 +38,14 @@ class EighthSection extends React.Component{
     if (isInvisible) {
       mesh.classList.add('hidden');
       ranger.classList.add('hidden');
+      rangerAnim.classList.add('hidden');
       circles.classList.add('hidden');
       containCirclesLines.classList.add('hidden');
       containCirclesDark.classList.add('hidden');
     } else {
       mesh.classList.remove('hidden');
       ranger.classList.remove('hidden');
+      rangerAnim.classList.remove('hidden');
       circles.classList.remove('hidden');
       containCirclesLines.classList.remove('hidden');
       containCirclesDark.classList.remove('hidden');
