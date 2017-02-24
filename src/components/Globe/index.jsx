@@ -360,7 +360,7 @@ class GlobeComponent extends React.Component {
           </div>
           <h3 className="explore-text">Explore the Best Places in the Biosphere</h3>
           <h4 className="footer-text">E.O. Wilson suggests these spots where Earth{"'"}s biodiversity<br />
-          can still reclaimed in his book Half-Earth. Our Planet{"'"}s Fight for Life
+          can still be reclaimed in his book Half-Earth: Our Planet{"'"}s Fight for Life
         </h4>
           <Modal
             image={this.state.modalImage}
