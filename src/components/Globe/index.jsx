@@ -6,9 +6,9 @@ import customData from './assets/data.json';
 
 import './style.scss';
 import earthImage from './images/globe/1-clean.jpg';
-import animaliaImage from './images/globe/animmalia-2.jpg';
-import protectedImage from './images/globe/protected-areas-2.jpg';
-import ecoImage from './images/globe/eco-regions.jpg';
+import animaliaImage from './images/globe/animmalia-2-low.jpg';
+import protectedImage from './images/globe/protected-areas-2-low.jpg';
+import ecoImage from './images/globe/eco-regions-low.jpg';
 import earthBumpImage from './images/earth-bump.jpg';
 import { latLongToVector3, addStats } from './utils';
 

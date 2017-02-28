@@ -1,5 +1,5 @@
 import React from 'react';
-import textImage from './text-image.png';
+import textImage from './text-image.jpg';
 import TitleSection from '../TitleSection';
 import './style.scss';
 

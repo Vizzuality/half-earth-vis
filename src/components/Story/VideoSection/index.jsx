@@ -1,5 +1,4 @@
 import React from 'react';
-import videoPath from './assets/demo.mp4';
 import './style.scss';
 
 
@@ -96,8 +95,8 @@ class VideoSection extends React.Component{
     return (
       <div className="c-video-section z3" ref={(c) => { this.video = c; }}>
         <video className="video-player z3" ref={(c) => { this.videoplayer = c; }}>
-          {/* <source src="https://drive.google.com/uc?export=download&id=0B1__or7KNt_LNjJzMktzOUU0NU0" type="video/mp4"></source> */}
-          <source src={videoPath} type="video/mp4"></source>
+          <source src="./videos/half-earth-wilson-video.webm" type="video/webm"></source>
+          <source src="./videos/half-earth-wilson-video.mp4" type="video/mp4"></source>
           Your browser does not support the video tag.
         </video>
       </div>

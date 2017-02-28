@@ -2,7 +2,7 @@ import React from 'react';
 import TitleSection from '../TitleSection';
 import './style.scss';
 import firstImage from './assets/_hand_with_bird.jpg';
-import secondImage from './assets/_deer.png';
+import secondImage from './assets/_deer.jpg';
 import fourthImage from './assets/tree.jpg';
 import sixthImage from './assets/mallard.jpg';
 
