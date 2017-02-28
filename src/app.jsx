@@ -92,7 +92,7 @@ class AppComponent extends React.Component {
         <CirclesDark />
         <LineCircles />
         <BackgroundChange />
-        <Header />
+        { window.location.search !== '?embed=true' ? <Header /> : null }
         <Sidebar />
         <Story scrollTop={this.state.scrollTop} direction={this.state.direction} />
       </div>
