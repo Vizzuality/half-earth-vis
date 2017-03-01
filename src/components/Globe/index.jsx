@@ -169,6 +169,8 @@ class GlobeComponent extends React.Component {
   }
 
   goFirst() {
+    document.querySelector('.back-stars').style.display = 'none';
+    document.querySelector('.back-blue-two').style.opacity = '0';
     const mesh = document.querySelector('.c-mesh');
     const ranger = document.querySelector('.c-ranger-d3');
     const rangerAnim = document.querySelector('.c-ranger-d3-anim');
