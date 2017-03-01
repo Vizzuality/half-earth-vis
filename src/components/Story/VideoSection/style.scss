@@ -17,4 +17,19 @@
     font-family: 'object-fit: fill;';
     object-fit: fill;
   }
+
+  .c-icon-circle-direction {
+    cursor: pointer;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(0, -50%);
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+  }
+
+  .c-icon-circle-up {
+    
+  }
 }
