@@ -168,6 +168,24 @@ class GlobeComponent extends React.Component {
     this.control.autoRotateSpeed = this.props.velocity;
   }
 
+  goFirst() {
+    document.querySelector('.back-stars').style.display = 'none';
+    document.querySelector('.back-blue-two').style.opacity = '0';
+    const mesh = document.querySelector('.c-mesh');
+    const ranger = document.querySelector('.c-ranger-d3');
+    const rangerAnim = document.querySelector('.c-ranger-d3-anim');
+    const circles = document.querySelector('.c-line-circles');
+    const containCirclesLines = document.querySelector('.c-line-circles');
+    const containCirclesDark = document.querySelector('.c-circles-dark');
+    document.querySelector('body').classList.remove('-stop-scrolling');
+    window.scrollTo(0, 0);
+    document.querySelector('.second-text-globe').style.display = 'none';
+    document.querySelector('.contain-checks').style.display = 'none';
+    document.querySelector('.explore-text').style.display = 'none';
+    document.querySelector('.footer-text').style.display = 'none';
+    document.querySelector('.c-icon-circle-up').style.display = 'none';
+  }
+
   addLights() {
     const ambientLight = new THREE.AmbientLight(0x364047);
     this.directionalLight = new THREE.DirectionalLight(0x9aaab8, 1);
@@ -337,6 +355,12 @@ class GlobeComponent extends React.Component {
     return (
         <div ref={(node) => this.el = node} className="vizz-component-globe z2">
           <div className="back-stars"></div>
+            <svg
+              className="c-icon-circle-up  -small"
+              onClick={() => this.goFirst()}
+            >
+              <use xlinkHref="#icon-down-circle">{''}</use>
+            </svg>
           <h1 className="title-section center first-text-globe">Can we save half<br />the earth<br />for the rest<br />of life{'?'}</h1>
           <h2 className="title-section center second-text-globe">We can if we want to</h2>
           <div className="contain-checks">
