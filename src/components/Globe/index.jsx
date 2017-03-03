@@ -368,19 +368,19 @@ class GlobeComponent extends React.Component {
               <input className="select-legend protected" id="protected" data-layer={protectedImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
               <label htmlFor="protected">Protected Areas</label>
             </div>
-            <span className="text-source protected-text">Source: Protected planet</span>
+            <span className="text-source protected-text">Source: <a href="https://www.protectedplanet.net/" target="_blank">Protected planet</a></span>
 
             <div className="label-contain">
               <input className="select-legend eco" id="eco" data-layer={ecoImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
               <label htmlFor="eco">Eco-regions</label>
             </div>
-            <span className="text-source eco-text">Source: CIESIN</span>
+            <span className="text-source eco-text">Source: <a href="http://www.ciesin.org/" target="_blank">CIESIN</a></span>
 
             <div className="label-contain">
               <input className="select-legend animalia" id="animalia" data-layer={animaliaImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
               <label htmlFor="animalia">Animalia</label>
             </div>
-            <span className="text-source animalia-text">Source: Half Earth book</span>
+            <span className="text-source animalia-text">Source: <a href="http://www.iucnredlist.org/" target="_blank">IUCN redlist</a></span>
           </div>
           <h3 className="explore-text">Explore the Best Places in the Biosphere</h3>
           <h4 className="footer-text">E.O. Wilson suggests these spots where Earth{"'"}s biodiversity<br />
