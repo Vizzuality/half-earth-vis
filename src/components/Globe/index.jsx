@@ -6,9 +6,9 @@ import customData from './assets/data.json';
 
 import './style.scss';
 import earthImage from './images/globe/1-clean.jpg';
-import animaliaImage from './images/globe/animmalia-2.jpg';
-import protectedImage from './images/globe/protected-areas-2.jpg';
-import ecoImage from './images/globe/eco-regions.jpg';
+import animaliaImage from './images/globe/animmalia-2-low.jpg';
+import protectedImage from './images/globe/protected-areas-2-low.jpg';
+import ecoImage from './images/globe/eco-regions-low.jpg';
 import earthBumpImage from './images/earth-bump.jpg';
 import { latLongToVector3, addStats } from './utils';
 
@@ -166,6 +166,24 @@ class GlobeComponent extends React.Component {
     this.control.enableZoom = false;
     this.control.rotateSpeed = 0.1;
     this.control.autoRotateSpeed = this.props.velocity;
+  }
+
+  goFirst() {
+    document.querySelector('.back-stars').style.display = 'none';
+    document.querySelector('.back-blue-two').style.opacity = '0';
+    const mesh = document.querySelector('.c-mesh');
+    const ranger = document.querySelector('.c-ranger-d3');
+    const rangerAnim = document.querySelector('.c-ranger-d3-anim');
+    const circles = document.querySelector('.c-line-circles');
+    const containCirclesLines = document.querySelector('.c-line-circles');
+    const containCirclesDark = document.querySelector('.c-circles-dark');
+    document.querySelector('body').classList.remove('-stop-scrolling');
+    window.scrollTo(0, 0);
+    document.querySelector('.second-text-globe').style.display = 'none';
+    document.querySelector('.contain-checks').style.display = 'none';
+    document.querySelector('.explore-text').style.display = 'none';
+    document.querySelector('.footer-text').style.display = 'none';
+    document.querySelector('.c-icon-circle-up').style.display = 'none';
   }
 
   addLights() {
@@ -337,6 +355,12 @@ class GlobeComponent extends React.Component {
     return (
         <div ref={(node) => this.el = node} className="vizz-component-globe z2">
           <div className="back-stars"></div>
+            <svg
+              className="c-icon-circle-up  -small"
+              onClick={() => this.goFirst()}
+            >
+              <use xlinkHref="#icon-down-circle">{''}</use>
+            </svg>
           <h1 className="title-section center first-text-globe">Can we save half<br />the earth<br />for the rest<br />of life{'?'}</h1>
           <h2 className="title-section center second-text-globe">We can if we want to</h2>
           <div className="contain-checks">
@@ -344,19 +368,19 @@ class GlobeComponent extends React.Component {
               <input className="select-legend protected" id="protected" data-layer={protectedImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
               <label htmlFor="protected">Protected Areas</label>
             </div>
-            <span className="text-source protected-text">Source: Protected planet</span>
+            <span className="text-source protected-text">Source: <a href="https://www.protectedplanet.net/" target="_blank">Protected planet</a></span>
 
             <div className="label-contain">
               <input className="select-legend eco" id="eco" data-layer={ecoImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
               <label htmlFor="eco">Eco-regions</label>
             </div>
-            <span className="text-source eco-text">Source: CIESIN</span>
+            <span className="text-source eco-text">Source: <a href="http://www.ciesin.org/" target="_blank">CIESIN</a></span>
 
             <div className="label-contain">
               <input className="select-legend animalia" id="animalia" data-layer={animaliaImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
               <label htmlFor="animalia">Animalia</label>
             </div>
-            <span className="text-source animalia-text">Source: Half Earth book</span>
+            <span className="text-source animalia-text">Source: <a href="http://www.iucnredlist.org/" target="_blank">IUCN redlist</a></span>
           </div>
           <h3 className="explore-text">Explore the Best Places in the Biosphere</h3>
           <h4 className="footer-text">E.O. Wilson suggests these spots where Earth{"'"}s biodiversity<br />

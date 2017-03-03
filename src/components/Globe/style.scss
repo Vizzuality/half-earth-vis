@@ -95,6 +95,10 @@
       color: #90979c;
       opacity: 0;
       transition: .1s linear;
+
+      a {
+        color: #90979c;
+      }
     }
   }
 
@@ -174,5 +178,19 @@
     width: 100%;
     text-align: center;
     margin: 0;
+   }
+
+   .c-icon-circle-up {
+     cursor: pointer;
+     position: absolute;
+     top: 30px;
+     left: 50%;
+     transform: translate(0, -50%);
+     z-index: 50;
+     width: 30px;
+     height: 30px;
+     opacity: 0;
+     transition: .2s linear;
+     transform: rotate(180deg);
    }
 }
