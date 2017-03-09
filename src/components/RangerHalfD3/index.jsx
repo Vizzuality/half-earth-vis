@@ -81,6 +81,13 @@ class RangerD3 extends React.Component {
             .attr('class', 'inner-arc')
             .attr('transform', 'rotate(-140)');
 
+            svg.append('text')
+               .attr('text-anchor', 'middle')
+               .attr('dy', -310)
+               .attr('dx', 10)
+               .attr('class', 'text-top')
+               .text('HALF EARTH');
+
         svg.append('text')
            .attr('text-anchor', 'middle')
            .attr('dy', ((radius / 4) + 20))
@@ -144,6 +151,13 @@ class RangerD3 extends React.Component {
                              .attr('class', 'outer-arc')
                              .attr('transform', 'rotate(220)');
 
+                             svgAnim.append('text')
+                                .attr('text-anchor', 'middle')
+                                .attr('dy', -310)
+                                .attr('dx', 10)
+                                .attr('class', 'text-top')
+                                .text('HALF EARTH');
+
                          svgAnim.append('text')
                             .attr('text-anchor', 'middle')
                             .attr('dy', ((radius / 4) + 20))
@@ -195,7 +209,8 @@ class RangerD3 extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="contain-ranger">
+
         <div className="c-ranger-d3 z2">
           {''}
         </div>
