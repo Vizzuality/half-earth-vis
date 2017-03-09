@@ -29,4 +29,18 @@
     text-transform: uppercase;
     fill: $white;
   }
+
+  .text-top {
+    font-size: 20px;
+    text-transform: uppercase;
+    fill: $white;
+  }
+}
+
+.contain-ranger {
+  h3 {
+    color: #fff;
+    position: fixed;
+    font-size: 24px;
+  }
 }
