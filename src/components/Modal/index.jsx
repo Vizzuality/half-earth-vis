@@ -10,6 +10,14 @@ class Modal extends React.Component {
     };
   }
 
+  componentWillUnmount() {
+    document.addEventListener('keydown', function(evt) {
+      if (this.el && evt && evt.keyCode === 27) {
+        this.el.style.top = '150%';
+      }
+    }.bind(this));
+  }
+
   componentWillReceiveProps(nextProps) {
     this.setState(
       {
@@ -21,17 +29,16 @@ class Modal extends React.Component {
   }
 
   closeModal() {
-    document.querySelector('.c-header').style.zIndex = '10';
-    this.el.style.top = '150%';
+    const header = document.querySelector('.c-header');
+    if (header) {
+      header.style.zIndex = '10';
+    }
+    if (this.el) {
+      this.el.style.top = '150%';
+    }
   }
 
   render() {
-    document.onkeydown = function (evt) {
-      evt = evt || window.event;
-      if (evt.keyCode === 27) {
-        document.querySelector('.c-modal').style.top = '150%';
-      }
-    };
     const imageClass = ['image', 'image-modal'];
     if (this.props.image) {
       imageClass.push(`-modal${this.props.image}-image`);
