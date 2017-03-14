@@ -242,8 +242,10 @@ class GlobeComponent extends React.Component {
   }
 
   showmodal(title, description, id) {
-    document.querySelector('.c-modal').style.top = '50%';
-    document.querySelector('.c-header').style.zIndex = '1';
+    const modal = document.querySelector('.c-modal');
+    const header = document.querySelector('.c-header');
+    if (modal) modal.style.top = '50%';
+    if (header) header.style.zIndex = '1';
     this.setState({
       modalText: description,
       modalImage: id,
@@ -382,10 +384,8 @@ class GlobeComponent extends React.Component {
             </div>
             <span className="text-source animalia-text">Source: <a href="http://www.iucnredlist.org/" target="_blank">IUCN redlist</a></span>
           </div>
-          <h3 className="explore-text">Explore "The Best Places in the Biosphere"</h3>
-          <h4 className="footer-text">E.O. Wilson suggests these spots where Earth{"'"}s biodiversity<br />
-          can still be reclaimed in his book “Half-Earth: Our Planet’s Fight for Life”.
-        </h4>
+          <h3 className="explore-text">Explore “The Best Places in the Biosphere“</h3>
+          <h4 className="footer-text">From “Half-Earth: Our Planet’s Fight for Life,” by E.O. Wilson.</h4>
           <Modal
             image={this.state.modalImage}
             description={this.state.modalText}
