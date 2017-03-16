@@ -6,7 +6,7 @@
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --progress --colors",
     "test": "./node_modules/.bin/eslint .",
-    "build": "NODE_ENV=production ./node_modules/.bin/webpack",
+    "build": "NODE_ENV=production ./node_modules/.bin/webpack && gulp",
     "publish": "NODE_ENV=production npm run build && node ./scripts/publish"
   },
   "repository": {
@@ -56,6 +56,8 @@
     "eslint-plugin-import": "^2.1.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.7.1",
+    "gulp": "^3.9.1",
+    "gulp-copy": "^1.0.0",
     "jscs": "^3.0.7"
   }
 }

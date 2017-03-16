@@ -13,6 +13,4 @@ ngrok
 *.log*
 
 # Generated
-/dist/*.*
-!/dist/videos
-!/dist/fonts
+/dist
