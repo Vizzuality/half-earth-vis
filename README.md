@@ -20,6 +20,10 @@ To run the server:
 
 	npm start
 
+To publish run:
+
+	npm run publish
+
 ## Contributing
 
 1. Fork it!
