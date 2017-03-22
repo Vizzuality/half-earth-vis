@@ -87,7 +87,7 @@ class GlobeComponent extends React.Component {
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2();
 
-    document.addEventListener('click', function(event) {
+    this.el.addEventListener('click', function(event) {
       event.preventDefault();
 
       mouse.x = (event.offsetX / this.renderer.domElement.clientWidth) * 2 - 1;
