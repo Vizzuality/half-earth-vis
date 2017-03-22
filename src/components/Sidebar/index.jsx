@@ -10,7 +10,7 @@ class SidebarComponent extends React.Component {
       <aside className="c-sidebar z4">
         <div className="contain-share">
           <div className="share">
-            <a href="https://www.facebook.com/eowilsonfoundation">
+            <a href="https://www.facebook.com/eowilsonfoundation" target="_blank">
               <svg className="c-icon -small">
                 <use xlinkHref="#icon-fb">{''}</use>
               </svg>
@@ -18,7 +18,7 @@ class SidebarComponent extends React.Component {
           </div>
 
           <div className="share">
-            <a href="https://twitter.com/EOWilsonFndtn">
+            <a href="https://twitter.com/EOWilsonFndtn" target="_blank">
               <svg className="c-icon -small">
                 <use xlinkHref="#icon-twitter">{''}</use>
               </svg>
@@ -26,7 +26,7 @@ class SidebarComponent extends React.Component {
           </div>
 
           <div className="share">
-            <a href="https://www.youtube.com/user/EOWilsonBiodiversity">
+            <a href="https://www.youtube.com/user/EOWilsonBiodiversity" target="_blank">
               <svg className="c-icon -small">
                 <use xlinkHref="#icon-youtube">{''}</use>
               </svg>
@@ -34,7 +34,7 @@ class SidebarComponent extends React.Component {
           </div>
 
           <div className="share">
-            <a href="https://vimeo.com/eowilson">
+            <a href="https://vimeo.com/eowilson" target="_blank">
               <svg className="c-icon -small">
                 <use xlinkHref="#icon-vimeo">{''}</use>
               </svg>

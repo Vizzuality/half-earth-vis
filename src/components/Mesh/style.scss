@@ -2,11 +2,13 @@
 
 .c-mesh {
   position: fixed;
+  contain: layout;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: .2s $cubic;
-  opacity: 0;
+  transition: opacity .2s $cubic;
+  -webkit-transform-style: preserve-3d;
+  opacity: 1;
 
   &.-hidden {
     opacity: 0;

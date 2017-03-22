@@ -6,7 +6,6 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  min-height: 100vh;
   background-attachment: fixed;
   background-image: url('./bg-intro.jpg');
   background-repeat: no-repeat;
@@ -14,7 +13,7 @@
 
   h1 {
     padding-left: $letter-spacing-h1;
-    transition: 1s linear;
+
     color: $white;
     font-family: $font-family-base;
     font-size: $font-size-h1-laptop;
@@ -24,10 +23,21 @@
     text-align: center;
     text-shadow: 0 0 34px rgba($pattern-color, .3);
     text-transform: uppercase;
+
     opacity: 0;
+    animation: splash 2s normal forwards ease-in-out;
 
     @media screen and (min-width: 1281px) {
       font-size: $font-size-h1;
     }
+  }
+}
+
+@keyframes splash {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
