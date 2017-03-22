@@ -16,12 +16,14 @@ class GalleryOneSection extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  shouldComponentUpdate(nextProps, nextState) {
     const minY = 1040;
     const maxY = 2900;
-    if (nextProps.scrollTop >= minY && nextProps.scrollTop <= maxY) {
-      this.setState({ scrollTop: nextProps.scrollTop });
-    }
+    return (nextProps.scrollTop >= minY && nextProps.scrollTop <= maxY);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ scrollTop: nextProps.scrollTop });
   }
 
   componentDidUpdate() {

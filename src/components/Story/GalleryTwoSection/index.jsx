@@ -15,12 +15,10 @@ class GalleryTwoSection extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  shouldComponentUpdate(nextProps, nextState) {
     const minY = 3200;
     const maxY = 6000;
-    if (nextProps.scrollTop >= minY && nextProps.scrollTop <= maxY) {
-      this.setState({ scrollTop: nextProps.scrollTop });
-    }
+    return (nextProps.scrollTop >= minY && nextProps.scrollTop <= maxY);
   }
 
   componentDidUpdate() {

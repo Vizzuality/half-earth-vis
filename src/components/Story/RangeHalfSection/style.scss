@@ -4,6 +4,8 @@
   display: table;
   position: relative;
   padding-top: 685px;
+  contain: layout;
+  -webkit-transform-style: preserve-3d;
 
   .text-section {
     position: absolute;
