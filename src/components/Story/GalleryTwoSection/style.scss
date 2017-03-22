@@ -10,6 +10,7 @@
 
     .text-section {
       position: absolute;
+      -webkit-transform-style: preserve-3d;
 
       &.first {
         top: 212px;
@@ -31,7 +32,7 @@
 
     img {
       position: absolute;
-      transition: $animation-cubic;
+      will-change: transform;
 
       &.first-image-two {
         right: 270px;
@@ -74,7 +75,6 @@
   .third-image-two,
   .fourth-image-two {
     position: absolute;
-    transition: $animation-cubic;
     background-repeat: no-repeat;
     background-size: cover;
   }

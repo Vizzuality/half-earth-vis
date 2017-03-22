@@ -25,7 +25,7 @@ class GalleryOneSection extends React.Component {
   }
 
   componentDidUpdate() {
-    this.moveGallery();
+    requestAnimationFrame(this.moveGallery.bind(this));
   }
 
   moveGallery() {

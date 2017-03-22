@@ -7,20 +7,24 @@ import sixthImage from './assets/_ducks.jpg';
 
 
 class GalleryTwoSection extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
-      minY: 0,
-      maxY: 0
+      scrollTop: props.scrollTop
     };
   }
 
-  componentDidMount() {
-    this.moveGallery();
+  componentWillReceiveProps(nextProps) {
+    const minY = 3200;
+    const maxY = 6000;
+    if (nextProps.scrollTop >= minY && nextProps.scrollTop <= maxY) {
+      this.setState({ scrollTop: nextProps.scrollTop });
+    }
   }
 
   componentDidUpdate() {
-    this.moveGallery();
+    requestAnimationFrame(this.moveGallery.bind(this));
   }
 
   moveGallery() {
