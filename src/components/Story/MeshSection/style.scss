@@ -3,6 +3,7 @@
 .c-mesh-section {
   position: relative;
   padding-top: 170px;
+  -webkit-transform-style: preserve-3d;
 
   .title-section {
     margin: 0 auto;

@@ -3,9 +3,10 @@
 .c-sidebar {
   display: flex;
   position: fixed;
+  contain: layout;
   bottom: 0;
   margin: 0 $medium-margin $medium-margin;
-  z-index: 10 !important;
+  z-index: 1000;
 
   .contain-share {
     display: flex;
@@ -14,7 +15,6 @@
 
     .share {
       margin-top: $medium-margin;
-      cursor: pointer;
 
       &:first-child {
         margin-top: 0;

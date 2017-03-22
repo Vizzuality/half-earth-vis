@@ -11,6 +11,7 @@
 
   .text-section {
     position: absolute;
+    -webkit-transform-style: preserve-3d;
 
     &.first {
       top: 710px;
@@ -26,7 +27,7 @@
 
   img {
     position: absolute;
-    transition: $animation-cubic;
+    will-change: transform;
     box-shadow: -10px 10px 0 0 rgba($pattern-color, .3);
 
     &.first-image-one {
@@ -66,7 +67,6 @@
   .third-image-one,
   .fifth-image-one {
     position: absolute;
-    transition: $animation-cubic;
     background-repeat: no-repeat;
     background-size: cover;
   }
