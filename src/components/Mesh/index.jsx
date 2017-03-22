@@ -15,14 +15,12 @@ class Mesh extends React.Component {
   componentWillReceiveProps(nextProps) {
     const minY = 1050;
     const maxY = 1680;
-    this.setState({
-      isActive: nextProps.scrollTop >= minY && nextProps.scrollTop <= maxY
-    });
+    this.setState({ isActive: nextProps.scrollTop >= minY && nextProps.scrollTop <= maxY });
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.isActive) {
-      this.createMesh();
+      requestAnimationFrame(this.createMesh.bind(this));
     }
   }
 

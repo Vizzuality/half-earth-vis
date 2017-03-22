@@ -8,16 +8,20 @@ import sixthImage from './assets/mallard.jpg';
 
 
 class GalleryOneSection extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
-      minY: 0,
-      maxY: 0
+      scrollTop: props.scrollTop
     };
   }
 
-  componentDidMount() {
-    this.moveGallery();
+  componentWillReceiveProps(nextProps) {
+    const minY = 1040;
+    const maxY = 2900;
+    if (nextProps.scrollTop >= minY && nextProps.scrollTop <= maxY) {
+      this.setState({ scrollTop: nextProps.scrollTop });
+    }
   }
 
   componentDidUpdate() {
@@ -25,7 +29,7 @@ class GalleryOneSection extends React.Component {
   }
 
   moveGallery() {
-    const y = window.pageYOffset - this.gallery.offsetTop;
+    const y = document.body.scrollTop - this.gallery.offsetTop;
     const elements = [
       { el: this.secondImage, velocity: 0.2 },
       { el: this.fourthImage, velocity: 0.2 },
@@ -34,7 +38,7 @@ class GalleryOneSection extends React.Component {
 
     for (let i = elements.length - 1; i >= 0; i--) {
       const diff = elements[i].el.offsetTop - y;
-      const y1 = diff * (elements[i].velocity || 0);
+      const y1 = diff * elements[i].velocity;
       elements[i].el.style.transform = `translateY(${y1}px)`;
     }
   }
@@ -107,8 +111,7 @@ class GalleryOneSection extends React.Component {
 }
 
 GalleryOneSection.propTypes = {
-  scrollTop: React.PropTypes.number,
-  direction: React.PropTypes.bool,
+  scrollTop: React.PropTypes.number
 };
 
 export default GalleryOneSection;

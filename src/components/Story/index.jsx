@@ -24,20 +24,18 @@ class Story extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState(
-      {
-        scrollTop: nextProps.scrollTop,
-        direction: nextProps.direction
-      }
-    );
+    this.setState({
+      scrollTop: nextProps.scrollTop,
+      direction: nextProps.direction
+    });
   }
 
   render() {
     return (
       <div className="c-story">
-        <CoverStorySection scrollTop={this.state.scrollTop} />
-        <MeshSection scrollTop={this.state.scrollTop} />
-        <GalleryOneSection scrollTop={this.state.scrollTop} direction={this.state.direction} />
+        <CoverStorySection />
+        <MeshSection />
+        <GalleryOneSection scrollTop={this.state.scrollTop} />
         <RangeSection scrollTop={this.state.scrollTop} />
         <RangeHalfSection scrollTop={this.state.scrollTop} />
         <GalleryTwoSection scrollTop={this.state.scrollTop} direction={this.state.direction} />

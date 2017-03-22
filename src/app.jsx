@@ -1,5 +1,4 @@
 import 'normalize.css';
-import _ from 'underscore';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Globe from './components/Globe';
@@ -20,68 +19,46 @@ class AppComponent extends React.Component {
     super(props);
     this.state = {
       scrollTop: 0,
-      direction: false,
-      rotate: false
+      direction: false
     };
   }
 
   componentDidMount() {
     location.hash = (location.hash) ? location.hash : ' '; // improve scrollTop reload
+
     this.state = {
-      scrollTop: window.pageYOffset
+      scrollTop: document.body.scrollTop
     };
 
-    window.addEventListener('scroll', _.debounce(() => {
-      this.setState({ scrollTop: window.pageYOffset });
-    }, 1));
+    window.addEventListener('scroll', (ev) => {
+      requestAnimationFrame(() => {
+        this.setState({ scrollTop: ev.srcElement.body.scrollTop });
+      });
+    });
 
-    window.addEventListener('wheel', _.debounce((e) => {
-      if (e.deltaY < 0) {
-        this.setState({ direction: false });
-      } else {
-        this.setState({ direction: true });
-      }
-    }, 1));
-
-    // this.knowBrowser();
+    window.addEventListener('wheel', (ev) => {
+      requestAnimationFrame(() => {
+        this.setState({ direction: ev.deltaY >= 0 });
+      });
+    });
   }
 
-  knowBrowser() {
-    if ((navigator.userAgent.indexOf('Opera') || navigator.userAgent.indexOf('OPR')) !== -1) {
-      this.setState({ rotate: true });
-    }
-
-    if (navigator.userAgent.indexOf('Chrome') !== -1) {
-      this.setState({ rotate: false });
-    }
-
-    if (navigator.userAgent.indexOf('Safari') !== -1) {
-      this.setState({ rotate: true });
-    }
-
-    if (navigator.userAgent.indexOf('Firefox') !== -1) {
-      this.setState({ rotate: true });
-    }
-
-    if ((navigator.userAgent.indexOf('MSIE') !== -1) || (!!document.documentMode === true)) {
-      this.setState({ rotate: false });
-    }
-
-    if (navigator.userAgent.indexOf('Edge') > -1) {
-      this.setState({ rotate: false });
-    }
+  shouldRotate() {
+    return false;
+    // return (navigator.userAgent.indexOf('Chrome') > -1 ||
+    //   navigator.userAgent.indexOf('Edge') > -1);
   }
 
   render() {
     return (
       <div>
         <Globe
-          autorotate={this.state.rotate}
+          autorotate={this.shouldRotate()}
           width={580}
           height={580}
           scrollTop={this.state.scrollTop}
         />
-      <Mesh width={600} height={580} scrollTop={this.state.scrollTop} />
+        <Mesh width={600} height={580} scrollTop={this.state.scrollTop} />
         <RangerHalfD3
           scrollTop={this.state.scrollTop}
           direction={this.state.direction}
@@ -92,9 +69,8 @@ class AppComponent extends React.Component {
         <CirclesDark />
         <LineCircles />
         <BackgroundChange />
-        { window.location.search !== '?embed=true' ? <Header /> : null }
-        <Sidebar />
         <Story scrollTop={this.state.scrollTop} direction={this.state.direction} />
+        <Sidebar />
       </div>
     );
   }
