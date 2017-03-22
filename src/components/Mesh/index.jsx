@@ -8,13 +8,26 @@ class Mesh extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      minY: 0,
-      maxY: 0
+      isActive: false
     };
   }
 
-  componentDidMount() {
-    this.createMesh();
+  componentWillReceiveProps(nextProps) {
+    const minY = 1050;
+    const maxY = 1680;
+    this.setState({
+      isActive: nextProps.scrollTop >= minY && nextProps.scrollTop <= maxY
+    });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.isActive) {
+      this.createMesh();
+    }
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextState.isActive !== this.state.isActive;
   }
 
   createMesh() {
@@ -23,14 +36,12 @@ class Mesh extends React.Component {
       pointColor: 'rgba(79, 220, 253, 1)',
       lineColor: 'rgba(96, 157, 187, 1)'
     };
-    this.el = d3.select('.c-mesh');
     this.options = Object.assign({}, defaults, options);
     options = this.options;
     const τ = Math.PI * 2;
-    // const width = Math.ceil(window.innerHeight * 0.75) + 100;
     const width = this.props.width + 100;
     const height = this.props.height + 100;
-    const canvas = this.el.append('canvas')
+    const canvas = d3.select(this.canvas)
       .attr('width', width)
       .attr('height', height);
     const context = canvas.node().getContext('2d');
@@ -90,8 +101,8 @@ class Mesh extends React.Component {
 
   render() {
     return (
-      <div className="c-mesh -hidden z3">
-
+      <div className="c-mesh z3" ref={ (el) => { this.el = el; } }>
+        { this.state.isActive && <canvas ref={(canvas) => { this.canvas = canvas; }} /> }
       </div>
     );
   }
@@ -100,7 +111,7 @@ class Mesh extends React.Component {
 
 Mesh.propTypes = {
   width: React.PropTypes.number,
-  height: React.PropTypes.number,
+  height: React.PropTypes.number
 };
 
 export default Mesh;

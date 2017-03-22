@@ -81,7 +81,7 @@ class AppComponent extends React.Component {
           height={580}
           scrollTop={this.state.scrollTop}
         />
-      <Mesh width={600} height={580} />
+      <Mesh width={600} height={580} scrollTop={this.state.scrollTop} />
         <RangerHalfD3
           scrollTop={this.state.scrollTop}
           direction={this.state.direction}
