@@ -181,6 +181,7 @@ class GlobeComponent extends React.Component {
     window.scrollTo(0, 0);
     document.querySelector('.second-text-globe').style.display = 'none';
     document.querySelector('.contain-checks').style.display = 'none';
+    document.querySelector('.contain-legends').style.display = 'none';
     document.querySelector('.explore-text').style.display = 'none';
     document.querySelector('.footer-text').style.display = 'none';
     document.querySelector('.c-icon-circle-up').style.display = 'none';
@@ -210,6 +211,7 @@ class GlobeComponent extends React.Component {
   setTexture(e) {
     let same = false;
     const target = e.target;
+    const legendContainer = document.querySelector('.list-legend-info');;
 
     if (e.target.classList.contains('-selected')) {
       same = true;
@@ -220,11 +222,16 @@ class GlobeComponent extends React.Component {
     document.querySelector('.animalia-text').style.opacity = '0';
 
     if (e.target.classList.contains('eco')) {
+      legendContainer.innerHTML = '<li><div class="example"></div> Color 1</li>';
       document.querySelector('.eco-text').style.opacity = '1';
     } else if (e.target.classList.contains('protected')) {
+      legendContainer.innerHTML = '<li><div class="example"></div> Color 2</li>';
       document.querySelector('.protected-text').style.opacity = '1';
     } else if (e.target.classList.contains('animalia')) {
+      legendContainer.innerHTML = '<li><div class="example"></div> Color 3</li>';
       document.querySelector('.animalia-text').style.opacity = '1';
+    } else {
+      legendContainer.innerHTML = '';
     }
 
     const checks = document.querySelectorAll('.select-legend');
@@ -383,6 +390,11 @@ class GlobeComponent extends React.Component {
               <label htmlFor="animalia">Animalia</label>
             </div>
             <span className="text-source animalia-text">Source: <a href="http://www.iucnredlist.org/" target="_blank">IUCN redlist</a></span>
+          </div>
+          <div className="contain-legends">
+            <span className="text-source">Legend information</span>
+            <ul className="list-legend-info">
+            </ul>
           </div>
           <h3 className="explore-text">Explore “The Best Places in the Biosphere“</h3>
           <h4 className="footer-text">From “Half-Earth: Our Planet’s Fight for Life,” by E.O. Wilson.</h4>

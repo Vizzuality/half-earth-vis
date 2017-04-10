@@ -78,6 +78,47 @@
     cursor: pointer;
   }
 
+  .contain-legends {
+    display: flex;
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    flex-direction: column;
+    transition: .2s linear;
+    opacity: 1;
+    z-index: 10;
+    padding: 15px;
+    border: 2px solid $white;
+    opacity: 0;
+
+    span {
+      color: $white;
+      font-size: $base-font-size;
+    }
+
+    ul {
+      padding-left: 20px;
+      list-style: none;
+
+      li {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        color: $white;
+        line-height: 30px;
+
+        .example {
+          display: inline-block;
+          width: 15px;
+          height: 15px;
+          background-color: pink;
+          margin-right: 10px;
+          border-radius: 15px;
+        }
+      }
+    }
+  }
+
   .contain-checks {
     display: flex;
     position: absolute;

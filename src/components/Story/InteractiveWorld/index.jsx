@@ -29,16 +29,19 @@ class InteractiveWorld extends React.Component {
     };
 
     const info = document.querySelector('.contain-checks');
+    const infolegends = document.querySelector('.contain-legends');
     const isInfoShow = this.props.scrollTop > (state.minY - 200);
 
     if (isInfoShow) {
       document.querySelector('.explore-text').style.opacity = '1';
       document.querySelector('.footer-text').style.opacity = '1';
       info.style.opacity = '1';
+      infolegends.style.opacity = '1';
     } else {
       document.querySelector('.explore-text').style.opacity = '0';
       document.querySelector('.footer-text').style.opacity = '0';
       info.style.opacity = '0';
+      infolegends.style.opacity = '0';
     }
   }
 
