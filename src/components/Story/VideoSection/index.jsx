@@ -57,7 +57,6 @@ class VideoSection extends React.Component{
     setTimeout(function(){
       document.querySelector('.second-text-globe').style.display = 'none';
       document.querySelector('.contain-checks').style.opacity = '1';
-      document.querySelector('.contain-legends').style.opacity = '1';
       document.querySelector('.explore-text').style.opacity = '1';
       document.querySelector('.footer-text').style.opacity = '1';
       document.querySelector('.c-icon-circle-up').style.opacity = '1';
@@ -79,7 +78,6 @@ class VideoSection extends React.Component{
       this.videoplayer.play();
       document.querySelector('.second-text-globe').style.display = 'block';
       document.querySelector('.contain-checks').style.display = 'block';
-      document.querySelector('.contain-legends').style.display = 'block';
       document.querySelector('.explore-text').style.display = 'block';
       document.querySelector('.footer-text').style.display = 'block';
       document.querySelector('.c-icon-circle-up').style.display = 'block';
@@ -123,7 +121,6 @@ class VideoSection extends React.Component{
         if (showVideo) {
         document.querySelector('.second-text-globe').style.display = 'none';
         document.querySelector('.contain-checks').style.opacity = '1';
-        document.querySelector('.contain-legends').style.opacity = '1';
         document.querySelector('.explore-text').style.opacity = '1';
         document.querySelector('.footer-text').style.opacity = '1';
         document.querySelector('.c-icon-circle-up').style.opacity = '1';
