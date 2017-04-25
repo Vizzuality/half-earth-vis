@@ -78,6 +78,47 @@
     cursor: pointer;
   }
 
+  .contain-legends {
+    display: flex;
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    flex-direction: column;
+    transition: .2s linear;
+    opacity: 1;
+    z-index: 10;
+    padding: 15px;
+    border: 2px solid $white;
+    opacity: 0;
+
+    span {
+      color: $white;
+      font-size: $base-font-size;
+    }
+
+    ul {
+      padding-left: 20px;
+      list-style: none;
+
+      li {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        color: $white;
+        line-height: 30px;
+
+        .example {
+          display: inline-block;
+          width: 15px;
+          height: 15px;
+          background-color: pink;
+          margin-right: 10px;
+          border-radius: 15px;
+        }
+      }
+    }
+  }
+
   .contain-checks {
     display: flex;
     position: absolute;
@@ -192,5 +233,122 @@
      opacity: 0;
      transition: .2s linear;
      transform: rotate(180deg);
+   }
+
+
+   .check-color-legends {
+     display: flex;
+     flex-direction: column;
+     opacity: 1;
+     z-index: 10;
+     padding-top: 0;
+     padding-bottom: 0;
+     margin-top: 0;
+
+    &.eco-regions-color {
+      display: none;
+    }
+
+    &.animalia-regions-color {
+      display: none;
+    }
+
+     span {
+       color: $white;
+       font-size: 13px;
+     }
+
+     ul {
+       list-style: none;
+       margin-top: 0;
+       padding-left: 5px;
+
+       li {
+         display: flex;
+         align-items: center;
+         align-content: center;
+         color: $white;
+         line-height: 30px;
+         font-size: 13px;
+
+         .circle-color {
+           display: inline-block;
+           width: 10px;
+           height: 10px;
+           margin-right: 10px;
+           border-radius: 15px;
+
+           &.-color-1 {
+            background-color: #007154;
+           }
+           &.-color-2 {
+             background-color: #bff7e9;
+           }
+           &.-color-3 {
+             background-color: #01e0a7;
+           }
+           &.-color-4 {
+             background-color: #01a97d;
+           }
+           &.-color-5 {
+             background-color: #67cfa4;
+           }
+           &.-color-6 {
+             background-color: #458a6d;
+           }
+           &.-color-7 {
+             background-color: #59b5a8;
+           }
+           &.-color-8 {
+             background-color: #d0eae1;
+           }
+           &.-color-9 {
+             background-color: #2ee9ff;
+           }
+           &.-color-10 {
+             background-color: #4390d2;
+           }
+           &.-color-11 {
+             background-color: #097a89;
+           }
+           &.-color-12 {
+             background-color: #584554;
+           }
+           &.-color-13 {
+             background-color: #d2f7a8;
+           }
+           &.-color-14 {
+             background-color: #5860cc;
+           }
+           &.-color-15 {
+             background-color: #eeeeee;
+           }
+           &.-color-16 {
+             background-color: #a0a0a0;
+           }
+           &.-color-17 {
+             background-color: #d73027;
+           }
+           &.-color-18 {
+             background-color: #f79272;
+           }
+           &.-color-19 {
+             background-color: #fed6b0;
+           }
+           &.-color-20 {
+             background-color: #fff2cc;
+           }
+           &.-color-21 {
+             background-color: #d2ecb4;
+           }
+           &.-color-22 {
+             background-color: #8cce8a;
+           }
+           &.-color-23 {
+             background-color: #1a9850;
+           }
+         }
+       }
+     }
    }
 }

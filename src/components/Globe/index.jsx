@@ -181,6 +181,7 @@ class GlobeComponent extends React.Component {
     window.scrollTo(0, 0);
     document.querySelector('.second-text-globe').style.display = 'none';
     document.querySelector('.contain-checks').style.display = 'none';
+    document.querySelector('.contain-legends').style.display = 'none';
     document.querySelector('.explore-text').style.display = 'none';
     document.querySelector('.footer-text').style.display = 'none';
     document.querySelector('.c-icon-circle-up').style.display = 'none';
@@ -210,21 +211,29 @@ class GlobeComponent extends React.Component {
   setTexture(e) {
     let same = false;
     const target = e.target;
+    const legendContainer = document.querySelector('.list-legend-info');;
 
     if (e.target.classList.contains('-selected')) {
       same = true;
     }
 
     document.querySelector('.eco-text').style.opacity = '0';
+    document.querySelector('.eco-regions-color').style.display = 'none';
     document.querySelector('.protected-text').style.opacity = '0';
     document.querySelector('.animalia-text').style.opacity = '0';
 
     if (e.target.classList.contains('eco')) {
+      legendContainer.innerHTML = '<li><div class="example"></div> Color 1</li>';
       document.querySelector('.eco-text').style.opacity = '1';
+      document.querySelector('.eco-regions-color').style.display = 'flex';
     } else if (e.target.classList.contains('protected')) {
+      legendContainer.innerHTML = '<li><div class="example"></div> Color 2</li>';
       document.querySelector('.protected-text').style.opacity = '1';
     } else if (e.target.classList.contains('animalia')) {
+      legendContainer.innerHTML = '<li><div class="example"></div> Color 3</li>';
       document.querySelector('.animalia-text').style.opacity = '1';
+    } else {
+      legendContainer.innerHTML = '';
     }
 
     const checks = document.querySelectorAll('.select-legend');
@@ -371,18 +380,117 @@ class GlobeComponent extends React.Component {
               <label htmlFor="protected">Protected Areas</label>
             </div>
             <span className="text-source protected-text">Source: <a href="https://www.protectedplanet.net/" target="_blank">Protected planet</a></span>
-
             <div className="label-contain">
               <input className="select-legend eco" id="eco" data-layer={ecoImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
               <label htmlFor="eco">Eco-regions</label>
             </div>
             <span className="text-source eco-text">Source: <a href="http://www.ciesin.org/" target="_blank">CIESIN</a></span>
-
+              <div className="check-color-legends eco-regions-color">
+                <ul>
+                  <li>
+                    <div className="circle-color -color-1"></div>
+                    Tropical & Subtropical Moist Broadleaf Forests
+                  </li>
+                  <li>
+                    <div className="circle-color -color-2"></div>
+                    Tropical & Subtropical Dry Broadleaf Forests
+                  </li>
+                  <li>
+                    <div className="circle-color -color-3"></div>
+                    Tropical & Subtropical Coniferous Forests
+                  </li>
+                  <li>
+                    <div className="circle-color -color-4"></div>
+                    Temperate Broadleaf & Mixed Forests
+                  </li>
+                  <li>
+                    <div className="circle-color -color-5"></div>
+                    Temperate Conifer Forests
+                  </li>
+                  <li>
+                    <div className="circle-color -color-6"></div>
+                    Boreal Forests/Taiga
+                  </li>
+                  <li>
+                    <div className="circle-color -color-7"></div>
+                    Tropical & Subtropical Grasslands, Savannas & Shrublands
+                  </li>
+                  <li>
+                    <div className="circle-color -color-8"></div>
+                    Temperate Grasslands, Savannas & Shrublands
+                  </li>
+                  <li>
+                    <div className="circle-color -color-9"></div>
+                    Flooded Grasslands & Savannas
+                  </li>
+                  <li>
+                    <div className="circle-color -color-10"></div>
+                    Montane Grasslands & Shrublands
+                  </li>
+                  <li>
+                    <div className="circle-color -color-11"></div>
+                    Tundra
+                  </li>
+                  <li>
+                    <div className="circle-color -color-12"></div>
+                    Mediterranean Forests, Woodlands & Scrub
+                  </li>
+                  <li>
+                    <div className="circle-color -color-13"></div>
+                    Deserts & Xeric Shrublands
+                  </li>
+                  <li>
+                    <div className="circle-color -color-14"></div>
+                    Mangroves
+                  </li>
+                  <li>
+                    <div className="circle-color -color-15"></div>
+                    Marine
+                  </li>
+                </ul>
+              </div>
             <div className="label-contain">
               <input className="select-legend animalia" id="animalia" data-layer={animaliaImage} type="checkbox" onChange={(e) => this.setTexture(e)}></input>
               <label htmlFor="animalia">Animalia</label>
             </div>
             <span className="text-source animalia-text">Source: <a href="http://www.iucnredlist.org/" target="_blank">IUCN redlist</a></span>
+              <div className="check-color-legends animalia-regions-color">
+                <ul>
+                  <li>
+                    <div className="circle-color -color-17"></div>
+                      Min: 1 | Max: 25.11764706
+                  </li>
+                  <li>
+                    <div className="circle-color -color-18"></div>
+                      Min: 25.11764707 | Max: 87.82352941
+                  </li>
+                  <li>
+                    <div className="circle-color -color-19"></div>
+                      Min: 87.8235294 | Max: 184.2941176
+                  </li>
+                  <li>
+                    <div className="circle-color -color-20"></div>
+                      Min: 184.2941177 | Max: 295.2352941
+                  </li>
+                  <li>
+                    <div className="circle-color -color-21"></div>
+                      Min: 295.2352942 | Max: 435.1176471
+                  </li>
+                  <li>
+                    <div className="circle-color -color-22"></div>
+                      Min: 435.1176472 | Max: 613.5882353
+                  </li>
+                  <li>
+                    <div className="circle-color -color-23"></div>
+                      Min: 613.5882354 | Max: 1231
+                  </li>
+                </ul>
+              </div>
+          </div>
+          <div className="contain-legends">
+            <span className="text-source">Legend information</span>
+            <ul className="list-legend-info">
+            </ul>
           </div>
           <h3 className="explore-text">Explore “The Best Places in the Biosphere“</h3>
           <h4 className="footer-text">From “Half-Earth: Our Planet’s Fight for Life,” by E.O. Wilson.</h4>
