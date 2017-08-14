@@ -5,9 +5,9 @@
   position: fixed;
   top: 150%;
   left: 50%;
-  width: calc(100% - 200px);
-  height: calc(100vh - 250px);
-  transform: translate(-50%, -50%);
+  width: calc(100% - 40px);
+  height: calc(100vh - 140px);
+  transform: translate(-50%, calc(-50% + 50px));
   transition: .7s ease;
   z-index: 1050;
 
