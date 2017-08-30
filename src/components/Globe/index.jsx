@@ -210,7 +210,6 @@ class GlobeComponent extends React.Component {
   setTexture(e) {
     let same = false;
     const target = e.target;
-
     if (e.target.classList.contains('-selected')) {
       same = true;
     }
@@ -235,11 +234,18 @@ class GlobeComponent extends React.Component {
     for (let i = 0; i < checks.length; i++) {
       checks[i].classList.remove('-selected');
     }
+
     if (!same) {
       target.classList.add('-selected');
       this.earth.material.map = this.imageLoader.load(target.getAttribute('data-layer'));
       this.imageTexture = target.getAttribute('data-layer');
     } else {
+      document.querySelector('.protected-text').style.opacity = '0';
+      document.querySelector('.eco-text').style.opacity = '0';
+      document.querySelector('.eco-text').style.opacity = '0';
+      document.querySelector('.animalia-text').style.opacity = '0';
+      document.querySelector('.eco-regions-color').style.display = 'none';
+      document.querySelector('.animalia-regions-color').style.display = 'none';
       this.earth.material.map = this.imageLoader.load(earthImage);
       this.imageTexture = earthImage;
     }
